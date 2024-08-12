@@ -9,13 +9,16 @@ export function StartMatch() {
     let {navigateEventModal} = useNavigateModal();
 
     let startMatchHandler = () => {
-        TutorialUtils.finishTutorial();
-        navigateEventModal(RoutePaths.SUCCESS, {
-            currency: {
-                exp: 25,
-                soft: 200
-            }
-        });
+        if (TutorialUtils.isTutorial()) {
+            navigateEventModal(RoutePaths.SUCCESS, {
+                currency: {
+                    exp: 25,
+                    soft: 200
+                }
+            });
+            return TutorialUtils.finishTutorial();
+        }
+        alert('play game');
     };
 
     return (

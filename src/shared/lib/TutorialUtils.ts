@@ -2,6 +2,10 @@ import {StorageItem} from "shared/common/StorageItem";
 
 
 export class TutorialUtils {
+    static isTutorial(): boolean {
+        return !!localStorage[StorageItem.TUTORIAL];
+    }
+
     static clearTutorialStorage() {
         delete localStorage[StorageItem.TUTORIAL];
     }
@@ -19,10 +23,7 @@ export class TutorialUtils {
     }
 
     static finishTutorial() {
-        let isTutorial: boolean = !!localStorage[StorageItem.TUTORIAL];
-        if (isTutorial) {
-            this.clearTutorialStorage();
-            this.setTutorialFinishStorage();
-        }
+        this.clearTutorialStorage();
+        this.setTutorialFinishStorage();
     }
 }
