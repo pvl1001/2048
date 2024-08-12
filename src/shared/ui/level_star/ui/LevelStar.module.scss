@@ -1,0 +1,18 @@
+._ {
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  font-size: 2rem;
+
+  img {
+    position: absolute;
+    width: 2.4em;
+  }
+}
+
+.star_level {
+  position: relative;
+  z-index: 1;
+  color: #BA662F;
+  margin-bottom: -0.2em;
+}

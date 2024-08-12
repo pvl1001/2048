@@ -1,0 +1,41 @@
+._ {
+  color: #EAEDFE;
+  background: #2950A5;
+  text-align: center;
+  font-size: 2.4rem;
+  line-height: normal;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.7rem;
+}
+
+.image {
+  width: 24.4rem;
+  margin-bottom: .5rem;
+}
+
+.description_first {
+  margin-bottom: 1rem;
+}
+
+.description_second {
+  margin-bottom: 4rem;
+}
+
+.text_bonus {
+  @include text-gold;
+  font-size: 5.6rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+.note {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: normal;
+  opacity: .5;
+  margin-top: 1rem;
+}

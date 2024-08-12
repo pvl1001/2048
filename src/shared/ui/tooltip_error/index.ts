@@ -1,0 +1,1 @@
+export {TooltipError} from './ui/TooltipError';

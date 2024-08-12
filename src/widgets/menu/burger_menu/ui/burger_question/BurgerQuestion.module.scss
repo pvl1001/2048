@@ -1,0 +1,18 @@
+._ {
+  min-height: 6rem;
+  padding: 1rem 2.5rem 1rem 1.8rem;
+  display: grid;
+  align-items: center;
+  position: relative;
+}
+
+.arrow {
+  width: 1rem;
+  transform: rotate(180deg);
+  position: absolute;
+  right: 1rem;
+
+  rect {
+    fill: var(--color-default)
+  }
+}

@@ -1,0 +1,168 @@
+:root {
+  --color-default-progress: #2E54AE;
+  --color-active-progress: linear-gradient(180deg, #BE5FFA -6.25%, #AD48EB 106.25%);
+}
+
+._ {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+._._active {
+  .level_number {
+    background: var(--color-active-progress);
+  }
+}
+
+._._done {
+  .tooltip_reward {
+    opacity: .4;
+  }
+}
+
+._._claim {
+
+  .level_number {
+    @include text-border(#279D24);
+    background: linear-gradient(180deg, #56E252 0%, #4FCF4C 100%);
+    filter: drop-shadow(.0rem .4rem .4rem rgba(0, 0, 0, 0.25));
+    transform: scale(1.1);
+  }
+
+  .tooltip_reward {
+    transform: scale(1.1) translateY(-1.2rem);
+
+    &, &:before {
+      background-color: #D0FFD3;
+    }
+  }
+
+  .currency {
+    color: #3C8921;
+  }
+}
+
+.done_icon {
+  width: 3rem;
+  transform: translateY(0.4rem);
+
+  * {
+    fill: var(--color-default)
+  }
+}
+
+.tooltip_reward {
+  width: 12.2rem;
+  height: 11.8rem;
+  color: var(--color-default);
+  font-size: 2.4rem;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  filter: drop-shadow(0 .4rem .4rem rgba(0, 0, 0, 0.25));
+  background-color: #F4F6FF;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -1.2rem;
+    width: 2.7rem;
+    height: 3.7rem;
+    mask: url("shared/assets/icons/tooltip-arrow.svg") center / contain no-repeat;
+    background-color: #F4F6FF;
+    transform: rotate(180deg);
+    z-index: 0;
+  }
+}
+
+.currency {
+  position: absolute;
+  bottom: .6rem;
+}
+
+._dollar {
+  width: 5.6rem;
+  margin-top: -1.8rem;
+}
+
+._coin {
+  width: 5.1rem;
+  margin-top: -1.8rem;
+}
+
+.progress_container {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 6.2rem;
+    aspect-ratio: 1;
+    z-index: -1;
+    border: 0.4rem solid var(--color-default-progress);
+  }
+}
+
+.level_number {
+  width: 5.8rem;
+  aspect-ratio: 1;
+  color: #F4F6FF;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: content-box;
+}
+
+._:not(._active) .level_number {
+  background: var(--color-default-progress);
+  border-inline-color: transparent;
+}
+
+.progress_line {
+  position: absolute;
+  min-height: 3.6rem;
+  width: 13rem;
+  background-repeat: no-repeat;
+  background-image: var(--color-active-progress),
+  linear-gradient(to left, var(--color-default-progress) 0, var(--color-default-progress));
+  background-size: var(--percent) calc(100% - 0.2rem * 2), 100%;
+  background-position: 0 center, 100%;
+  left: -12rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.level_1 .progress_line {
+  border-radius: 4rem 0 0 4rem;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    border-radius: 3.6rem;
+    border-left: .2rem solid var(--color-default-progress);
+    border-top: .2rem solid var(--color-default-progress);
+    border-right: .2rem solid transparent;
+    border-bottom: .2rem solid transparent;
+    rotate: -45deg;
+    display: block;
+    height: 3.6rem;
+    width: 3.6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

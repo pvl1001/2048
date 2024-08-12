@@ -1,0 +1,77 @@
+._ {
+  all: unset;
+  position: absolute;
+  z-index: 100;
+  width: 97.7rem;
+  height: 57.5rem;
+  scale: .7;
+  bottom: 11rem;
+  left: 50%;
+  translate: -56.6%;
+
+  &:before {
+    content: '';
+    width: 70rem;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(255, 255, 255, .15) 0%, rgba(255, 255, 255, 0) 70%);
+    display: inline-block;
+    position: absolute;
+    bottom: -22rem;
+    left: -15rem;
+    z-index: 0;
+    border-radius: 50%;
+  }
+}
+
+.img_container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40.7rem;
+
+  &::before, &::after {
+    content: '';
+    width: 3.8rem;
+    height: 5.7rem;
+    background: url(shared/assets/images/triangle.webp) center / contain no-repeat;
+    position: absolute;
+    right: -3.4rem;
+    top: 2.3rem;
+    translate: 0 -50%;
+    filter: drop-shadow(0 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
+    z-index: -1;
+  }
+
+  &::after {
+    z-index: 10;
+    filter: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  position: absolute;
+  right: 0;
+  translate: 0 -50%;
+  text-align: center;
+  padding: 3.1rem 4.7rem;
+  width: 54.0rem;
+  min-height: 15rem;
+  background-color: #F4F6FF;
+  border-radius: 2rem;
+  box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+
+  font-size: 3.6rem;
+  color: var(--color-default);
+  font-weight: 700;
+  line-height: normal;
+  top: calc(50% + 3rem);
+
+  &:before {
+    bottom: calc(50% - 13.3rem);
+  }
+}
+

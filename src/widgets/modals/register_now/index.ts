@@ -1,0 +1,1 @@
+export {RegisterNow} from './ui/RegisterNow';

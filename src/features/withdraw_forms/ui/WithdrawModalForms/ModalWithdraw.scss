@@ -1,0 +1,52 @@
+._ {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.block_description {
+  @include modal-border-container;
+  padding-block: 3.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  color: #C0C2E7;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: auto;
+
+  > * {
+    width: 23.4rem;
+  }
+}
+
+._._form {
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 3rem;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+
+    > *:nth-child(3) {
+      flex: 1 0 100%;
+    }
+
+    > *:not(:nth-child(3)) {
+      flex: 1 1 calc(50% - 3rem);
+    }
+  }
+}
+

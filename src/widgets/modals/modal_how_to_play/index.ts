@@ -1,0 +1,1 @@
+export {ModalHowToPlay} from './ui/ModalHowToPlay';

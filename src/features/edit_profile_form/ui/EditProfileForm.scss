@@ -1,0 +1,23 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 3.4rem 2.8rem;
+  margin-bottom: 6rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form {
+  min-height: 100%;
+  flex-flow: column;
+  display: flex;
+  padding: 1rem;
+}
+
+.context_menu {
+  padding: 5.4rem 0 3rem;
+}

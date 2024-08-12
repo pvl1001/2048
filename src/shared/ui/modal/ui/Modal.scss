@@ -1,0 +1,96 @@
+._ {
+  text-align: center;
+  color: var(--color-default);
+  font-size: 2.4rem;
+  font-weight: 700;
+  overflow: auto;
+  line-height: normal;
+
+  fieldset {
+    display: grid;
+    gap: 1.3rem;
+  }
+}
+
+._, .overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  z-index: 100;
+  position: relative;
+  max-width: 65.8rem;
+  width: 100%;
+  background-color: #EAEDFE;
+  border-radius: 4.2rem;
+}
+
+.overlay {
+  background: #0A1635;
+}
+
+.content {
+  padding: 2rem 7.6rem 3.6rem;
+}
+
+.modal_withdraw {
+  .container {
+    min-height: 53.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 3.3rem 2.8rem;
+  }
+
+  &._form .container {
+    max-width: 77.4rem;
+  }
+
+}
+
+.modal_error .container {
+  min-height: 46.1rem;
+  display: flex;
+  flex-flow: column;
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding: 7rem 0 4.6rem;
+  }
+}
+
+.modal_deposit .content {
+  padding-inline: 3.3rem;
+}
+
+.mascot {
+  .container {
+    margin-top: 20rem;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.8rem 0;
+  }
+
+  &_img {
+    position: absolute;
+    z-index: -1;
+    top: -25rem;
+    width: 38.6rem;
+  }
+}

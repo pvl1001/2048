@@ -1,0 +1,83 @@
+._ {
+  background-color: #4069C865;
+  border-radius: var(--border-radius-box);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: #EAEDFE;
+}
+
+.description {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: normal;
+  opacity: .5;
+  margin-top: .6rem;
+}
+
+.field_wrapper {
+  position: relative;
+}
+
+.copied_message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+  svg {
+    width: 3rem;
+    margin-right: .3rem;
+
+    g {
+      fill: #50D44C
+    }
+  }
+}
+
+.field {
+  min-width: 40.7rem;
+
+  input {
+    font-size: 2.4rem;
+    font-weight: 700;
+    height: 6rem;
+    border-radius: 3rem;
+    color: inherit;
+    text-align: center;
+
+    &::placeholder {
+      font-size: 2.2rem;
+      font-weight: 600;
+      text-align: left;
+    }
+  }
+}
+
+.button {
+  width: 23.4rem;
+  margin: 3rem auto 0;
+}
+
+._copy {
+  padding: 4.2rem 0 3.4rem;
+
+  .text_container {
+    margin-bottom: 2rem;
+  }
+}
+
+._submit {
+  padding: 3.2rem 0 2.3rem;
+
+  .text_container {
+    margin-bottom: 2.6rem;
+  }
+}

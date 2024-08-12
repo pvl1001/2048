@@ -1,0 +1,61 @@
+._ {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 53, 80%);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+}
+
+.loader {
+  display: flex;
+  gap: 7%;
+  width: 20rem;
+  padding: 1.5rem;
+
+  li {
+    width: 25%;
+    aspect-ratio: 1;
+    border-radius: .7rem;
+    background-color: #EAEDFE;
+    opacity: .5;
+
+    @for $i from 0 through 5 {
+      &:nth-child(#{($i)}) {
+        $time: 1.5s;
+        animation: jump $time ease-in-out ($i - 1) * calc($time/5) infinite;
+      }
+    }
+  }
+}
+
+.button {
+  background: transparent;
+
+  .loader {
+    width: 15rem;
+
+    li {
+      border-radius: .4rem;
+    }
+  }
+}
+
+.modal {
+  background: rgba(177, 186, 255, 0.6);
+  border-radius: 4.2rem;
+}
+
+
+@keyframes jump {
+  15%, 45% {
+    transform: translateY(0);
+    opacity: .5;
+  }
+
+  30% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+

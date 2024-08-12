@@ -1,0 +1,65 @@
+._ {
+  height: 11.4rem;
+  border-radius: 4.2rem;
+  background: #EAEDFE;
+  box-shadow: 0 .4rem .4rem 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+}
+
+.active {
+  background-color: #FFDF85;
+
+  * {
+    color: #C45837;
+  }
+
+  :global {
+    .player_card_place *,
+    .score :before {
+      background: #C45837;
+    }
+
+    .player_card_place,
+    .score {
+      background-color: #FCC672;
+    }
+  }
+}
+
+.gamepad {
+  flex: 0 0 9rem;
+  -webkit-mask: url('shared/assets/icons/gamepad.png') center / 2.8rem no-repeat;
+  background: #6fb0fc;
+}
+
+.searching {
+  * {
+    color: #4787D2;
+  }
+
+  :global {
+    background: #99C5F8;
+
+    .player_card_place *,
+    .score :before {
+      background: #8BBCF5;
+    }
+
+    .player_card_place,
+    .score {
+      background-color: #8BBCF5;
+    }
+
+    .block_player :before {
+      color: #5496E3;
+      box-shadow: none;
+    }
+
+  }
+
+}
+
+.loupe {
+  flex: 0 0 9rem;
+  background: url('shared/assets/icons/loupe.png') center / 2.8rem no-repeat;
+}

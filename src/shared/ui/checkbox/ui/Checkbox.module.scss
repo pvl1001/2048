@@ -1,0 +1,30 @@
+._ {
+  display: inline-block;
+
+  input {
+    display: none;
+
+    & + div {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: .7rem;
+      border: .2rem solid rgba(68, 64, 162, 0.4);
+      cursor: pointer;
+
+      svg {
+        transform: scale(0);
+        transition: .1s ease-out;
+
+        rect {
+          fill: #50D44C;
+        }
+      }
+    }
+
+    &:checked + div svg {
+      transform: scale(1.05) translateX(5%);
+    }
+  }
+}

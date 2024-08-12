@@ -1,0 +1,90 @@
+._daily {
+  --gradient: linear-gradient(180deg, #3D68C4 0%, #4F7DE0 193.46%);
+  --image: url('img/daily_gift.webp');
+  --margin-bottom: 2rem;
+}
+
+._invite {
+  --gradient: linear-gradient(180deg, #A35DE0 0%, #615BCD 100%);
+  --image: url('img/hard_gift.webp');
+  --margin-bottom: .4rem;
+}
+
+._ {
+  background: #FFF;
+  border-radius: var(--border-radius-box);
+  padding: 1.4rem 1.4rem 2rem;
+  display: grid;
+  box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+}
+
+.img {
+  height: 19rem;
+  border-radius: 3.6rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--gradient);
+  margin-bottom: var(--margin-bottom);
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: var(--image)
+  }
+
+  &__text {
+    text-transform: uppercase;
+    text-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+    font-size: 4.8rem;
+    line-height: 5.8rem;
+    font-weight: 800;
+    padding-left: 3rem;
+    position: absolute;
+  }
+}
+
+
+.invited {
+  text-align: center;
+  color: #9D9FD8;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+
+  a {
+    text-decoration: underline;
+    color: var(--color-default);
+  }
+}
+
+.button {
+  width: 20rem;
+  margin: 0 auto;
+  height: 6.6rem;
+  border-radius: 2.6rem;
+  padding: 0;
+}
+
+.invite_disabled_button {
+  font-size: 2.2rem;
+  padding-left: 2.5rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    line-height: 1;
+    text-align: left;
+  }
+
+  img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}

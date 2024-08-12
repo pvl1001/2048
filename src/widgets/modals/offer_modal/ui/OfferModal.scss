@@ -1,0 +1,106 @@
+.happy {
+  --image-width: 52rem;
+  --image-bottom: -4rem;
+  --image-bg: url('../lib/img/happy_stars.webp') 5.3rem 3.8rem / 42rem no-repeat,
+  url('../lib/img/happy.webp') center / contain no-repeat;
+  --card-color: #5787EF80;
+  --text-border-color: #264D98;
+}
+
+.lucky {
+  --image-width: 53rem;
+  --image-bottom: -2rem;
+  --image-bg: url('../lib/img/lucky_stars.webp') 4.8rem 3.6rem / 42.3rem no-repeat,
+  url('../lib/img/lucky.webp') center / contain no-repeat;
+  --card-color: #CF65E180;
+  --text-border-color: #58309B;
+}
+
+.special {
+  --image-width: 52rem;
+  --image-bottom: -5.3rem;
+  --image-bg: url('../lib/img/special_stars.webp') 2.7rem 4.7rem / 44.3rem no-repeat,
+  url('../lib/img/special.webp') center / contain no-repeat;
+  --card-color: #8F71EA80;
+  --text-border-color: #432F9B;
+}
+
+.just_for_you {
+  --image-width: 58rem;
+  --image-bottom: -8rem;
+  --image-bg: url('../lib/img/happy_stars.webp') 5rem 0 / 42rem no-repeat,
+  url('../lib/img/just-for-you.webp') center / contain no-repeat;
+  --card-color: #2BD0B780;
+  --text-border-color: #096E88;
+}
+
+.image {
+  height: 45rem;
+  width: var(--image-width);
+  bottom: var(--image-bottom);
+  background: var(--image-bg);
+  position: absolute;
+}
+
+ul.card_list {
+  position: absolute;
+  right: 5.6rem;
+  top: 3rem;
+  bottom: 4rem;
+  display: flex;
+  gap: .6rem;
+
+}
+
+li.card {
+  background: var(--card-color);
+  width: 15.1rem;
+  border-radius: 4.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.currency {
+  height: 11.9rem;
+  width: 100%;
+
+  &._hard {
+    background: url('shared/assets/icons/dollars.png') .5rem center / contain no-repeat;
+  }
+
+  &._bonus {
+    background: url('../lib/img/bonus_text.webp') calc(50% + -0.4rem) calc(50% + 0.6rem) / 7.5rem no-repeat,
+    url('shared/assets/icons/dollars.png') .5rem center / contain no-repeat
+  }
+
+  &._soft {
+    background: url('shared/assets/icons/coins.png') center / contain no-repeat;
+  }
+
+  &_value {
+    @include text-border(var(--text-border-color), .2rem);
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.sale_banner {
+  position: fixed;
+  right: -4.1rem;
+  top: 10.2rem;
+}
+
+.available {
+  position: fixed;
+  right: 3.2rem;
+  bottom: 2.6rem;
+  color: #C2C4E5;
+  font-size: 2.4rem;
+  font-weight: 600;
+  opacity: .5;
+}

@@ -1,0 +1,51 @@
+._ {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 -2rem;
+}
+
+.image_container {
+  width: 11rem;
+  height: 11rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.frozen img {
+  width: 8.2rem;
+}
+
+.unfrozen img {
+  width: 7.8rem;
+}
+
+.region img {
+  width: 11rem;
+}
+
+.text {
+  margin-bottom: 2.5rem;
+
+  p {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__text {
+    color: #A4A5D3;
+  }
+
+  &__link a {
+    color: var(--color-default);
+    text-decoration: underline;
+  }
+}
+
+.button {
+  width: 24.6rem;
+}
+

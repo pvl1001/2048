@@ -1,0 +1,44 @@
+._ {
+  border-radius: 4.2rem;
+  border: .2rem solid #EAEDFE;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  overflow: hidden;
+}
+
+.icon_block {
+  flex: 0 0 10rem;
+  display: grid;
+  place-items: center;
+  background-color: #EAEDFE35;
+
+  img {
+    width: 4.5rem;
+  }
+}
+
+.info_container {
+  display: grid;
+  padding-bottom: 2rem;
+}
+
+.list {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 3.1rem;
+  line-height: 2rem;
+
+  li {
+    list-style: disc;
+  }
+}
+
+.policy {
+  color: var(--color-default);
+  margin: 0 auto;
+
+  a {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,46 @@
+@mixin head-text-color($color) {
+  .title {
+    color: $color;
+  }
+
+  .close_btn svg * {
+    fill: $color;
+  }
+}
+
+._ {
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4.2rem 4.2rem 0 0;
+}
+
+._.default {
+  background-color: #DCE1FF;
+  @include head-text-color(var(--color-default));
+}
+
+._.blue {
+  background-color: #3C66C1;
+  @include head-text-color(#fff);
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.close_btn {
+  position: absolute;
+  display: flex;
+  right: 2rem;
+  padding: 1rem;
+  @include hover-button;
+
+  svg {
+    margin: auto;
+    width: 2.9rem;
+  }
+}

@@ -1,0 +1,49 @@
+._ {
+  height: 6.2rem;
+  display: flex;
+  border-radius: 3.6rem;
+  overflow: hidden;
+}
+
+.block_wins {
+  color: #EAEDFE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem 0 3rem;
+  background-color: #3D65C0;
+  flex: 1;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: lowercase;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.date {
+  font-size: 1.6rem;
+  font-weight: 500;
+  opacity: .5;
+}
+
+.block_money {
+  flex: 0 0 10.5rem;
+  display: grid;
+  place-items: center;
+  background-color: #3359AF;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.color_green {
+  color: #75F071;
+}
+
+.color_red {
+  color: #FF8484;
+}

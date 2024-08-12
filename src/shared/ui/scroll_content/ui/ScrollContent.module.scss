@@ -1,0 +1,46 @@
+._ {
+  background: linear-gradient(180deg, #517BDD 0%, #2FB1ED 100%);
+  overflow: auto;
+  flex: 1;
+  margin-top: -0.1rem;
+  padding: 3.1rem 2rem 2.7rem;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  padding: 0 1.5rem 0.4rem 2rem;
+}
+
+.shadow {
+  position: sticky;
+  opacity: 0.4;
+  height: 1.7rem;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, rgba(19, 48, 111, 0.00) 0%, #13306F 100%);
+  left: 0;
+  right: 0;
+  transition: .1s;
+}
+
+.top {
+  top: -0.1rem;
+  margin-bottom: -1.7rem;
+  transform: rotate(180deg);
+}
+
+.bottom {
+  bottom: -0.5rem;
+  margin-top: -1.7rem;
+}
+
+.center {
+  display: flex;
+  flex-flow: column;
+
+  .wrapper {
+    height: auto;
+    margin: auto;
+  }
+}

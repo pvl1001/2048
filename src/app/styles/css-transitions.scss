@@ -1,0 +1,144 @@
+@mixin menu($translateX) {
+  &-enter .menu {
+    transform: translateX($translateX);
+  }
+
+  &-enter-active .menu {
+    transform: translateX(0);
+    transition: transform .2s ease-out;
+  }
+
+  &-exit .menu {
+    transform: translateX(0);
+  }
+
+  &-exit-active .menu {
+    transform: translateX($translateX);
+    transition: transform .2s ease-out;
+  }
+}
+
+.transition-context-menu {
+  &-enter {
+    transform: translateX(100%);
+  }
+
+  &-enter-active {
+    transform: translateX(0);
+    transition: transform .2s ease-out;
+  }
+
+  &-exit {
+    transform: translateX(0);
+  }
+
+  &-exit-active {
+    transform: translateX(100%);
+    transition: transform .2s ease-out;
+  }
+}
+
+.transition-tab {
+  &-enter {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 200ms, transform 200ms;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 200ms, transform 200ms;
+  }
+}
+
+.transition-menu {
+  @include menu(100%)
+}
+
+.transition-menu-left {
+  @include menu(-100%)
+}
+
+.transition-modal {
+  &-enter .modal-container {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  &-enter-active .modal-container {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &-exit .modal-container {
+    opacity: 1;
+  }
+
+  &-exit-active .modal-container {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  &-enter-active .modal-container,
+  &-exit-active .modal-container {
+    transition: opacity 200ms, transform 200ms;
+  }
+}
+
+.transition-tippy {
+  &-enter .tooltip {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  &-enter-active .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 250ms, transform 250ms;
+  }
+
+  &-exit .tooltip {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &-exit-active .tooltip {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 250ms, transform 250ms;
+  }
+}
+
+.transition-up-button {
+  &-enter {
+    transform: translateY(100%);
+    bottom: 0;
+  }
+
+  &-enter-active {
+    transform: translateY(0);
+    bottom: 6.2rem;
+    transition: 200ms;
+  }
+
+  &-exit {
+    transform: translateY(0);
+    bottom: 6.2rem;
+  }
+
+  &-exit-active {
+    transform: translateY(100%);
+    bottom: 0;
+    transition: 200ms;
+  }
+}

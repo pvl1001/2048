@@ -1,0 +1,56 @@
+
+._ {
+  @include menu;
+  background-color: #2950A5;
+  padding: 5.4rem 0 4rem;
+  z-index: 1;
+}
+
+.tab_content {
+  background: none;
+}
+
+.title {
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  font-weight: 700;
+  color: #EAEDFE;
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.btn {
+  width: 23.4rem;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.waiting_text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.tooltip_question {
+  position: absolute;
+  right: 4.6rem;
+  top: 4.1rem;
+}
+
+.tooltip_content {
+  padding: 2.1rem 5.6rem;
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.result_title {
+  margin: 0 7rem;
+}

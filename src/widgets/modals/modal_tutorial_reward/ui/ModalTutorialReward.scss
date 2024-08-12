@@ -1,0 +1,19 @@
+._ {
+  > p {
+    line-height: normal;
+
+    &:first-child {
+      opacity: .5;
+      margin-bottom: .8rem;
+    }
+  }
+}
+
+.complete_cash {
+  margin-top: 2.5rem;
+}
+
+.button {
+  width: 24.6rem;
+  margin-top: 3rem;
+}

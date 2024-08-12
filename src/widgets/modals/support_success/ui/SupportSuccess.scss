@@ -1,0 +1,19 @@
+._ {
+  color: #FFF;
+  cursor: pointer;
+
+  :global {
+    .modal-container {
+      background-color: transparent;
+    }
+  }
+}
+
+.icon {
+  width: 8.6rem;
+  margin-bottom: 2rem;
+
+  rect {
+    fill: var(--color-green)
+  }
+}

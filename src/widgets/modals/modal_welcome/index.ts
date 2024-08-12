@@ -1,0 +1,1 @@
+export {ModalWelcome} from './ui/ModalWelcome';

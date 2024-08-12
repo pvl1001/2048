@@ -1,0 +1,1 @@
+export {ModalTutorialReward} from './ui/ModalTutorialReward';

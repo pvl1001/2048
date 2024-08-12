@@ -1,0 +1,41 @@
+.wrapper {
+  width: 38.6rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.button {
+  @include hover-button;
+  position: absolute;
+  top: 2.2rem;
+  left: 6rem;
+  height: 3rem;
+
+  svg rect {
+    fill: var(--color-default)
+  }
+}
+
+.back.button {
+  padding: 1rem;
+  box-sizing: content-box;
+
+  svg {
+    height: 100%;
+  }
+}
+
+.shadow:before {
+  content: "";
+  display: block;
+  width: 11rem;
+  height: 100vh;
+  background: linear-gradient(-90deg, rgba(8, 33, 84, 0) 0%, #071C4B 100%);
+  opacity: 0.6;
+  position: absolute;
+  right: -5.5rem;
+  z-index: -1;
+}

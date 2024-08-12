@@ -1,0 +1,63 @@
+._ {
+  color: var(--color-default);
+  padding: 2.2rem 1.1rem 1.7rem 0.4rem;
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.players {
+  width: 6.5rem;
+  gap: 1rem;
+  font-weight: 700;
+
+  img {
+    width: 1.7rem;
+  }
+}
+
+.leaderboard {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    background: url("shared/assets/icons/leaderboard.png") center / contain no-repeat;
+    width: 1.4rem;
+    height: 1.6rem;
+  }
+}
+
+.leaderboard,
+.disabled_text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.disabled_text {
+  color: var(--color-disabled);
+}
+
+.blue_container {
+  @include blue-container;
+}
+

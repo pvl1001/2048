@@ -1,0 +1,44 @@
+._ {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+
+  input {
+    width: 7.6rem;
+    height: 8rem;
+    border-radius: 2rem;
+    text-align: center;
+
+    color: var(--color-default);
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: normal;
+
+    &:placeholder-shown {
+      background-color: #DDE2F9;
+    }
+
+    &:not(:placeholder-shown),
+    &:focus {
+      outline: .2rem solid #A4A5D3;
+      background-color: transparent;
+    }
+  }
+}
+
+.error {
+  input {
+    @include input-error;
+  }
+}
+
+.error_text {
+  color: #E56D6D;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: -3.5rem;
+}

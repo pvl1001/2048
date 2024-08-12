@@ -1,0 +1,99 @@
+._ {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 1.5rem 0;
+  color: var(--color-default);
+
+}
+
+.content {
+  display: grid;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  line-height: normal;
+}
+
+.back_button {
+  @include hover-button;
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+  height: 3rem;
+
+  svg rect {
+    fill: var(--color-default)
+  }
+}
+
+.main_list {
+  padding-top: 15rem;
+  gap: 10rem;
+}
+
+.help_list {
+  padding-top: 4.7rem;
+  gap: 5.2rem;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.4rem;
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 1.8rem;
+}
+
+.search {
+  margin-bottom: 1rem;
+}
+
+.menus {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  * {
+    font-size: 2.4rem;
+    line-height: normal;
+    font-weight: 600;
+  }
+}
+
+.questions_list {
+  padding-inline: 1.5rem;
+}
+
+.no_result {
+  margin: auto;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+
+  img {
+    width: 3.5rem;
+  }
+
+  p {
+    color: var(--color-default);
+    font-size: 1.8rem;
+    font-weight: 600;
+    opacity: .5;
+  }
+}

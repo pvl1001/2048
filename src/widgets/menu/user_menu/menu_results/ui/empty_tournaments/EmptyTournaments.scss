@@ -1,0 +1,22 @@
+._ {
+  height: 22.2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 4rem;
+  background-color: #3D65C060;
+  font-size: 2rem;
+  line-height: 2.9rem;
+  color: var(--color-white);
+
+  width: calc(100% - 3rem);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  img {
+    width: 5.2rem;
+  }
+}

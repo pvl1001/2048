@@ -1,0 +1,60 @@
+._ {
+  position: relative;
+  cursor: pointer;
+  border-radius: 6rem;
+  width: 14rem;
+  height: 14rem;
+  @include avatar-shadow(6rem);
+
+  input {
+    display: none;
+  }
+
+  input + div {
+    position: absolute;
+    inset: 0 0 0.2rem;
+    border-radius: 6rem;
+    border: 0.5rem solid #50D44C;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  input + div,
+  input + div + img {
+    transition: .2s ease-out;
+  }
+
+  .green_round {
+    width: 3.23rem;
+    height: 3.23rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #50D44C 0%, #36AB33 100%);
+    position: absolute;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+
+    svg {
+      width: 1.8rem;
+    }
+  }
+
+  input:checked + div {
+    overflow: visible;
+    opacity: 1;
+  }
+
+  input:checked + div,
+  input:checked + div + img {
+    transform: scale(1.085);
+  }
+}
+
+.img_avatar {
+  width: 100%;
+  height: inherit;
+}
+

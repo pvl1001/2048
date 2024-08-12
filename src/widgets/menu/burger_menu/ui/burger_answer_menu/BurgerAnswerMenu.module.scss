@@ -1,0 +1,57 @@
+._ {
+  padding-bottom: 3rem;
+
+  a:not(.support_link) {
+    text-decoration: underline;
+    color: var(--color-default);
+  }
+
+  * {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+
+.hr {
+  width: 14.5rem;
+  height: .2rem;
+  border-radius: 1.1rem;
+  opacity: 0.1;
+  background: #4440A2;
+  margin: 1rem auto;
+}
+
+.answer_container {
+  padding: 1rem 1.8rem 3rem;
+
+  ol {
+    padding: 2rem 1.5rem;
+    display: grid;
+    gap: 2rem;
+
+    li {
+      color: #8382C0;
+      font-weight: 500;
+    }
+  }
+}
+
+.support_link {
+  @include hover-button;
+  display: block;
+  color: var(--color-default);
+  font-size: 1.5rem;
+  background-color: #D5DAF6;
+  padding-block: 4rem;
+  text-align: center;
+  border-radius: 4rem;
+}
+
+.context_menu {
+  position: absolute !important;
+  width: auto !important;
+  overflow: auto;
+  background-color: #fff;
+  padding-inline: 1.5rem;
+}
+

@@ -1,0 +1,119 @@
+._level_progress {
+  --bg-title: #3874C8;
+  --bg-content: linear-gradient(180deg, #517BDD 1.93%, #2FB1ED 99.83%);
+}
+
+._lucky_offer {
+  --bg-title: #7733AC50;
+  --bg-content: linear-gradient(122deg, #E25DD4 24.74%, #582F9A 77.88%);
+}
+
+._happy_offer {
+  --bg-title: #1D51AC50;
+  --bg-content: linear-gradient(122deg, #5789F8 24.74%, #2D55A1 77.88%);
+}
+
+._special_offer {
+  --bg-title: #5A2C9150;
+  --bg-content: linear-gradient(122deg, #A95DE2 24.74%, #3A3CA6 77.88%);
+}
+
+._just_for_you {
+  --bg-title: #0D8C7750;
+  --bg-content: linear-gradient(122deg, #2DE0AB 24.74%, #056C86 77.88%);
+}
+
+._ :global .modal-container {
+  max-width: 106.4rem;
+  padding: 1rem 1rem 2.8rem;
+  background-color: #fff;
+  z-index: 100;
+  border-radius: var(--border-radius-box);
+  display: grid;
+  position: relative;
+  translate: 0;
+}
+
+.content {
+  background: var(--bg-content);
+  border-radius: calc(var(--border-radius-box) - 1rem);
+  overflow: hidden;
+}
+
+.title_box {
+  background-color: var(--bg-title);
+  text-align: center;
+  font-weight: 800;
+  line-height: normal;
+  padding: 1.3rem 0 2.2rem;
+  position: relative;
+}
+
+.button {
+  min-width: 24.6rem;
+  margin: auto;
+}
+
+.title {
+  @include text-gold;
+  font-size: 5.3rem;
+  margin-bottom: .4rem;
+  text-transform: uppercase;
+  position: relative;
+  //-webkit-text-stroke: 1px #279D24;
+}
+
+.description {
+  color: #FFF;
+  font-size: 2.2rem;
+}
+
+.container {
+  position: relative;
+  height: 36rem;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 45rem;
+  position: absolute;
+  top: 1.4rem;
+  left: -0.3rem;
+  z-index: 2;
+}
+
+.close_button {
+  opacity: 0.5;
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  z-index: 1;
+}
+
+.was_price {
+  color: #C2C4E5;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: normal;
+  margin-block: .8rem .6rem;
+
+  &__value {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: .2rem;
+      border-radius: 0.3rem;
+      background: #FF5151;
+      left: -.1rem;
+      right: -.1rem;
+      top: calc(50% - .1rem);
+    }
+  }
+}
+
+.time {
+  padding: 3.1rem 11.5rem;
+}

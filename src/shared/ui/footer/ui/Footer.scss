@@ -1,0 +1,22 @@
+._ {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6.0rem;
+  padding-bottom: 4.0rem;
+}
+
+.block_copyright {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.copyright {
+  font-size: var(--font-size-defailt);
+  font-weight: 700;
+  color: var(--color-default);
+}
+
+.logo {
+  width: 46.8rem;
+}

@@ -1,0 +1,49 @@
+._gift {
+  --bg-gradient: linear-gradient(180deg, #588AF9 0%, #536DF9 100%);
+  --bg-image: url('../lib/img/gift.webp') center / 16.6rem no-repeat;
+  --time-bg: #7A96FF;
+}
+
+._mascot {
+  --bg-gradient: linear-gradient(180deg, #E35ED5 0%, #C344EF 100%);
+  --bg-image: url('../lib/img/stars.webp') calc(50% - 0.5rem) calc(50% - 0.2rem) / 17.2rem no-repeat,
+  url('../lib/img/mascot.webp') calc(50% - 0.9rem) calc(50% - 0.4rem) / 16.5rem no-repeat;
+  --time-bg: #E56FFF;
+}
+
+._ {
+  background: var(--bg-gradient);
+  width: 20.2rem;
+  height: 18rem;
+  border-radius: 0 0 4.2rem 4.2rem;
+  box-shadow: 0 .4rem .4rem 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include card-hover;
+}
+
+.image {
+  flex: 1;
+  background: var(--bg-image);
+}
+
+.time {
+  height: 4.3rem;
+  background-color: var(--time-bg);
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  gap: .5rem;
+  color: #FFF;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.time_icon {
+  height: 1em;
+  aspect-ratio: 1;
+  mask: url('shared/assets/icons/clock.svg') center / contain no-repeat;
+  background-color: #fff;
+}

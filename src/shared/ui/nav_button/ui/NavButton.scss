@@ -1,0 +1,20 @@
+._ {
+  width: 4.6rem;
+  height: 4.6rem;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.4rem;
+  aspect-ratio: 1;
+  background-color: #EF4646;
+  border-radius: 50%;
+}

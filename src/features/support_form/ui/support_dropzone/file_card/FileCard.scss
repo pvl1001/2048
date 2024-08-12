@@ -1,0 +1,64 @@
+._ {
+  width: 12.2rem;
+  height: 8.4rem;
+  display: grid;
+  place-items: center;
+  background-color: #DDE2F980;
+  border-radius: 1.9rem;
+  color: #B0B3E9;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+}
+
+.text_container {
+  display: grid;
+  place-items: center;
+  gap: .7rem;
+}
+
+.plus_icon {
+  width: 1.6rem;
+  transform: rotate(45deg);
+
+  rect {
+    fill: #B0B3E9;
+  }
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+
+  img {
+    width: 1.4rem;
+  }
+}
+
+._.empty {
+  cursor: pointer;
+}
+
+._.error {
+  background-color: #E9D3E1;
+  color: #E56D6D;
+
+  svg rect {
+    fill: #E56D6D;
+  }
+}
+
+.close_button {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  width: .9rem;
+  height: .9rem;
+  padding: .5rem;
+
+  svg rect {
+    fill: #B0B3E9;
+  }
+}

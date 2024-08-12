@@ -1,0 +1,60 @@
+._ {
+  height: 7.2rem;
+  border-radius: 3.2rem;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 600;
+  position: relative;
+  padding: 0 3.7rem;
+  overflow: hidden;
+  @include hover-button;
+}
+
+.orange {
+  background: linear-gradient(180deg, #FFBF44 0%, #FF9344 100%);
+  text-shadow: 0 .2rem .4rem rgba(175, 60, 23, 0.70);
+  box-shadow: 0 .4rem .2rem 0 rgba(19, 29, 65, 0.12);
+}
+
+.blue {
+  background: linear-gradient(180deg, #70B1FC 0%, #64A6F4 100%);;
+  text-shadow: 0 .2rem .4rem #255A99;
+  box-shadow: 0 .4rem .2rem 0 rgba(0, 0, 0, 0.12);
+}
+
+.disabled {
+  background: linear-gradient(180deg, #BAC0DF 0%, #A9AFD2 100%);
+  box-shadow: 0 .4rem .2rem 0 rgba(0, 0, 0, 0.12);
+  color: #878EB4;
+  pointer-events: none;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0;
+
+  .container {
+    flex: 1;
+    padding: 0 1.9rem 0 2.3rem;
+  }
+
+  &__container {
+    background: #FF8644;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex: 0 0 9.3rem;
+    padding: 0 .8rem 0 .5rem;
+
+    &:before {
+      content: '';
+      width: 2.3rem;
+      height: 2.4rem;
+      background: url('../../../assets/icons/coin.png') center / contain no-repeat;
+      margin-right: 6px;
+    }
+  }
+}

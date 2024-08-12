@@ -1,0 +1,30 @@
+._ {
+
+}
+
+._ {
+  fieldset {
+    display: grid;
+    gap: 1.3rem;
+  }
+}
+
+.title {
+  @include modal-text-title;
+}
+
+.back_btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 1rem;
+  @include hover-button;
+
+  svg {
+    width: 1.8rem;
+
+    * {
+      fill: #A1A4DF;
+    }
+  }
+}

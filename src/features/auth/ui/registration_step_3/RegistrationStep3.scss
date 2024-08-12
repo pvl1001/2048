@@ -1,0 +1,23 @@
+.title {
+  @include modal-text-title;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.birthday {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-end;
+}
+
+.referal_code {
+  :global {
+    .label {
+      color: #C2C4E5;
+    }
+  }
+}

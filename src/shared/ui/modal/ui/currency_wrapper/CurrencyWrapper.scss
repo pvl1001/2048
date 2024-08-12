@@ -1,0 +1,15 @@
+._ {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.item {
+  min-width: 15.2rem;
+  padding-inline: 1rem;
+  height: 4.1rem;
+  border-radius: 2.6rem;
+  background: #DCE1FF;
+  display: grid;
+  place-items: center;
+}

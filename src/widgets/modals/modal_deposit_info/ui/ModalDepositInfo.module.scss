@@ -1,0 +1,59 @@
+.info_list {
+  @include modal-border-container;
+  padding: 2.5rem 2.7rem;
+  display: grid;
+  gap: 2rem;
+  line-height: normal;
+}
+
+.info_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2.6rem;
+}
+
+.info_value {
+  width: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tooltip {
+  transform: translateX(35%);
+  margin-right: -25%;
+}
+
+.tooltip_content {
+  padding: 2.2rem 5.6rem;
+}
+
+.balance {
+  margin-top: 1rem;
+  background-color: #DFE3FA;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: #C0C2E7;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 2.1rem;
+  line-height: 112%;
+  padding-left: 1rem;
+
+  a {
+    color: var(--color-default);
+    text-decoration: underline;
+  }
+}
+
+.checkout_button {
+  width: 23.4rem;
+  margin-top: 2.6rem;
+}

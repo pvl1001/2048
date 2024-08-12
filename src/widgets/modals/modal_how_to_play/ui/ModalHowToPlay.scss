@@ -1,0 +1,63 @@
+._ {
+  --swiper-pagination-bullet-size: 1rem;
+  --swiper-pagination-bullet-horizontal-gap: .5rem;
+  --swiper-pagination-color: #6595FF;
+  --swiper-pagination-bullet-inactive-color: #1E428F;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  :global {
+    .modal-container {
+      max-width: 54.4rem;
+      box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.container {
+  color: #fff;
+  line-height: normal;
+  background-color: #2D54A9;
+  border-radius: 0 0 4.2rem 4.2rem;
+  padding-top: .4rem;
+}
+
+.slider:global.swiper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  .swiper-pagination {
+    position: relative;
+    order: 2;
+  }
+}
+
+.slide {
+  padding-inline: 6rem;
+  pointer-events: none; // fix swipe firefox
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  font-weight: 500;
+  opacity: .5;
+}
+
+.video {
+  height: 54rem;
+  width: 38rem;
+  object-fit: cover;
+  border-radius: 5rem;
+}
+
+.button {
+  margin-block: 3rem 1.5rem;
+  width: 24.6rem;
+}

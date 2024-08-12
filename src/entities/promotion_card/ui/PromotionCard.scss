@@ -1,0 +1,143 @@
+._ {
+  width: 34.8rem;
+  padding: 1.4rem 1.4rem 0;
+  border-radius: 4.2rem;
+  background: #FFF;
+  box-shadow: 0 .4rem .4rem 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.content {
+  border-radius: 3.5rem;
+  background: linear-gradient(180deg, #3D68C4 0%, #4F7DE0 105.08%);
+  padding: 7.7rem 0 6rem;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    opacity: 0.9;
+    background: linear-gradient(180deg, rgba(44, 78, 153, 0.00) 0%, #173168 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 11.1rem;
+  }
+}
+
+.image {
+  height: 21.7rem;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 25.9rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #2A54AD 0%, rgba(42, 84, 173, 0.00) 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.currency {
+  display: grid;
+  place-items: center;
+  position: relative;
+  font-size: 7.2rem;
+  font-weight: 800;
+  @include text-gold;
+
+  p {
+    color: #FFF;
+    font-size: 3.2rem;
+  }
+
+}
+
+.buy {
+  display: grid;
+  place-items: center;
+  padding-block: 2rem;
+
+  button {
+    width: 24.6rem;
+    font-size: 3.2rem;
+  }
+}
+
+.bonus {
+  color: #FFE896;
+  text-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+  z-index: 1;
+}
+
+.rookie .image img {
+  height: 18.4rem;
+  margin: 2.3rem auto 0;
+}
+
+.extended .image img {
+  height: 18.7rem;
+  margin: 1.7rem auto 0;
+}
+
+.ultimate .image img {
+  height: 18.9rem;
+}
+
+.popular {
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 13.5rem;
+    aspect-ratio: 1;
+    background: url('shared/assets/images/promotions/most_popular.png') center / contain no-repeat;
+    right: -2.6rem;
+    top: 2.7rem;
+    z-index: 2;
+  }
+
+  .title {
+    color: #7F52B8;
+  }
+
+  .content {
+    background: linear-gradient(180deg, #A95DE2 0%, #676BDF 105.08%);
+
+    &:before {
+      background: linear-gradient(180deg, rgba(73, 34, 139, 0.00) 0%, #49228B 100%);
+    }
+
+
+  }
+
+  .image {
+    &:before {
+      background: linear-gradient(180deg, #7B3EBD 0%, rgba(123, 62, 189, 0.00) 100%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 20.6rem;
+      height: 18.7rem;
+      background: url('shared/assets/images/promotions/stars.png') center / contain no-repeat;
+      top: .4rem;
+    }
+  }
+
+}

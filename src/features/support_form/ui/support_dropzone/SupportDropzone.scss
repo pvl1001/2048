@@ -1,0 +1,74 @@
+._ {
+  height: 14rem;
+  border-radius: 1.9rem;
+  background: url('shared/assets/images/border_dropzone.png') center / 100% 100% no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+
+}
+
+.attach {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.attach_title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: .7rem;
+  text-decoration: underline;
+  cursor: pointer;
+
+  img {
+    width: 1.6rem;
+  }
+}
+
+.description {
+  font-size: 1.6rem;
+  font-weight: 600;
+  opacity: .5;
+}
+
+.file_list {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer {
+  color: #BFC2E9;
+  font-weight: 600;
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.footer__text {
+  font-size: 1.2rem;
+}
+
+.counter {
+  text-align: right;
+  font-size: 1.6rem;
+}
+
+.error {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+._.active {
+  outline: .3rem solid #BFC2E9;
+  outline-offset: -.3rem;
+}

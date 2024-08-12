@@ -1,0 +1,37 @@
+._ {
+  @include menu(59.7rem);
+
+  &:before {
+    content: '';
+    display: block;
+    width: 11rem;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(8, 33, 84, 0.00) 0%, #071C4B 100%);
+    opacity: 0.6;
+    position: absolute;
+    left: -5.5rem;
+    z-index: -1;
+  }
+}
+
+.close_button {
+  position: absolute;
+  right: 6.9rem;
+  top: 2.6rem;
+}
+
+.content {
+  padding-top: 10rem;
+  height: 100%;
+  background: linear-gradient(180deg, #517BDD 0%, #2FB1ED 100%);
+}
+
+.card_list {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.invite_menu {
+  width: inherit;
+}

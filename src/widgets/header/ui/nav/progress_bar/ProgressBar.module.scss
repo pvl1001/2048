@@ -1,0 +1,120 @@
+._ {
+  margin-left: auto;
+  height: 4.6rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.bar {
+  min-width: 16.8rem;
+  background-color: #05143465;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding-right: .7rem;
+}
+
+.coin {
+  width: 3.7rem;
+  margin-left: .5rem;
+}
+
+.dollar {
+  width: 4.2rem;
+  margin-left: .2rem;
+}
+
+.star {
+  position: relative;
+}
+
+.star_level {
+  position: absolute;
+  margin-top: -.2rem;
+  left: .3rem;
+  width: 3rem;
+  text-align: center;
+}
+
+.hard {
+  gap: .6rem;
+}
+
+.plus {
+  @include hover-button;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-left: auto;
+
+  color: #FFF;
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  text-shadow: 0 .2rem .2rem #06805C;
+  background: linear-gradient(180deg, #00DE9D 0%, #03D094 100%);
+
+  span {
+    margin-top: -.4rem;
+  }
+}
+
+.percent_value {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.currency_value {
+  flex: 1;
+  text-align: center;
+}
+
+.progress {
+  position: absolute;
+  height: 100%;
+  margin: .3rem;
+  background: linear-gradient(180deg, #C061FB 0%, #AA44E9 100%);
+  z-index: 0;
+  display: grid;
+  place-items: center;
+}
+
+.progress_container {
+  overflow: hidden;
+  position: absolute;
+  inset: 0.3rem 0.3rem 0.3rem 2rem;
+  flex: 1;
+  border-radius: 0 1.7rem 1.7rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.tippy {
+  &_container {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 700 !important;
+  }
+
+  &_img {
+    width: 2.7rem;
+  }
+
+  :global {
+    .tippy-content {
+      padding: 1rem 3rem;
+
+    }
+  }
+}
+

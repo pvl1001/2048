@@ -1,0 +1,147 @@
+._ {
+  position: absolute;
+  inset: 0;
+
+  :global .wrapper {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+.title_container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  text-align: center;
+}
+
+.btn_back {
+  transform: translateX(-1.6rem);
+}
+
+.currency {
+  border-radius: 4.2rem;
+  overflow: hidden;
+
+  &_balance {
+    background-color: #3874C880;
+    margin-bottom: 1rem;
+
+    .currency__list {
+      padding: 2.8rem 3rem 3rem;
+    }
+  }
+
+  &_amount {
+    background-color: #3874C8;
+    margin-bottom: 2.5rem;
+
+    .currency__list {
+      padding: 2.6rem 3rem 3rem;
+    }
+  }
+
+  &__list {
+    font-size: 2.2rem;
+    line-height: 4.4rem;
+    display: grid;
+    gap: 1.6rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p:last-child {
+        height: 4.4rem;
+        min-width: 10.2rem;
+        background-color: #365EB899;
+        text-align: center;
+        border-radius: 2.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 1.6rem 0;
+    opacity: .5;
+    background-color: #3874C8;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+.green {
+  color: var(--color-green);
+}
+
+.payment {
+  height: 5.6rem;
+  border-radius: 8.4rem;
+  box-shadow: 0 .4rem .4rem 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 2.9rem;
+
+  div {
+    display: grid;
+    place-items: center;
+  }
+
+  div:first-child {
+    flex: 1;
+    background-color: #91C7F3;
+    font-size: 1.6rem;
+    font-weight: 500;
+    position: relative;
+    color: var(--color-default);
+
+    &:before {
+      content: '';
+      height: 1.5rem;
+      width: 1.5rem;
+      mask-image: url("shared/assets/icons/arrow_slider.svg");
+      mask-size: cover;
+      background: #91C7F3;
+      position: absolute;
+      right: 0;
+      transform: rotate(180deg) translateX(-.8rem);
+    }
+  }
+
+  div:last-child {
+    background-color: #1c1c1c;
+    width: 18rem;
+
+    svg {
+      height: 50%;
+    }
+  }
+}
+
+.description {
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  font-weight: 500;
+  opacity: .5;
+  max-width: 42rem;
+  margin: 0 auto 1.4rem;
+}
+
+.button_next {
+  width: 23.4rem;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+

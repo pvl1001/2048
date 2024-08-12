@@ -1,0 +1,49 @@
+._ {
+  input {
+    display: none;
+  }
+
+  input:checked + .option {
+    background-color: #D5DAF6;
+
+    .check {
+      display: initial;
+    }
+  }
+}
+
+.option {
+  color: var(--color-default);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  text-align: initial;
+  cursor: pointer;
+  border-radius: 1.9rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    width: 3.1rem;
+  }
+
+  &:hover {
+    background-color: #D5DAF650;
+  }
+}
+
+.check {
+  display: none;
+  width: 1.8rem;
+  height: 1.2rem;
+  -webkit-mask: url('../../../../assets/icons/check.svg') center / contain no-repeat;
+  background-color: #50D44C;
+  margin-left: auto;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}

@@ -1,0 +1,17 @@
+._ {
+  width: 5.6rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-default);
+  font-size: 2.4rem;
+  font-weight: 700;
+  background-color: #B0D2F8;
+  border-radius: 4.2rem 0 0 4.2rem;
+}
+
+.clock {
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-mask: url('shared/assets/icons/clock.svg') center / contain no-repeat;
+  background: var(--color-default);
+}

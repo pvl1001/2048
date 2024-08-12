@@ -1,0 +1,149 @@
+._ {
+  width: 23.4rem;
+  border-radius: var(--border-radius-box);
+  background-color: #fff;
+  padding: 1rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+}
+
+._7 {
+  .image_container {
+    background: linear-gradient(180deg, #A35DE0 0%, #615BCD 100%);
+  }
+
+  .day {
+    background-color: #5F3DAF;
+  }
+}
+
+._7._active {
+  .image_container:before {
+    height: 42.2rem;
+    width: 100%;
+    left: 0;
+    margin: 0;
+  }
+}
+
+._done {
+  position: relative;
+  overflow: clip;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #42508F;
+    opacity: 0.7;
+    z-index: 1;
+  }
+}
+
+.image_container {
+  background: linear-gradient(#3D68C4, #4F7DE0);
+  border-radius: calc(var(--border-radius-box) - 1rem);
+  overflow: hidden;
+}
+
+.image_day {
+  height: 13.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_day_all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  place-items: center;
+
+  img {
+    transform: scale(0.75);
+  }
+}
+
+.day {
+  color: #FFF;
+  background-color: #2D54A9;
+  line-height: 5.8rem;
+}
+
+.count {
+  color: var(--color-default);
+  padding: 1.3rem 0 0.5rem;
+}
+
+.count_all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
+
+._active {
+  background-color: #D0FFD3;
+
+  .image_container {
+    background: linear-gradient(#71D951, #63C93C);
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      background: url("shared/assets/icons/shine.png") center / cover no-repeat;
+      position: absolute;
+      width: 22.5rem;
+      height: 22.3rem;
+      left: 0;
+      margin: -1rem;
+    }
+  }
+
+  .day {
+    background-color: #3F951E;
+    position: relative;
+  }
+
+  .count {
+    color: #38861A;
+  }
+}
+
+._today {
+  transform: scale(1.08);
+  transition: .4s;
+  transition-delay: .4s;
+}
+
+._coin {
+  width: 9.2rem;
+}
+
+._coins {
+  width: 11.4rem;
+}
+
+._exp {
+  width: 9.5rem;
+}
+
+._dollar {
+  width: 9.9rem;
+}
+
+._dollars {
+  width: 16.1rem;
+}
+
+.done_icon {
+  width: 5.4rem;
+  position: absolute;
+  transform: translate(-2.4rem, -0.4rem);
+
+  * {
+    fill: var(--color-default)
+  }
+}

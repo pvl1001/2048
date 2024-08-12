@@ -1,0 +1,42 @@
+._ {
+  width: 11rem;
+  padding: 2rem 1rem;
+  @include card-block-line;
+}
+
+.in_progress {
+  color: #3F6BC8;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 2.8rem;
+    height: 2rem;
+    background: url('shared/assets/icons/gamepad.png') center / contain no-repeat;
+    margin: 0.3rem auto;
+  }
+}
+
+.next_time,
+.disbanded {
+  color: var(--color-disabled);
+
+  &:before {
+    content: '';
+    display: block;
+    margin: 0.3rem auto;
+  }
+}
+
+.disbanded:before {
+  width: 2.3rem;
+  height: 2.3rem;
+  -webkit-mask: url('shared/assets/icons/close.svg') 0 / contain no-repeat;
+  background-color: var(--color-disabled);
+}
+
+.next_time:before {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url('shared/assets/icons/luck_cube.png') center / contain no-repeat;
+}

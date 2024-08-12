@@ -1,0 +1,30 @@
+.title {
+  @include modal-text-title;
+}
+
+.btn_submit {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 2.4rem;
+
+  button {
+    width: 24.6rem;
+  }
+}
+
+.have_account {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+
+  span {
+    color: #C2C4E5;
+  }
+
+  a {
+    color: #4440A2;
+    text-decoration-line: underline;
+    margin-left: 1rem;
+  }
+}

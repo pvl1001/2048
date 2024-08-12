@@ -1,0 +1,19 @@
+._ {
+  width: 18.7rem;
+
+  img {
+    width: 100%;
+  }
+
+  &:after {
+    content: "BONUS";
+    position: absolute;
+    inset: 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #AF228C;
+    display: grid;
+    place-items: center;
+    padding-bottom: .9rem;
+  }
+}

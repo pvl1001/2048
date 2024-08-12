@@ -1,0 +1,1 @@
+export type PromoCodeForm = Record<'code', string>

@@ -1,0 +1,16 @@
+export {ModalLogin, ModalRegistration} from './modal_auth';
+export {ModalWarning} from './modal_warning';
+export {ModalError} from './modal_error';
+export {ModalHowToPlay} from './modal_how_to_play';
+export {RegisterNow} from './register_now';
+export {ModalRefund} from './modal_refund';
+export {ModalSuccess, RegistrationSuccess} from './modal_success';
+export {ModalTutorialReward} from './modal_tutorial_reward';
+export {ModalSupport} from './modal_support';
+export {SupportSuccess} from './support_success';
+export {LevelProgress} from './level_progress';
+export {DailyRewards} from './daily_rewards';
+export {LevelUp} from './level_up';
+export {ModalDepositInfo} from './modal_deposit_info';
+export {ModalWelcome} from './modal_welcome';
+export {OfferModal} from './offer_modal';

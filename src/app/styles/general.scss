@@ -1,0 +1,88 @@
+html {
+  height: auto;
+  font-size: calc(100vw / 1920 * 10);
+
+  &, * {
+    // firefox
+    scrollbar-color: #9BBBFF transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.2rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.4rem; /* ширина для вертикального скролла */
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #9BBBFF;
+    }
+  }
+}
+
+body:has(.overlay) {
+  overflow: hidden;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  background: #EAEDFE;
+}
+
+body.tutorial {
+  --tutorial-z-index: 10;
+  pointer-events: none;
+
+  .tutorial-card { // выделить карточку тура
+    z-index: calc(var(--tutorial-z-index) + 1);
+
+    button {
+      pointer-events: auto;
+    }
+  }
+
+  .swiper-pagination {
+    z-index: 0;
+  }
+
+  #tutorial_tournaments {
+    position: relative;
+    z-index: var(--tutorial-z-index);
+  }
+
+  .swiper-wrapper,
+  .swiper-slide-active {
+    transform: initial !important;
+    position: initial !important;
+  }
+
+  .swiper-wrapper:after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: var(--tutorial-z-index);
+    background-color: rgba(10, 22, 53, 0.8);
+  }
+}
+
+.wrapper {
+  max-width: 157rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.label {
+  text-align: left;
+  color: var(--color-default);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  padding-left: 2rem;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
