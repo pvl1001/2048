@@ -1,57 +1,41 @@
-<h1>install modules (before first run)</h1>
+<h3>Backend отключен! Игры не запускаются. Работает только статика.</h3>
+<h3><a href="https://pvl1001.github.io/2048/">Потыкать сайт 2048</a></h3>
 
-npm ci
+<h1>О сайте</h1>
+<h3>Морда сайта игры 2048</h3>
 
----
+--- 
 
-<h1>run (compile project to dist)</h1>
+Merge Cube 2048 — это захватывающая игра-головоломка, в которой вам нужно объединять кубики с числами, чтобы достичь 2048 или даже больше! Но что делает ее еще более захватывающей, так это то, что в игре есть регулярные турниры, где вы можете
+соревноваться друг с другом, чтобы выиграть денежные призы. Турниры основаны на навыках, поэтому чем больше вы играете, тем больше у вас шансов на победу. В игре также есть таблицы лидеров, где вы можете увидеть, как вы сравнялись с другими игроками.
 
-npm run build
+Реализовано:
 
----
-
-<h1>start local dev-server (127.0.0.1:4200) no need to compile firsts</h2></h1>
-
-npm start
-
----
-
-
-<h1>to build/run a PRODUCTION version:</h1>
-
-<h2>in tsconfig.json</h2>
-
-"sourceMap": false,
-
-//"sourceMap": true,
-
-<h2>in webpcak.config.ts</h2>
-
-//devtool: "inline-source-map",
-
-mode: "production",
-
-//mode: "development",
-
-<h2>OR(build to /dist only)</h2>
-npm run build-prod
+- Авторизация
+- Редактирование профиля
+- Уведомления
+- Вывод валюты
+- Пополнение баланса
+- Отображение: турниров, депозитов, история игр, история транзакций
+- Отправка сообщений в тех. поддержку <a href="https://www.zendesk.com/" target="_blank">Zendesk</a>
 
 ---
 
-<h1>to build/run DEVELOPMENT  version:</h1>
+`npm ci` - Установка зависимостей
 
-<h2>in tsconfig.json</h2>
+`npm run build` - Собрать проект
 
-//"sourceMap": false,
+`npm run start`- Запустить проект на localhost
 
-"sourceMap": true,
+---
 
-<h2>in webpcak.config.ts</h2>
+<h2>Стек</h3>
 
-devtool: "inline-source-map",
-
-//mode: "production",
-
-mode: "development",
-<h2>OR (build to /dist only)</h2>
-npm run build-dev
+- React
+- React-router
+- Redux (RTK)
+- WebSocket
+- CSS modules (SCSS)
+- Webpack
+- Архитектура FSD
+- CI/CD
