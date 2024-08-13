@@ -1,8 +1,6 @@
 import {useState} from "react";
 import {RoutePaths} from "shared/common/RoutePaths";
-import {getFormWithSelect} from "shared/lib/getFormWithSelect";
 import {useNavigateModal} from "shared/lib/hooks";
-import {FaqCategory} from "./consts";
 import {Api} from "../api/Api";
 import {TSupportFile, TSupportForm} from "../types";
 
@@ -28,25 +26,25 @@ export function useSupportSubmit(files: TSupportFile[]) {
     }
 
     async function onSubmit(values: TSupportForm) {
-        const {category, question, email} = getFormWithSelect(values);
+        // const {category, question, email} = getFormWithSelect(values);
 
         try {
             setIsPending(true);
 
-            const uploadTokens: string[] = await Promise.all(
-                files.map(async ({file}) => await readFileAsBuffer(file))
-            );
+            // const uploadTokens: string[] = await Promise.all(
+            //     files.map(async ({file}) => await readFileAsBuffer(file))
+            // );
 
-            await Api.postTicket({
-                ticket: {
-                    subject: category as FaqCategory,
-                    id: email,
-                    comment: {
-                        body: question,
-                        uploads: uploadTokens
-                    }
-                }
-            });
+            // await Api.postTicket({
+            //     ticket: {
+            //         subject: category as FaqCategory,
+            //         id: email,
+            //         comment: {
+            //             body: question,
+            //             uploads: uploadTokens
+            //         }
+            //     }
+            // });
             navigateModal(RoutePaths.SUPPORT_SUCCESS);
         } catch (err) {
             navigateModalError(err);

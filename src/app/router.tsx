@@ -1,7 +1,7 @@
-import {createBrowserRouter} from "react-router-dom";
 import cn from "classnames";
 import {ModalWithdraw} from "features/withdraw_forms";
 import {MainPage} from "pages/main_page";
+import {createBrowserRouter} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {ProtectedRoute} from "shared/lib/hocs";
 import {thunkGetGlobalConfig} from "shared/model/global_config";
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: RoutePaths.SUPPORT_SUCCESS,
-                        element: <Modal title={'Support'}><Modals.SupportSuccess/></Modal>,
+                        element: <Modals.SupportSuccess/>,
                     },
                     {
                         path: RoutePaths.HOW_TO_PLAY,
