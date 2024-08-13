@@ -1,9 +1,9 @@
-import {select, useAppSelector} from "app/store";
-import cn from "classnames";
-import {WithdrawAmountForm} from "features/withdraw_forms";
 import {forwardRef, Ref, useEffect, useRef, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {CSSTransition} from "react-transition-group";
+import {select, useAppSelector} from "app/store";
+import cn from "classnames";
+import {WithdrawAmountForm} from "features/withdraw_forms";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {ProfileCurrency} from "shared/model/profile";
 import {ScrollContent} from "shared/ui/scroll_content";
@@ -14,13 +14,13 @@ import WithdrawInfo from "./withdraw_info/WithdrawInfo";
 
 
 function MenuWithdraw({}, ref: Ref<HTMLDivElement>) {
-    let location = useLocation();
-    let profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
-    let [amountValue, setAmountValue] = useState(0);
-    let [isSubmit, setIsSubmit] = useState(false);
-    let overviewRef = useRef(null);
-    let {hard, bonus, formatUniteHard}: ProfileCurrency = profileCurrency;
-    let isWithdrawFinish: boolean = !!location.state?.isWithdrawFinish;
+    const location = useLocation();
+    const profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
+    const [amountValue, setAmountValue] = useState(0);
+    const [isSubmit, setIsSubmit] = useState(false);
+    const overviewRef = useRef(null);
+    const {hard, bonus, formatUniteHard}: ProfileCurrency = profileCurrency;
+    const isWithdrawFinish: boolean = !!location.state?.isWithdrawFinish;
 
     useEffect(() => {
         if (isWithdrawFinish) {

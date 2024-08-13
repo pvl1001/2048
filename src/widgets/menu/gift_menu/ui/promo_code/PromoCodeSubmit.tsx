@@ -1,7 +1,7 @@
+import {ChangeEvent, useRef, useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {Field, Form, Formik, FormikProps} from "formik";
-import {ChangeEvent, useRef, useState} from "react";
 import {BuyStore} from "shared/common/BuyStore";
 import {Errors} from "shared/common/Errors";
 import {UseGetCurrency, useGetCurrency} from "shared/lib/hooks";
@@ -12,11 +12,11 @@ import {PromoCodeForm} from "./types";
 
 
 export function PromoCodeSubmit() {
-    let {buyItem}: UseGetCurrency = useGetCurrency(true);
-    let isPending: boolean = useAppSelector(select.profile._isPending);
-    let [error, setError] = useState('');
-    let formikRef = useRef<FormikProps<PromoCodeForm>>(null);
-    let formik = formikRef.current;
+    const {buyItem}: UseGetCurrency = useGetCurrency(true);
+    const isPending: boolean = useAppSelector(select.profile._isPending);
+    const [error, setError] = useState('');
+    const formikRef = useRef<FormikProps<PromoCodeForm>>(null);
+    const formik = formikRef.current;
 
     async function onSubmit(e: PromoCodeForm) {
         try {

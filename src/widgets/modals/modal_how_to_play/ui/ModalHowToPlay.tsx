@@ -5,29 +5,29 @@ import {Button} from "shared/ui/button";
 import {ModalHead, ModalWrapper} from "shared/ui/modal";
 import {Pagination} from "swiper/modules";
 import {Swiper, SwiperProps, SwiperSlide} from "swiper/react";
-import type {Swiper as SwiperClass} from "swiper/types";
-import {slides} from "../lib/const";
-import {HowToPlaySlide} from "../types";
 import s from "./ModalHowToPlay.scss";
 import {Video} from "./Video";
+import {slides} from "../lib/const";
+import {HowToPlaySlide} from "../types";
+import type {Swiper as SwiperClass} from "swiper/types";
 
 
 export function ModalHowToPlay() {
-    let {closeModal} = useNavigateModal();
-    let [slideIndex, setSlideIndex] = useState(0);
-    let [isLoading, setIsLoading] = useState<boolean[]>([]);
-    let [swiper, onSwiper] = useState<SwiperClass | null>(null);
+    const {closeModal} = useNavigateModal();
+    const [slideIndex, setSlideIndex] = useState(0);
+    const [isLoading, setIsLoading] = useState<boolean[]>([]);
+    const [swiper, onSwiper] = useState<SwiperClass | null>(null);
 
-    let settings: SwiperProps = {
+    const settings: SwiperProps = {
         modules: [Pagination],
         onSwiper,
         pagination: {clickable: true},
         onSlideChange: (swiper) => setSlideIndex(swiper.activeIndex),
     };
 
-    let setIsLoadingEnded = (isCurrentSlide: boolean) => useCallback(() => {
+    const setIsLoadingEnded = (isCurrentSlide: boolean) => useCallback(() => {
         setIsLoading(prev => {
-            let arr = [...prev];
+            const arr = [...prev];
             arr[slideIndex] = true;
             return arr;
         });
@@ -47,7 +47,7 @@ export function ModalHowToPlay() {
 
                 <Swiper {...settings} className={s.slider}>
                     {slides.map((slide: HowToPlaySlide, i: number) => {
-                        let isCurrentSlide: boolean = slideIndex === i;
+                        const isCurrentSlide: boolean = slideIndex === i;
                         return <SwiperSlide key={slide.headTitle} lazy={isLazy(i)}>
                             <Video
                                 slide={slide}

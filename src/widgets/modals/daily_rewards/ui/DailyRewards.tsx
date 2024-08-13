@@ -3,15 +3,15 @@ import {Claim} from "features/claim";
 import {ConfigDailyReward} from "shared/api/adapters";
 import {ProfileDailyRewards} from "shared/model/profile";
 import {ModalWrapper} from "shared/ui/modal";
-import {useReopenDailyRewards} from "../lib/useReopenDailyRewards";
 import {DailyCard} from "./daily_card/DailyCard";
 import s from "./DailyRewards.scss";
+import {useReopenDailyRewards} from "../lib/useReopenDailyRewards";
 
 
 export function DailyRewards() {
-    let {checkReopen} = useReopenDailyRewards();
-    let dailyRewards: ConfigDailyReward[] = useAppSelector(select.config._dailyRewards);
-    let {loginDay, currentReward}: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
+    const {checkReopen} = useReopenDailyRewards();
+    const dailyRewards: ConfigDailyReward[] = useAppSelector(select.config._dailyRewards);
+    const {loginDay, currentReward}: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
 
     return (
         <ModalWrapper className={s._}>

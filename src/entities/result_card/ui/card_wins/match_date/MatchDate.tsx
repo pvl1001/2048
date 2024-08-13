@@ -1,6 +1,6 @@
+import {ReactNode} from "react";
 import classNames from "classnames";
 import {Dayjs} from "dayjs";
-import {ReactNode} from "react";
 import clockIcon from "shared/assets/icons/clock.svg";
 import {MatchState} from "shared/common/MatchState";
 import {DateUtils} from "shared/lib/DateUtils";
@@ -14,12 +14,12 @@ type MatchDateProps = {
 }
 
 function MatchDate({state, date, className = ''}: MatchDateProps) {
-    let matchDate: Dayjs = DateUtils.getDateFromUnix(date);
-    let format: string = 'DD.MM.YYYY';
-    let isToday: boolean = DateUtils.now().format(format) === matchDate.format(format);
-    let hours: string = DateUtils.getDiff({endDate: matchDate,}).format('H:mm');
+    const matchDate: Dayjs = DateUtils.getDateFromUnix(date);
+    const format: string = 'DD.MM.YYYY';
+    const isToday: boolean = DateUtils.now().format(format) === matchDate.format(format);
+    const hours: string = DateUtils.getDiff({endDate: matchDate,}).format('H:mm');
 
-    let matchState: ReactNode = state === MatchState.ONGOING
+    const matchState: ReactNode = state === MatchState.ONGOING
         ? <>Ongoing</>
         : isToday
             ? <><b>{hours}</b> min ago</>

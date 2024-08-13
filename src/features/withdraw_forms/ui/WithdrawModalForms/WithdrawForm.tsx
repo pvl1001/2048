@@ -1,25 +1,25 @@
+import {useRef, useState} from "react";
 import cn from "classnames";
 import {FlagId} from "features/auth";
 import {Field, Form, Formik, FormikProps} from "formik";
-import {useRef, useState} from "react";
 import {TValidationSchema, useNavigateModal, useValidationSchema} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select, TSelectOption} from "shared/ui/select";
+import s from "./ModalWithdraw.scss";
 import {Fields} from "../../lib/const";
 import {UseWithdrawForm, useWithdrawForm} from "../../lib/useWithdrawForm";
 import {validationParams} from "../../lib/validationParams";
 import {WithdrawSelects} from "../../lib/WithdrawSelects";
 import {TDocumentTypesKeys, TValidationRegexParam, TWithdrawValues} from "../../types";
-import s from "./ModalWithdraw.scss";
 
 
 export function WithdrawForm() {
-    let formikRef = useRef<FormikProps<TWithdrawValues>>(null);
-    let {closeModal} = useNavigateModal();
-    let validationSchema: TValidationSchema = useValidationSchema();
-    let [documentValidate, setDocumentValidate] = useState<TValidationRegexParam>({regex: /^.+$/, error: ''});
-    let {initialValues, onSubmit, withdrawFormConfig, documentTypes, accountTypes, isPending}: UseWithdrawForm = useWithdrawForm(formikRef);
+    const formikRef = useRef<FormikProps<TWithdrawValues>>(null);
+    const {closeModal} = useNavigateModal();
+    const validationSchema: TValidationSchema = useValidationSchema();
+    const [documentValidate, setDocumentValidate] = useState<TValidationRegexParam>({regex: /^.+$/, error: ''});
+    const {initialValues, onSubmit, withdrawFormConfig, documentTypes, accountTypes, isPending}: UseWithdrawForm = useWithdrawForm(formikRef);
 
     return (
         <Formik
@@ -29,7 +29,7 @@ export function WithdrawForm() {
             validationSchema={validationSchema.withdrawForm(withdrawFormConfig, documentValidate)}
         >
             {formik => {
-                let setError = (fieldName: Fields) => {
+                const setError = (fieldName: Fields) => {
                     if (formik.touched[fieldName]) {
                         if ((formik.errors[fieldName] as TSelectOption)?.value) {
                             return (formik.errors[fieldName] as TSelectOption)?.value;

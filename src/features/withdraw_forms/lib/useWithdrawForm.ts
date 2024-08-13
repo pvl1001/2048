@@ -1,7 +1,7 @@
-import {select, useAppDispatch, useAppSelector} from "app/store";
-import {FormikProps} from "formik";
 import {RefObject, useState} from "react";
 import {useLocation} from "react-router-dom";
+import {select, useAppDispatch, useAppSelector} from "app/store";
+import {FormikProps} from "formik";
 import {TWithdrawFormConfig} from "shared/api/adapters";
 import {CurrencyId} from "shared/api/server_service";
 import {RoutePaths} from "shared/common/RoutePaths";
@@ -9,10 +9,10 @@ import getErrorMessage from "shared/lib/GetErrorMessage";
 import {getFormWithSelect} from "shared/lib/getFormWithSelect";
 import {useNavigateModal} from "shared/lib/hooks";
 import {thunkCreatePayout} from "shared/model/profile";
-import {Api} from "../api/Api";
-import {TWithdrawPayloadForm, TWithdrawUnionValues, TWithdrawValues} from "../types";
 import {Fields} from "./const";
 import {setServerError} from "./setServerError";
+import {Api} from "../api/Api";
+import {TWithdrawPayloadForm, TWithdrawUnionValues, TWithdrawValues} from "../types";
 
 
 export type UseWithdrawForm = {
@@ -25,17 +25,17 @@ export type UseWithdrawForm = {
 }
 
 export function useWithdrawForm(formikRef: RefObject<FormikProps<TWithdrawValues>>) {
-    let dispatch = useAppDispatch();
-    let location = useLocation();
-    let {navigateModal, navigateModalError} = useNavigateModal();
-    let [isPending, setIsPending] = useState(false);
-    let withdrawFormConfig: TWithdrawFormConfig = useAppSelector(select.profile._withdrawFormConfig(location.state.bankCode));
-    let serverFields: Fields[] = withdrawFormConfig.FormFields.split(',') as Fields[];
-    let documentTypes: string[] = withdrawFormConfig.DocumentTypeValues.split(',');
-    let accountTypes: string[] = withdrawFormConfig.AccountTypeValues.split(',');
-    let initialValues: TWithdrawValues = serverFields.reduce((acc, el) => {
-        let select = {title: '', value: ''};
-        let input = '';
+    const dispatch = useAppDispatch();
+    const location = useLocation();
+    const {navigateModal, navigateModalError} = useNavigateModal();
+    const [isPending, setIsPending] = useState(false);
+    const withdrawFormConfig: TWithdrawFormConfig = useAppSelector(select.profile._withdrawFormConfig(location.state.bankCode));
+    const serverFields: Fields[] = withdrawFormConfig.FormFields.split(',') as Fields[];
+    const documentTypes: string[] = withdrawFormConfig.DocumentTypeValues.split(',');
+    const accountTypes: string[] = withdrawFormConfig.AccountTypeValues.split(',');
+    const initialValues: TWithdrawValues = serverFields.reduce((acc, el) => {
+        const select = {title: '', value: ''};
+        const input = '';
         return {
             ...acc,
             [el]: [Fields.ACCOUNT_TYPE, Fields.DOCUMENT_TYPE].includes(el) ? select : input
@@ -43,12 +43,12 @@ export function useWithdrawForm(formikRef: RefObject<FormikProps<TWithdrawValues
     }, {} as TWithdrawValues);
 
     async function onSubmit(values: TWithdrawValues) {
-        let bankCode: number = location.state.bankCode;
-        let amount: CurrencyId = location.state.amount;
-        let formData: Omit<TWithdrawUnionValues, 'amount'> = getFormWithSelect({
+        const bankCode: number = location.state.bankCode;
+        const amount: CurrencyId = location.state.amount;
+        const formData: Omit<TWithdrawUnionValues, 'amount'> = getFormWithSelect({
             ...values, bankCode
         });
-        let data: Omit<TWithdrawPayloadForm, 'address'> = {
+        const data: Omit<TWithdrawPayloadForm, 'address'> = {
             "bankCode": formData.bankCode ?? '',
             "documentId": formData.DocumentId ?? '',
             "documentType": formData.DocumentType ?? '',
@@ -67,7 +67,7 @@ export function useWithdrawForm(formikRef: RefObject<FormikProps<TWithdrawValues
                 isWithdrawFinish: true
             });
         } catch (err: unknown) {
-            let message = getErrorMessage(err);
+            const message = getErrorMessage(err);
             if (message.includes('Failed to convert')) {
                 navigateModalError(err);
             }

@@ -12,9 +12,9 @@ type Props = {
 }
 
 function BlockWins({entryFee, numberOfParticipants, action}: Props) {
-    let {ID_HARD_CURRENCY, ID_SOFT_CURRENCY, ID_BONUS_CURRENCY} = entryFee;
-    let hardCurrency: number = Mask.hardCurrency((ID_HARD_CURRENCY ?? 0) + (ID_BONUS_CURRENCY ?? 0));
-    let softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
+    const {ID_HARD_CURRENCY, ID_SOFT_CURRENCY, ID_BONUS_CURRENCY} = entryFee;
+    const hardCurrency: number = Mask.hardCurrency((ID_HARD_CURRENCY ?? 0) + (ID_BONUS_CURRENCY ?? 0));
+    const softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
 
     return (
         <div className={s.block_wins}>

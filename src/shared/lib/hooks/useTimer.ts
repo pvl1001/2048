@@ -8,8 +8,8 @@ export type UseTimer = {
 }
 
 export function useTimer(initialSecond: number, intervalSecond: number = 1): UseTimer {
-    let [second, setSecond] = useState(initialSecond);
-    let timer: string = DateUtils.createDurationSecond(second).format('mm:ss');
+    const [second, setSecond] = useState(initialSecond);
+    const timer: string = DateUtils.createDurationSecond(second).format('mm:ss');
 
     function resetTimer(sec: number): void {
         setSecond(sec);

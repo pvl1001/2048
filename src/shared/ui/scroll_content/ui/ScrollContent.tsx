@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {forwardRef, PropsWithChildren, Ref, UIEvent, useState} from "react";
+import cn from "classnames";
 import s from "./ScrollContent.module.scss";
 
 
@@ -9,11 +9,11 @@ type ScrollContentProps = {
     center?: boolean
 }
 
-export let ScrollContent = forwardRef(({children, center, className, hidden}: PropsWithChildren<ScrollContentProps>, ref: Ref<HTMLDivElement>) => {
+export const ScrollContent = forwardRef(({children, center, className, hidden}: PropsWithChildren<ScrollContentProps>, ref: Ref<HTMLDivElement>) => {
     const [scrollValue, setScrollValue] = useState({top: 0, bottom: 0});
 
     function onScroll(e: UIEvent<HTMLElement>) {
-        let {scrollTop, scrollHeight, offsetHeight} = e.target as HTMLElement;
+        const {scrollTop, scrollHeight, offsetHeight} = e.target as HTMLElement;
 
         setScrollValue({
             top: scrollTop,

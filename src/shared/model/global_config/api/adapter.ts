@@ -12,7 +12,7 @@ export class ConfigAdapter {
     }
 
     static getGlobalConfig(payload: GlobalConfigResponse): GlobalConfig {
-        let OfferShopPositionConfig: GlobalConfig['OfferShopPositionConfig'] = Object.values(payload.OfferShopPositionConfig || {}).reduce((acc, value) => {
+        const OfferShopPositionConfig: GlobalConfig['OfferShopPositionConfig'] = Object.values(payload.OfferShopPositionConfig || {}).reduce((acc, value) => {
             return {
                 ...acc,
                 [value.OfferId]: {
@@ -30,7 +30,7 @@ export class ConfigAdapter {
             };
         }, {} as OfferShop);
 
-        let DailyRewardConfig: GlobalConfig["DailyRewardConfig"] = Object.values(payload.DailyRewardConfig || {}).reduce((acc: DailyRewardConfig, el: DailyRewardResponse, i) => {
+        const DailyRewardConfig: GlobalConfig["DailyRewardConfig"] = Object.values(payload.DailyRewardConfig || {}).reduce((acc: DailyRewardConfig, el: DailyRewardResponse, i) => {
             return {
                 ...acc,
                 ['day' + (i + 1)]: {
@@ -42,10 +42,10 @@ export class ConfigAdapter {
             };
         }, {} as DailyRewardConfig);
 
-        let StoreLevelConfig: GlobalConfig["StoreLevelConfig"] = Object.entries(payload.StoreLevelConfig || {}).reduce((acc: any, [k, val]: [string, StoreLevelConfigValue]) => {
-            let level: number = Number(k.replace('idPlayerLevel', ''));
-            let newValueKey: 'bonus' | 'soft' = val["levelRewardConfig.currency"].includes('BONUS') ? 'bonus' : 'soft';
-            let newValueValue: number = Number(val["levelRewardConfig.currency"].split(':')[1]);
+        const StoreLevelConfig: GlobalConfig["StoreLevelConfig"] = Object.entries(payload.StoreLevelConfig || {}).reduce((acc: any, [k, val]: [string, StoreLevelConfigValue]) => {
+            const level: number = Number(k.replace('idPlayerLevel', ''));
+            const newValueKey: 'bonus' | 'soft' = val["levelRewardConfig.currency"].includes('BONUS') ? 'bonus' : 'soft';
+            const newValueValue: number = Number(val["levelRewardConfig.currency"].split(':')[1]);
             return {
                 ...acc,
                 [level]: {
@@ -55,12 +55,12 @@ export class ConfigAdapter {
             };
         }, {});
 
-        let StoreItemConfig: GlobalConfig["StoreItemConfig"] = {
+        const StoreItemConfig: GlobalConfig["StoreItemConfig"] = {
             tutReward: this.reformatItemConfig(payload.StoreItemConfig.ID_TUT_REWARD),
             regReward: this.reformatItemConfig(payload.StoreItemConfig.ID_REG_REWARD),
         };
 
-        let PayoutFormConfig = JSON.parse(JSON.stringify(payload.PayoutFormConfig || {}).replaceAll(' ', '')); // fix - убрать пробелы в строках
+        const PayoutFormConfig = JSON.parse(JSON.stringify(payload.PayoutFormConfig || {}).replaceAll(' ', '')); // fix - убрать пробелы в строках
 
         return {
             ...payload,

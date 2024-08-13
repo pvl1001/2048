@@ -1,10 +1,10 @@
 import {memo} from "react";
 import {Link} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
+import s from "./BurgerAnswerMenu.module.scss";
 import {TFaqItem} from "../../types";
 import BurgerMenuWrapper from "../burger_menu_wrapper/BurgerMenuWrapper";
 import BurgerQuestion from "../burger_question/BurgerQuestion";
-import s from "./BurgerAnswerMenu.module.scss";
 
 
 export type BurgerAnswerMenuProps = Partial<TFaqItem> & {

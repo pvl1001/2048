@@ -18,9 +18,9 @@ type BurgerHelpMenuProps = {
 }
 
 function BurgerHelpMenu({menu, goToMenu, faqKey, children, title, name, ...props}: PropsWithChildren<BurgerHelpMenuProps>) {
-    let [searchValue, setSearchValue] = useState('');
-    let [currentQuestion, setCurrentQuestion] = useState<TFaqItem | null>(null);
-    let [searchResult, setSearchResult] = useState<TFaqItem[] | null>(null);
+    const [searchValue, setSearchValue] = useState('');
+    const [currentQuestion, setCurrentQuestion] = useState<TFaqItem | null>(null);
+    const [searchResult, setSearchResult] = useState<TFaqItem[] | null>(null);
 
     function clearResult() {
         setSearchValue('');
@@ -33,15 +33,15 @@ function BurgerHelpMenu({menu, goToMenu, faqKey, children, title, name, ...props
         goToMenu('searchAnswer');
     }
 
-    let onSearch = useCallback((result: TFaqItem[]) => {
+    const onSearch = useCallback((result: TFaqItem[]) => {
         setSearchResult(result);
     }, []);
 
-    let setValue = useCallback((v: string) => {
+    const setValue = useCallback((v: string) => {
         setSearchValue(v);
     }, []);
 
-    let onBackHandler = useCallback(() => {
+    const onBackHandler = useCallback(() => {
         if (menu.searchAnswer) {
             return goToMenu('searchAnswer', false);
         }

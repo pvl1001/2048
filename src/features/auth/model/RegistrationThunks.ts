@@ -3,25 +3,25 @@ import {StatusRequest} from "shared/common/StatusRequest";
 import {DateUtils} from "shared/lib/DateUtils";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {TValidationSchema} from "shared/lib/hooks";
+import {registrationActions, RegistrationDataStep3, RegistrationSlice} from "./RegistrationSlice";
 import {Api} from "../api/Api";
 import {RegistrationDataResponse} from "../api/types";
-import {registrationActions, RegistrationDataStep3, RegistrationSlice} from "./RegistrationSlice";
 
 
-export let thunkRegistrationContinue = createAsyncThunk<RegistrationDataStep3 | undefined, TValidationSchema>(
+export const thunkRegistrationContinue = createAsyncThunk<RegistrationDataStep3 | undefined, TValidationSchema>(
     'registration/thunkRegistrationContinue',
     async (ValidationSchema: TValidationSchema, {dispatch, rejectWithValue}) => {
         try {
-            let res: RegistrationDataResponse = await Api.getRegistrationData();
+            const res: RegistrationDataResponse = await Api.getRegistrationData();
 
             if (!res.isRegistered) {
-                let birthDay: number = +DateUtils.getDay(res.regData.birthday);
-                let birthMonth: number = +DateUtils.getMonth(res.regData.birthday);
-                let birthYear: number = +DateUtils.getYear(res.regData.birthday);
-                let {birthday, ...rest} = res.regData;
-                let payload = {...rest, birthDay, birthMonth, birthYear};
+                const birthDay: number = +DateUtils.getDay(res.regData.birthday);
+                const birthMonth: number = +DateUtils.getMonth(res.regData.birthday);
+                const birthYear: number = +DateUtils.getYear(res.regData.birthday);
+                const {birthday, ...rest} = res.regData;
+                const payload = {...rest, birthDay, birthMonth, birthYear};
 
-                let formData: RegistrationDataStep3 = {
+                const formData: RegistrationDataStep3 = {
                     inviteCode: '',
                     ...payload,
                     birthDay: {title: '', value: birthDay},

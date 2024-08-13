@@ -9,11 +9,11 @@ type BlockPrizeProps = {
 }
 
 export function BlockPrize({currency}: BlockPrizeProps) {
-    let {ID_SOFT_CURRENCY, ID_HARD_CURRENCY, ID_BONUS_CURRENCY} = currency;
+    const {ID_SOFT_CURRENCY, ID_HARD_CURRENCY, ID_BONUS_CURRENCY} = currency;
 
-    let blockPrizeClass = ID_BONUS_CURRENCY ? s.with_bonus : ID_HARD_CURRENCY && ID_SOFT_CURRENCY ? s.with_coin : '';
-    let hardCurrency: number = Mask.hardCurrency(ID_BONUS_CURRENCY || ID_HARD_CURRENCY);
-    let softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
+    const blockPrizeClass = ID_BONUS_CURRENCY ? s.with_bonus : ID_HARD_CURRENCY && ID_SOFT_CURRENCY ? s.with_coin : '';
+    const hardCurrency: number = Mask.hardCurrency(ID_BONUS_CURRENCY || ID_HARD_CURRENCY);
+    const softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
 
     return (
         <div className={cn(s.block_prize, blockPrizeClass)}>

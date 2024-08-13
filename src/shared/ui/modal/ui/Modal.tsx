@@ -1,6 +1,6 @@
-import cn from "classnames";
 import {PropsWithChildren} from "react";
 import {useLocation} from "react-router-dom";
+import cn from "classnames";
 import successMascot from "shared/assets/images/cube/success_mascot.webp";
 import {useChildrenWithProps} from "shared/lib/hooks";
 import s from './Modal.scss';
@@ -16,7 +16,7 @@ type ModalProps = {
 }
 
 export function Modal({children, title, className, disabledEventOverlay, withMascot}: PropsWithChildren<ModalProps>) {
-    let location = useLocation();
+    const location = useLocation();
 
     return (
         <ModalWrapper className={cn(className, {

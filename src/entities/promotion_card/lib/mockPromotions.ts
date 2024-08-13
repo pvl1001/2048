@@ -1,8 +1,8 @@
-import {PromotionServer} from "../types";
 import {PromotionsSku} from "./consts";
+import {PromotionServer} from "../types";
 
 
-export let mockPromotionsResponse: {data: PromotionServer[]} = {
+export const mockPromotionsResponse: {data: PromotionServer[]} = {
     data: [
         {
             "sku": PromotionsSku.SKU_5,

@@ -3,11 +3,11 @@ import cn from "classnames";
 import {LeaderBoardResult, PlayerResult} from "entities/result_card";
 import {MatchState} from "shared/common/MatchState";
 import {TAvatarName} from "shared/model/profile";
-import {getAvatarSrc} from "../lib/getAvatarSrc";
 import BlockPlayer from "./block_player/BlockPlayer";
 import s from "./LeaderBoardCard.scss";
 import PlayerCardPlace from "./player_card_place/PlayerCardPlace";
 import PlayerCardPrize from "./player_card_prize/PlayerCardPrize";
+import {getAvatarSrc} from "../lib/getAvatarSrc";
 
 
 type PlayerCardProps = {
@@ -15,9 +15,9 @@ type PlayerCardProps = {
 }
 
 export function LeaderBoardCard({playerResult}: PlayerCardProps) {
-    let profileId: string = useAppSelector(select.profile._id);
-    let profileName: string = useAppSelector(select.profile._name);
-    let profileAvatarId: TAvatarName = useAppSelector(select.profile._avatarId);
+    const profileId: string = useAppSelector(select.profile._id);
+    const profileName: string = useAppSelector(select.profile._name);
+    const profileAvatarId: TAvatarName = useAppSelector(select.profile._avatarId);
 
     let {
         name,
@@ -29,18 +29,18 @@ export function LeaderBoardCard({playerResult}: PlayerCardProps) {
         playerId,
     } = playerResult as PlayerResult;
 
-    let isSearching: boolean = playerResult === 'searching';
-    let isCurrentUser: boolean = playerId === +profileId;
-    let isActive: boolean = !isSearching && isCurrentUser;
-    let isOngoing: boolean = state === MatchState.ONGOING;
-    let isRewards: boolean = JSON.stringify(rewards) !== '{}';
+    const isSearching: boolean = playerResult === 'searching';
+    const isCurrentUser: boolean = playerId === +profileId;
+    const isActive: boolean = !isSearching && isCurrentUser;
+    const isOngoing: boolean = state === MatchState.ONGOING;
+    const isRewards: boolean = JSON.stringify(rewards) !== '{}';
 
     if (isCurrentUser) {
         avatarId = profileAvatarId;
         name = profileName;
     }
 
-    let className: string = cn(s._, {
+    const className: string = cn(s._, {
         [s.active]: isActive,
         [s.searching]: isSearching,
     });

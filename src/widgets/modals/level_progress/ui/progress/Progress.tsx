@@ -1,5 +1,5 @@
-import {select, useAppSelector} from "app/store";
 import {useEffect, useRef, useState} from "react";
+import {select, useAppSelector} from "app/store";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {SwiperRef} from "swiper/swiper-react";
 import LevelProgressReward from "../tooltip_reward/LevelProgressReward";
@@ -11,16 +11,16 @@ let initialSlide: number = 0;
 
 function Progress() {
     const ref = useRef<SwiperRef>(null);
-    let profileLevel: number = useAppSelector(select.profile._level);
-    let profileLevelRewards: number[] = useAppSelector(select.profile._levelRewards);
-    let {progressLevels} = useAppSelector(select.config._storeLevelConfig);
-    let [levelRewards] = useState(profileLevelRewards);
+    const profileLevel: number = useAppSelector(select.profile._level);
+    const profileLevelRewards: number[] = useAppSelector(select.profile._levelRewards);
+    const {progressLevels} = useAppSelector(select.config._storeLevelConfig);
+    const [levelRewards] = useState(profileLevelRewards);
 
     // profileLevel = 25;
 
     function slideToHandler(index: number) {
         setTimeout(() => {
-            let swiperRef = ref.current;
+            const swiperRef = ref.current;
             swiperRef?.swiper?.slideTo(index);
             initialSlide = index;
         }, 400);

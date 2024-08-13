@@ -29,7 +29,7 @@ export class ProfileSelectors {
     static _progressPercent = createSelector(
         [GlobalConfigSelectors._storeLevelConfig, GlobalConfigSelectors._storeLevelConfig, this._level, this._exp],
         ({data: storeLevelConfig}, {maxLevel}, level, exp): number => {
-            let configExp: number = storeLevelConfig[level + 1]?.exp;
+            const configExp: number = storeLevelConfig[level + 1]?.exp;
             return level === maxLevel ? 100 : exp !== 0 ? exp / configExp * 100 : 0;
         }
     );
@@ -37,7 +37,7 @@ export class ProfileSelectors {
     static _withdrawFormConfig = (bankCode: string) => createSelector(
         [GlobalConfigSelectors._payoutFormConfig, this._registrationCountryCode],
         (payoutFormConfig, registrationCountryCode): TWithdrawFormConfig => {
-            let countryForms: TWithdrawFormConfig[] = Object.values(payoutFormConfig).filter(f => f.CountryCode === registrationCountryCode);
+            const countryForms: TWithdrawFormConfig[] = Object.values(payoutFormConfig).filter(f => f.CountryCode === registrationCountryCode);
 
             return countryForms.find(f => f.BankCode == bankCode) as TWithdrawFormConfig
                 ?? countryForms.find(f => f.BankCode == '');

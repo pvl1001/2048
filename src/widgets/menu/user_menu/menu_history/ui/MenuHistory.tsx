@@ -1,12 +1,12 @@
-import {HistoryCard, Transaction} from "entities/history_card";
 import {forwardRef, Ref} from "react";
+import {HistoryCard, Transaction} from "entities/history_card";
 import {ScrollContent} from "shared/ui/scroll_content";
-import {useTransactions} from "../lib/useTransactions";
 import s from './MenuHistory.scss';
+import {useTransactions} from "../lib/useTransactions";
 
 
 function MenuHistory({}: {}, ref: Ref<HTMLDivElement>) {
-    let transactions: Transaction[] = useTransactions();
+    const transactions: Transaction[] = useTransactions();
 
     return (
         <ScrollContent ref={ref}>

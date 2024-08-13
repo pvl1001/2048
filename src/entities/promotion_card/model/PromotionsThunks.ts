@@ -1,16 +1,16 @@
 import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
+import {PromotionsSlice} from "./PromotionsSlice";
 import {PromotionsApi} from "../api/PromotionsApi";
 import {Promotion} from "../types";
-import {PromotionsSlice} from "./PromotionsSlice";
 
 
-export let thunkGetPromotions = createAsyncThunk<Promotion[]>(
+export const thunkGetPromotions = createAsyncThunk<Promotion[]>(
     'promotions/thunkGetPromotions',
     async (_, {rejectWithValue}) => {
         try {
-            let res: Promotion[] = await PromotionsApi.getPromotions();
+            const res: Promotion[] = await PromotionsApi.getPromotions();
             return res.sort((a, b) => a.centum - b.centum);
         } catch (err) {
             return rejectWithValue(getErrorMessage(err));

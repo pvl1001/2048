@@ -3,7 +3,7 @@ import {MatchState} from "shared/common/MatchState";
 
 
 export function sortLeaderBoard(arr: LeaderBoardResult[]): LeaderBoardResult[] {
-    let result = {
+    const result = {
         search: [] as 'searching'[],
         ongoing: [] as PlayerResult[],
         reward: [] as PlayerResult[]

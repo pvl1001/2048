@@ -1,12 +1,12 @@
 import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
+import {TournamentsSlice} from "./TournamentsSlice";
 import {TournamentsApi} from "../api/TournamentsApi";
 import {Tournament} from "../types";
-import {TournamentsSlice} from "./TournamentsSlice";
 
 
-export let thunkGetTournaments = createAsyncThunk<Tournament[]>(
+export const thunkGetTournaments = createAsyncThunk<Tournament[]>(
     'tournaments/thunkGetTournaments',
     async (_, {rejectWithValue}) => {
         try {

@@ -1,24 +1,24 @@
+import {forwardRef, Ref} from "react";
 import {useAppDispatch} from "app/store";
 import {LeaderBoardResult, MatchInfo, PlayerResult, playersResultsActions, ResultCard, TournamentGroup} from "entities/result_card";
-import {forwardRef, Ref} from "react";
 import {UseMenu, useMenu} from "shared/lib/hooks";
 import {ScrollContent} from "shared/ui/scroll_content";
-import {Menu} from "../../../";
-import useMenuResults from "../lib/useMenuResults";
 import EmptyTournaments from "./empty_tournaments/EmptyTournaments";
 import s from './MenuResults.scss';
 import ResultTitle from "./result_title/ResultTitle";
+import {Menu} from "../../../";
+import useMenuResults from "../lib/useMenuResults";
 
 
 function MenuResults({}, ref: Ref<HTMLDivElement>) {
-    let dispatch = useAppDispatch();
-    let tournamentGroups: TournamentGroup[] = useMenuResults();
-    let {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
+    const dispatch = useAppDispatch();
+    const tournamentGroups: TournamentGroup[] = useMenuResults();
+    const {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
 
     function onClickLeaderBoard(match: MatchInfo): void {
-        let searchingCards: Array<'searching'> = Array(match.maxPlayersCount - match.currentPlayersCount).fill('searching');
-        let sortPlayerResult: PlayerResult[] = [...match.playersResults].sort((a, b) => a.place - b.place);
-        let playersResultsWithSearching: LeaderBoardResult[] = [...sortPlayerResult, ...searchingCards];
+        const searchingCards: Array<'searching'> = Array(match.maxPlayersCount - match.currentPlayersCount).fill('searching');
+        const sortPlayerResult: PlayerResult[] = [...match.playersResults].sort((a, b) => a.place - b.place);
+        const playersResultsWithSearching: LeaderBoardResult[] = [...sortPlayerResult, ...searchingCards];
         dispatch(playersResultsActions.setPlayersResults(playersResultsWithSearching));
         onOpenMenu('result');
     }

@@ -1,5 +1,5 @@
-import {configureStore} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {configureStore} from "@reduxjs/toolkit";
 import {reducers} from "./lib/reducers";
 import {socketMiddleware} from "./middleware/socketMiddleware";
 import {AppDispatch, RootState} from "./types";

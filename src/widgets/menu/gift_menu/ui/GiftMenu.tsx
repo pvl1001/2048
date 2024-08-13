@@ -1,18 +1,18 @@
-import {select, useAppDispatch, useAppSelector} from "app/store";
 import {useEffect} from "react";
+import {select, useAppDispatch, useAppSelector} from "app/store";
 import {UseMenu, useMenu} from "shared/lib/hooks";
 import {thunkGetProfile} from "shared/model/profile";
 import {ScrollContent} from "shared/ui/scroll_content";
-import {Menu} from "../../";
 import {GiftCard} from "./gift_card";
 import s from "./GiftMenu.module.scss";
 import {PromoCode} from "./promo_code/PromoCode";
+import {Menu} from "../../";
 
 
 function GiftMenu() {
-    let dispatch = useAppDispatch();
-    let {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
-    let isAuth: boolean = useAppSelector(select.profile._isAuth);
+    const dispatch = useAppDispatch();
+    const {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
+    const isAuth: boolean = useAppSelector(select.profile._isAuth);
 
     useEffect(() => {
         isAuth && dispatch(thunkGetProfile());

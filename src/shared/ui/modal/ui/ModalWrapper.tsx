@@ -1,6 +1,6 @@
-import cn from "classnames";
 import React, {PropsWithChildren} from "react";
 import {createPortal} from "react-dom";
+import cn from "classnames";
 import s from "./Modal.scss";
 import {ModalOverlay} from "./ModalOverlay";
 

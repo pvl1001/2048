@@ -7,7 +7,7 @@ import LeaderBoard from "./user_menu/menu_results/ui/leader_board/LeaderBoard";
 import UserMenu from "./user_menu/UserMenu";
 
 
-export let Menu = {
+export const Menu = {
     Burger: BurgerMenu,
     User: withMenu(UserMenu),
     Gift: withMenu(GiftMenu),

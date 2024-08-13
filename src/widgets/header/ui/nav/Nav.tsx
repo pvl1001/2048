@@ -1,5 +1,5 @@
-import {select, useAppSelector} from "app/store";
 import {Link} from "react-router-dom";
+import {select, useAppSelector} from "app/store";
 import BurgerIcon from 'shared/assets/icons/burger.svg';
 import GiftIcon from 'shared/assets/icons/button_gift.png';
 import UserIcon from 'shared/assets/icons/button_user.png';
@@ -14,9 +14,9 @@ import ProgressBar from "./progress_bar/ProgressBar";
 
 
 function Nav() {
-    let {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
-    let isAuth: boolean = useAppSelector(select.profile._isAuth);
-    let profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
+    const {isShowMenu, onOpenMenu, onCloseMenu}: UseMenu = useMenu();
+    const isAuth: boolean = useAppSelector(select.profile._isAuth);
+    const profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
 
     return (
         <div className={s._}>

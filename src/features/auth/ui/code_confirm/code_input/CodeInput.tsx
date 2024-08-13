@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {useEffect} from "react";
+import cn from "classnames";
 import {Mask} from "shared/lib/Mask";
 import s from "./CodeInput.scss";
 
@@ -14,20 +14,20 @@ type Props = {
 }
 
 function CodeInput({className, values, setValues, setCode, hasError, nextTab}: Props) {
-    let maxLength: number = 6;
+    const maxLength: number = 6;
 
     function onChange(value: string, i: number): void {
         if (value.length > 1) {
             value = value[value.length - 1];
         }
 
-        let number: string = Mask.number(value);
+        const number: string = Mask.number(value);
 
         if (i === maxLength || !number) {
             return;
         }
 
-        let copyValues: string[] = [...values];
+        const copyValues: string[] = [...values];
         copyValues[i] = number;
         setValues(copyValues);
         setCode(copyValues.join(''));
@@ -38,7 +38,7 @@ function CodeInput({className, values, setValues, setCode, hasError, nextTab}: P
 
     function clearValue(key: string, i: number): void {
         if (key === 'Backspace') {
-            let copyValues: string[] = [...values];
+            const copyValues: string[] = [...values];
             copyValues[i] = '';
             nextTab(i - 1);
             setValues(copyValues);

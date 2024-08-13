@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
-import {Transaction} from "../types";
 import {Cause} from "./const";
+import {Transaction} from "../types";
 
 
-export let mockHistoryResponse: {data: Transaction[]} = {
+export const mockHistoryResponse: {data: Transaction[]} = {
     data: [
         {
             "playerId": 1634,

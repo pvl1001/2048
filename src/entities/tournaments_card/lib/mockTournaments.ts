@@ -5,7 +5,7 @@ import {Tournament} from "../types";
 // let testTime = dayjs('2023-09-15 11:10');
 // console.log(testTime.unix());
 
-let mockTournaments: Tournament[] = [
+const mockTournaments: Tournament[] = [
     {
         "id": "tournament1",
         "numberOfParticipants": 6,

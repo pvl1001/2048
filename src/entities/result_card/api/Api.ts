@@ -6,7 +6,7 @@ import {MatchInfo} from "../types";
 export class Api {
     /** Получить историю матчей */
     static async getMatchHistory(): Promise<MatchInfo[]> {
-        let res: AxiosResponse<MatchInfo[]> = await requestAuth.get('match/matches_history', {
+        const res: AxiosResponse<MatchInfo[]> = await requestAuth.get('match/matches_history', {
             params: {
                 skip: 0,
                 limit: 20

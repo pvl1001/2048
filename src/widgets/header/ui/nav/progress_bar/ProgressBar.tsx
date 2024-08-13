@@ -9,7 +9,7 @@ type Props = {
 }
 
 function ProgressBar({currency}: Props) {
-    let {uniteHard, soft} = currency;
+    const {uniteHard, soft} = currency;
 
     return (
         <div className={s._}>

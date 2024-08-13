@@ -1,5 +1,5 @@
-import {PromotionsSku} from "entities/promotion_card";
 import {useState} from "react";
+import {PromotionsSku} from "entities/promotion_card";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {useNavigateModal} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
@@ -13,13 +13,13 @@ type Props = {
 }
 
 export function CreateDepositPayin({isCheck, sku, className}: Props) {
-    let [isPending, setIsPending] = useState(false);
-    let {navigateModalError, closeModal} = useNavigateModal();
+    const [isPending, setIsPending] = useState(false);
+    const {navigateModalError, closeModal} = useNavigateModal();
 
     async function createPayIn() {
         try {
             setIsPending(true);
-            let url: string = await Api.createPromotionPayIn(sku);
+            const url: string = await Api.createPromotionPayIn(sku);
             window.open(url, '_blank');
             closeModal();
         } catch (err: unknown) {

@@ -1,7 +1,7 @@
 import {Cause, Transaction} from "entities/history_card";
 
 
-let mockTransactions: Transaction[] = [
+const mockTransactions: Transaction[] = [
     {
         "playerId": 907,
         "cause": Cause.INAPP_DEPOSIT,

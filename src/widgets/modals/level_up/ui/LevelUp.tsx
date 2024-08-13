@@ -7,9 +7,9 @@ import s from "./LevelUp.module.scss";
 
 
 export function LevelUp() {
-    let dispatch = useAppDispatch();
-    let level: number = useAppSelector(select.profile._level);
-    let {closeModal} = useNavigateModal();
+    const dispatch = useAppDispatch();
+    const level: number = useAppSelector(select.profile._level);
+    const {closeModal} = useNavigateModal();
 
     function setLevelAttr() {
         dispatch(thunkSetProfileAttrs({level}));

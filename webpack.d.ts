@@ -1,4 +1,4 @@
-declare var require: (filename: string) => any;
+declare let require: (filename: string) => any;
 declare module '*.scss';
 declare module "*.png";
 declare module "*.svg";

@@ -1,6 +1,6 @@
-import cn from "classnames";
 import React, {PropsWithChildren} from "react";
 import {useLocation} from "react-router-dom";
+import cn from "classnames";
 import {ReactComponent as CloseIcon} from 'shared/assets/icons/close.svg';
 import {useNavigateModal} from "shared/lib/hooks";
 import s from "./ModalHead.module.scss";
@@ -11,8 +11,8 @@ type ModalHeadProps = {
 }
 
 export function ModalHead({children, theme = 'default'}: PropsWithChildren<ModalHeadProps>) {
-    let {closeModal} = useNavigateModal();
-    let location = useLocation();
+    const {closeModal} = useNavigateModal();
+    const location = useLocation();
 
     return (
         <div className={cn(s._, s[theme])}>

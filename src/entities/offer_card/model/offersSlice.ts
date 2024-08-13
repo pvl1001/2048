@@ -5,7 +5,7 @@ import {Api} from "../api/Api";
 import {OffersDataKeys, TOffers} from "../types";
 
 
-export let thunkGetOffers = createAsyncThunk<TOffers>(
+export const thunkGetOffers = createAsyncThunk<TOffers>(
     'thunkGetOffers',
     async (_, {rejectWithValue}) => {
         try {
@@ -16,13 +16,13 @@ export let thunkGetOffers = createAsyncThunk<TOffers>(
     }
 );
 
-let initialState = {
+const initialState = {
     data: {} as TOffers,
     status: '' as StatusRequest,
     error: '' as string,
 };
 
-let offersSlice = createSlice({
+const offersSlice = createSlice({
     name: 'offers',
     initialState,
     reducers: {
@@ -46,5 +46,5 @@ let offersSlice = createSlice({
             })
 });
 
-export let offersActions = offersSlice.actions;
-export let offersReducer = offersSlice.reducer;
+export const offersActions = offersSlice.actions;
+export const offersReducer = offersSlice.reducer;

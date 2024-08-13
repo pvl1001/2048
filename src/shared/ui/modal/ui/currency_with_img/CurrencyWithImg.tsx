@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {useState} from "react";
+import cn from "classnames";
 import CoinsImg from 'shared/assets/icons/coins.png';
 import DollarsImg from 'shared/assets/icons/dollars.png';
 import StarXpImg from 'shared/assets/icons/star_xp.png';
@@ -24,11 +24,11 @@ type Props = {
 
 /** Отображение одной валюты */
 export function CurrencyWithImg({currency, className}: Props) {
-    let exp = 'exp' in currency ? currency.exp : 0;
-    let soft = 'soft' in currency ? currency.soft : 0;
-    let formatUniteHard = 'formatUniteHard' in currency ? currency.formatUniteHard : 0;
+    const exp = 'exp' in currency ? currency.exp : 0;
+    const soft = 'soft' in currency ? currency.soft : 0;
+    const formatUniteHard = 'formatUniteHard' in currency ? currency.formatUniteHard : 0;
 
-    let [imgProps] = useState<ImgProps>(() => ({
+    const [imgProps] = useState<ImgProps>(() => ({
         exp: {
             src: StarXpImg,
             className: s.exp_img,
@@ -62,7 +62,7 @@ export function CurrencyWithImg({currency, className}: Props) {
         }
     }
 
-    let imgKey = getImgKey() as keyof typeof imgProps;
+    const imgKey = getImgKey() as keyof typeof imgProps;
 
     return (
         <div className={cn(s._, className)}>

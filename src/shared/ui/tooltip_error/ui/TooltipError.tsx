@@ -6,7 +6,7 @@ import s from "./TooltipError.module.scss";
 type TooltipErrorProps = TippyProps & {content: TippyProps['content']}
 
 export function TooltipError({className, ...props}: TooltipErrorProps) {
-    let settings: TippyProps = {
+    const settings: TippyProps = {
         ...props,
         className: s.tippy,
         theme: 'light',

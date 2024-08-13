@@ -1,7 +1,6 @@
 export class NumberUtils {
     public static priceFormat(price: number) {
-        // @ts-ignore
-        let formatter = Intl.NumberFormat("en", {notation: "compact", minimumFractionDigits: 0, maximumFractionDigits: 1});
+        const formatter = Intl.NumberFormat("en", {notation: "compact", minimumFractionDigits: 0, maximumFractionDigits: 1});
         return formatter.format(price);
     }
 

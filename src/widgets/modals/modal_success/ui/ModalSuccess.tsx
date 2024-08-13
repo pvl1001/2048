@@ -1,6 +1,6 @@
+import {useEffect, useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {useEffect, useState} from "react";
 import {ReactComponent as SuccessIcon} from 'shared/assets/icons/success.svg';
 import {RoutePaths} from "shared/common/RoutePaths";
 import {UseNavigateModal, useNavigateModal} from "shared/lib/hooks";
@@ -17,11 +17,11 @@ type ModalSuccessProps = {
 }
 
 export function ModalSuccess({buttonText, unmounted, ...props}: ModalSuccessProps) {
-    let {navigateEventModal, closeModal}: UseNavigateModal = useNavigateModal();
-    let modalEvents = useAppSelector(select.modalEvents._events);
-    let [currency] = useState<ProfileCurrency | undefined>(modalEvents[RoutePaths.SUCCESS]?.currency);
-    let [message] = useState<string>(props.message || modalEvents[RoutePaths.SUCCESS]?.message);
-    let navigateTo = modalEvents[RoutePaths.SUCCESS]?.navigateTo;
+    const {navigateEventModal, closeModal}: UseNavigateModal = useNavigateModal();
+    const modalEvents = useAppSelector(select.modalEvents._events);
+    const [currency] = useState<ProfileCurrency | undefined>(modalEvents[RoutePaths.SUCCESS]?.currency);
+    const [message] = useState<string>(props.message || modalEvents[RoutePaths.SUCCESS]?.message);
+    const navigateTo = modalEvents[RoutePaths.SUCCESS]?.navigateTo;
 
     useEffect(() => {
         if (navigateTo) {

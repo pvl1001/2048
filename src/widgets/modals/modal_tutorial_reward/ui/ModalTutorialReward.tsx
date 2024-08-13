@@ -1,6 +1,6 @@
-import {select, useAppSelector} from "app/store";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
+import {select, useAppSelector} from "app/store";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal, UseNavigateModal} from "shared/lib/hooks";
 import {ProfileCurrency} from "shared/model/profile";
@@ -10,9 +10,9 @@ import s from "./ModalTutorialReward.scss";
 
 
 export function ModalTutorialReward() {
-    let {closeModal}: UseNavigateModal = useNavigateModal();
-    let modalEvents = useAppSelector(select.modalEvents._events);
-    let [currency] = useState<ProfileCurrency | undefined>(modalEvents[RoutePaths.TUTORIAL_REWARD]?.currency);
+    const {closeModal}: UseNavigateModal = useNavigateModal();
+    const modalEvents = useAppSelector(select.modalEvents._events);
+    const [currency] = useState<ProfileCurrency | undefined>(modalEvents[RoutePaths.TUTORIAL_REWARD]?.currency);
 
     if (!currency) return <Navigate to={'/'} replace/>;
 

@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import {ButtonHTMLAttributes, forwardRef, Ref} from "react";
+import classNames from "classnames";
 import s from './NavButton.scss';
 
 

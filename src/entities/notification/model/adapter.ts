@@ -4,7 +4,7 @@ import {NotificationResponse, TNotification} from "../types";
 export class NotificationsAdapter {
     static get(payload: NotificationResponse): TNotification {
         if ('persistent' in payload) {
-            let {persistent} = payload;
+            const {persistent} = payload;
             return {
                 id: +persistent.id,
                 topic: persistent.message.topic,
@@ -15,7 +15,7 @@ export class NotificationsAdapter {
                 isRead: false
             };
         }
-        let {transient} = payload;
+        const {transient} = payload;
 
         return {
             topic: transient.topic,

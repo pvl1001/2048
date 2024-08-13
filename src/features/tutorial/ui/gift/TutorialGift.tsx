@@ -9,9 +9,9 @@ import s from './TutorialGift.scss';
 
 
 export function TutorialGift() {
-    let {navigateModal} = useNavigateModal();
-    let dispatch = useAppDispatch();
-    let {tutFeeCurrency} = useAppSelector(select.config._designCurrency);
+    const {navigateModal} = useNavigateModal();
+    const dispatch = useAppDispatch();
+    const {tutFeeCurrency} = useAppSelector(select.config._designCurrency);
 
     async function goNext() {
         navigateModal(RoutePaths.TUTORIAL_TOURNAMENT);

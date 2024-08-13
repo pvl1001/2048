@@ -10,9 +10,9 @@ import s from "./MainPage.module.scss";
 
 
 export function MainPage() {
-    let currentOutlet = useOutlet();
-    let {transitionOutlet} = useTransitionOutlet(currentOutlet);
-    let [isShowUpButton, setIsShowUpButton] = useState(false);
+    const currentOutlet = useOutlet();
+    const {transitionOutlet} = useTransitionOutlet(currentOutlet);
+    const [isShowUpButton, setIsShowUpButton] = useState(false);
 
     return (
         <div className={s.mainScreen}>

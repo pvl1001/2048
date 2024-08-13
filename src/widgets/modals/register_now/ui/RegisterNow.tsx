@@ -8,8 +8,8 @@ import s from './RegisterNow.scss';
 
 
 export function RegisterNow() {
-    let {soft, formatBonus} = useAppSelector(select.config._storeItemConfig).regReward;
-    let {navigateModal} = useNavigateModal();
+    const {soft, formatBonus} = useAppSelector(select.config._storeItemConfig).regReward;
+    const {navigateModal} = useNavigateModal();
 
     return (
         <>

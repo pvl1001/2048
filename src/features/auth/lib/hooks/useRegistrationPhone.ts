@@ -1,6 +1,6 @@
+import {useState} from "react";
 import {select, useAppDispatch, useAppSelector} from "app/store";
 import {FormikHelpers} from "formik";
-import {useState} from "react";
 import {registrationActions, RegistrationDataStep1} from "../../model/RegistrationSlice";
 import {RegistrationFormValues} from "../../types";
 import {LocalErrors} from "../LocalErrors";
@@ -15,11 +15,11 @@ export type UseFormRegistrationPhone = {
 }
 
 export function useRegistrationPhone(nextStep: () => void): UseFormRegistrationPhone {
-    let dispatch = useAppDispatch();
-    let [isPending, setIsPending] = useState(false);
-    let step1: RegistrationDataStep1 = useAppSelector(select.registration._step1);
-    let {step1IsCheck}: RegistrationDataStep1 = step1;
-    let initialValues: RegistrationFormValues = {
+    const dispatch = useAppDispatch();
+    const [isPending, setIsPending] = useState(false);
+    const step1: RegistrationDataStep1 = useAppSelector(select.registration._step1);
+    const {step1IsCheck}: RegistrationDataStep1 = step1;
+    const initialValues: RegistrationFormValues = {
         country: step1.country,
         phone: step1.phone,
     };
@@ -29,7 +29,7 @@ export function useRegistrationPhone(nextStep: () => void): UseFormRegistrationP
         dispatch(registrationActions.setIsCheck());
         try {
             setIsPending(true);
-            let fullNumberPhone: string = values.country.code + values.phone;
+            const fullNumberPhone: string = values.country.code + values.phone;
             // await Api.login({login: fullNumberPhone});
             nextStep();
         } catch (err) {
@@ -44,7 +44,7 @@ export function useRegistrationPhone(nextStep: () => void): UseFormRegistrationP
         dispatch(registrationActions.setIsCheck());
         try {
             setIsPending(true);
-            let fullNumberPhone: string = values.country.code + values.phone;
+            const fullNumberPhone: string = values.country.code + values.phone;
             // await Api.registerPhone(fullNumberPhone);
             nextStep();
         } catch (err) {

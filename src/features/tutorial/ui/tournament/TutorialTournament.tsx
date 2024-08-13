@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {useLayoutEffect} from "react";
+import cn from "classnames";
 import cubeImg from "shared/assets/images/cube/cube_register-now.webp";
 import s from "./TutorialTournament.scss";
 
@@ -7,7 +7,7 @@ import s from "./TutorialTournament.scss";
 export function TutorialTournament() {
 
     useLayoutEffect(() => {
-        let el: HTMLElement | null = document.getElementById('tutorial_tournaments');
+        const el: HTMLElement | null = document.getElementById('tutorial_tournaments');
         el?.scrollIntoView({behavior: 'smooth'});
         document.body.classList.add('tutorial');
         return () => {

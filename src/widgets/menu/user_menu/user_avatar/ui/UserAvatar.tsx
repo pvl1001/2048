@@ -10,9 +10,9 @@ type UserAvatarProps = {
 }
 
 export function UserAvatar({onClick}: UserAvatarProps) {
-    let profileAvatarId: TAvatarName = useAppSelector(select.profile._avatarId);
-    let profileName: string = useAppSelector(select.profile._name);
-    let profileId: string = useAppSelector(select.profile._id);
+    const profileAvatarId: TAvatarName = useAppSelector(select.profile._avatarId);
+    const profileName: string = useAppSelector(select.profile._name);
+    const profileId: string = useAppSelector(select.profile._id);
 
     return (
         <div className={s._}>

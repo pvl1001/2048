@@ -1,6 +1,6 @@
+import {CSSProperties, useMemo} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {CSSProperties, useMemo} from "react";
 import {ReactComponent as DoneIcon} from 'shared/assets/icons/check.svg';
 import coinImg from 'shared/assets/icons/coin.png';
 import dollarImg from 'shared/assets/icons/dollar.png';
@@ -17,13 +17,13 @@ type TooltipRewardProps = {
 }
 
 function LevelProgressReward({level, isActive, isDone, hasClaim, isCurrentLevel}: TooltipRewardProps) {
-    let percent: number = useAppSelector(select.profile._progressPercent);
+    const percent: number = useAppSelector(select.profile._progressPercent);
     // percent = 0;
-    let currentReward = useAppSelector(select.config._getCurrentReward(level));
-    let isCoin: boolean = 'soft' in currentReward;
-    let value: number = currentReward.soft || +Mask.hardCurrency(currentReward.bonus);
+    const currentReward = useAppSelector(select.config._getCurrentReward(level));
+    const isCoin: boolean = 'soft' in currentReward;
+    const value: number = currentReward.soft || +Mask.hardCurrency(currentReward.bonus);
 
-    let levelProgressWidth = useMemo(() => {
+    const levelProgressWidth = useMemo(() => {
         if (isCurrentLevel) {
             return percent;
         }

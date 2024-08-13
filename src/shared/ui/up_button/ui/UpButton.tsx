@@ -9,7 +9,7 @@ type UpButtonProps = {
 }
 
 export function UpButton({isShow}: UpButtonProps) {
-    let buttonRef = useRef(null);
+    const buttonRef = useRef(null);
 
     return (
         <CSSTransition

@@ -1,9 +1,9 @@
 import cn from "classnames";
-import {useTimer} from "shared/lib/hooks";
 import {ReactComponent as ClockIcon} from 'shared/assets/icons/clock.svg';
+import {useTimer} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
-import useButtonTimer from "../../lib/useButtonTimer";
 import s from "./ButtonTimer.module.scss";
+import useButtonTimer from "../../lib/useButtonTimer";
 
 
 type ButtonTimerProps = {
@@ -12,7 +12,7 @@ type ButtonTimerProps = {
 
 function ButtonTimer({className}: ButtonTimerProps) {
     useTimer(-1);
-    let time: string = useButtonTimer();
+    const time: string = useButtonTimer();
 
     return (
         <Button disabled className={cn(className, s._)}>

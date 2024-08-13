@@ -1,6 +1,6 @@
 import {memo, useEffect, useRef} from "react";
-import {HowToPlaySlide} from "../types";
 import s from "./ModalHowToPlay.scss";
+import {HowToPlaySlide} from "../types";
 
 
 type Props = {
@@ -13,7 +13,7 @@ export const Video = memo(({slide, isCurrentSlide, setIsLoadingEnded}: Props) =>
         const ref = useRef<HTMLVideoElement>(null);
 
         useEffect(() => {
-            let $video = ref.current;
+            const $video = ref.current;
             if (isCurrentSlide && $video) {
                 $video.onloadeddata = setIsLoadingEnded; // записать флаг окончания загрузки видео
                 $video.currentTime = 0; // начать видео сначала

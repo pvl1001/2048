@@ -4,9 +4,9 @@ import {Button} from "shared/ui/button";
 
 
 export function ClaimLevel() {
-    let {getLevelClaim}: UseGetCurrency = useGetCurrency();
-    let levelRewards: number[] = useAppSelector(select.profile._levelRewards);
-    let isPending: boolean = useAppSelector(select.profile._isPending);
+    const {getLevelClaim}: UseGetCurrency = useGetCurrency();
+    const levelRewards: number[] = useAppSelector(select.profile._levelRewards);
+    const isPending: boolean = useAppSelector(select.profile._isPending);
 
     return (
         <Button

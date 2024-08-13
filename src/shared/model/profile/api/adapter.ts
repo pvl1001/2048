@@ -23,9 +23,9 @@ export type ProfileCurrency = {
 export class ProfileAdapter {
 
     private static getDailyRewards(payload: ProfileResponse): ProfileDailyRewards {
-        let dailyRewards: TReward = Object.entries(payload.money).reduce((acc: TReward, [key, val]) => {
+        const dailyRewards: TReward = Object.entries(payload.money).reduce((acc: TReward, [key, val]) => {
             if (key.includes('TKN_REWARD_DAY') && val !== undefined) {
-                let numberDay: number = Number(key.at(-1) ?? '0');
+                const numberDay: number = Number(key.at(-1) ?? '0');
                 acc.days = {...acc.days, [numberDay]: val};
 
                 if (val > 0) {

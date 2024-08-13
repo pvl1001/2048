@@ -1,13 +1,13 @@
 import {NotificationResponse, WSTopics} from "entities/notification";
-import type {Middleware, MiddlewareAPI} from 'redux';
 import {Cookie} from "shared/lib/Cookie";
 import {WsActions, wsActions} from "../lib/wsActions";
 import {AppDispatch, RootState} from "../types";
+import type {Middleware, MiddlewareAPI} from 'redux';
 
 
 function offPersistentReward(message: NotificationResponse) { // Отключить дублирующую награду
     if ('persistent' in message) {
-        let {topic, payload} = message.persistent.message;
+        const {topic, payload} = message.persistent.message;
         if (topic !== WSTopics.unclaimedReward && payload.object.rewardId) {
             payload.object.rewardId = null;
         }
@@ -40,7 +40,7 @@ export const socketMiddleware = (): Middleware => {
             if (ws) {
                 ws.onopen = (event) => {
                     console.log('ws: onopen');
-                    let token = Cookie.get('token');
+                    const token = Cookie.get('token');
                     token && ws?.send(token);
                     ws?.send(JSON.stringify({
                         "subscribe": {
@@ -60,7 +60,7 @@ export const socketMiddleware = (): Middleware => {
                     dispatch(wsError());
                 };
                 ws.onmessage = (event) => {
-                    let message: NotificationResponse = JSON.parse(event.data);
+                    const message: NotificationResponse = JSON.parse(event.data);
                     offPersistentReward(message);
                     dispatch(wsMessage(message));
                 };

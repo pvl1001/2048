@@ -18,5 +18,5 @@ export class LocalErrors {
             ERR_BAD_NAME_LENGTH_BELOW_MIN: `Nickname must contain at least ${min} characters`,
             ERR_BAD_NAME_LENGTH_ABOVE_MAX: `Nickname can't contain more than ${max} characters`,
         });
-    };
+    }
 }

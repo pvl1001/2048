@@ -1,7 +1,7 @@
 import {TValidationParams} from "../types";
 
 
-export let validationParams: TValidationParams = {
+export const validationParams: TValidationParams = {
     BO: { // Bolivia
         account: {
             other: {

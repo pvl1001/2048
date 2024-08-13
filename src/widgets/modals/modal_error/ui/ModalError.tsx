@@ -9,7 +9,7 @@ type ModalErrorProps = {
 }
 
 export function ModalError({message}: ModalErrorProps) {
-    let {closeModal}: UseNavigateModal = useNavigateModal();
+    const {closeModal}: UseNavigateModal = useNavigateModal();
 
     return (
         <>

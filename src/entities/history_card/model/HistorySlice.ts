@@ -1,12 +1,12 @@
 import {createSlice, Slice} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
-import {Transaction} from "../types";
 import {extraReducers} from "./HistoryThunks";
+import {Transaction} from "../types";
 
 
 export type HistorySlice = typeof initialState
 
-let initialState = {
+const initialState = {
     data: [] as Transaction[],
     status: '' as TStatusRequest,
     error: '',
@@ -19,4 +19,4 @@ const historySlice: Slice<HistorySlice> = createSlice({
     extraReducers
 });
 
-export let historyReducer = historySlice.reducer;
+export const historyReducer = historySlice.reducer;

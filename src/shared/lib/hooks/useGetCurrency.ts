@@ -6,8 +6,8 @@ import {BuyStore} from "shared/common/BuyStore";
 import {RoutePaths} from "shared/common/RoutePaths";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {ProfileChange, ProfileChanges, ProfileServerResponse, thunkBuyItem, thunkGetClaim, thunkGetLevelClaim} from "shared/model/profile";
-import {ProfileAdapter} from "../../model/profile";
 import {useNavigateModal} from "./useNavigateModal";
+import {ProfileAdapter} from "../../model/profile";
 
 
 type WithNavigateModalCurrencyProps = {
@@ -46,14 +46,14 @@ function filterCurrencyChange(profileChanges: ProfileChanges[]): ProfileChange[]
 
 // Суммировать валюту с наград
 function getSumCurrencyChanges(profileChanges: ProfileChange[]): Partial<Money> {
-    let initialValue = {
+    const initialValue = {
         ID_EXP: 0,
         ID_BONUS_CURRENCY: 0,
         ID_HARD_CURRENCY: 0,
         ID_SOFT_CURRENCY: 0,
     };
     return profileChanges.reduce((acc, {currencyChanges}: Partial<ProfileChange>) => {
-        let checkMinusCurrency = (value?: number): number => (!value || value < 0) ? 0 : value;
+        const checkMinusCurrency = (value?: number): number => (!value || value < 0) ? 0 : value;
         return {
             ID_EXP: acc.ID_EXP + checkMinusCurrency(currencyChanges?.ID_EXP),
             ID_BONUS_CURRENCY: acc.ID_BONUS_CURRENCY + checkMinusCurrency(currencyChanges?.ID_BONUS_CURRENCY),
@@ -65,11 +65,11 @@ function getSumCurrencyChanges(profileChanges: ProfileChange[]): Partial<Money> 
 
 /** Получить награду и показать модальное окно*/
 export function useGetCurrency(isReturnError?: boolean): UseGetCurrency {
-    let dispatch = useAppDispatch();
-    let {navigateEventModal} = useNavigateModal();
+    const dispatch = useAppDispatch();
+    const {navigateEventModal} = useNavigateModal();
 
     function showRefundModal(profileChanges: ProfileChange[]) {
-        let changesRefund: ProfileChanges | undefined = getRefundChanges(profileChanges);
+        const changesRefund: ProfileChanges | undefined = getRefundChanges(profileChanges);
 
         if (changesRefund) { // возврат средств за распущенный матч
             navigateEventModal(RoutePaths.REFUND, {
@@ -79,14 +79,14 @@ export function useGetCurrency(isReturnError?: boolean): UseGetCurrency {
     }
 
     function showSuccessModal(profileChanges: ProfileChange[], props?: WithNavigateModalCurrencyProps) {
-        let otherChanges: ProfileChange[] = getOtherChanges(profileChanges);
+        const otherChanges: ProfileChange[] = getOtherChanges(profileChanges);
 
         if (otherChanges.length) {
-            let to: RoutePaths = props?.buyStoreItem === BuyStore.ID_TUT_REWARD
+            const to: RoutePaths = props?.buyStoreItem === BuyStore.ID_TUT_REWARD
                 ? RoutePaths.TUTORIAL_REWARD // награда за туториал
                 : RoutePaths.SUCCESS; // остальные награды
 
-            let sumCurrencyChanges: Partial<Money> = getSumCurrencyChanges(otherChanges);
+            const sumCurrencyChanges: Partial<Money> = getSumCurrencyChanges(otherChanges);
 
             navigateEventModal(to, {
                 message: 'Your prize:',
@@ -101,12 +101,12 @@ export function useGetCurrency(isReturnError?: boolean): UseGetCurrency {
         props?: WithNavigateModalCurrencyProps
     ) {
         try {
-            let res: ProfileServerResponse | ClaimResponse = await callback();
-            let profileChanges: ProfileChange[] = filterCurrencyChange(getProfileChanges(res));
+            const res: ProfileServerResponse | ClaimResponse = await callback();
+            const profileChanges: ProfileChange[] = filterCurrencyChange(getProfileChanges(res));
             showRefundModal(profileChanges);
             showSuccessModal(profileChanges, props);
         } catch (err) {
-            let message: string = getErrorMessage(err);
+            const message: string = getErrorMessage(err);
             if (isReturnError) {
                 throw Error(getErrorMessage(err));
             }

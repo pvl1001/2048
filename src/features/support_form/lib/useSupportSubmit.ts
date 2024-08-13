@@ -2,9 +2,9 @@ import {useState} from "react";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {getFormWithSelect} from "shared/lib/getFormWithSelect";
 import {useNavigateModal} from "shared/lib/hooks";
+import {FaqCategory} from "./consts";
 import {Api} from "../api/Api";
 import {TSupportFile, TSupportForm} from "../types";
-import {FaqCategory} from "./consts";
 
 
 export type UseSupportSubmit = {
@@ -13,14 +13,14 @@ export type UseSupportSubmit = {
 }
 
 export function useSupportSubmit(files: TSupportFile[]) {
-    let {navigateModal, navigateModalError} = useNavigateModal();
-    let [isPending, setIsPending] = useState(false);
+    const {navigateModal, navigateModalError} = useNavigateModal();
+    const [isPending, setIsPending] = useState(false);
 
     function readFileAsBuffer(file: File): Promise<string> {
         return new Promise((resolve) => {
-            let reader = new FileReader();
+            const reader = new FileReader();
             reader.onload = (event) => {
-                let buffer: ArrayBuffer | string = event.target?.result ?? '';
+                const buffer: ArrayBuffer | string = event.target?.result ?? '';
                 resolve(Api.uploadFile(file.name, buffer));
             };
             reader.readAsArrayBuffer(file);
@@ -28,12 +28,12 @@ export function useSupportSubmit(files: TSupportFile[]) {
     }
 
     async function onSubmit(values: TSupportForm) {
-        let {category, question, email} = getFormWithSelect(values);
+        const {category, question, email} = getFormWithSelect(values);
 
         try {
             setIsPending(true);
 
-            let uploadTokens: string[] = await Promise.all(
+            const uploadTokens: string[] = await Promise.all(
                 files.map(async ({file}) => await readFileAsBuffer(file))
             );
 

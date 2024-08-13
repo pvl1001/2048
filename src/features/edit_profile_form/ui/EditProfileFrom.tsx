@@ -2,10 +2,10 @@ import {ChangeEvent} from "react";
 import {avatarNames} from "shared/lib/avatarNames";
 import {TAvatarName} from "shared/model/profile";
 import {Button} from "shared/ui/button";
-import useMenuProfile, {UseMenuProfile} from "../lib/useMenuProfile";
 import AvatarCard from "./avatar_card/AvatarCard";
 import AvatarName from "./avatar_name/AvatarName";
 import s from "./EditProfileForm.scss";
+import useMenuProfile, {UseMenuProfile} from "../lib/useMenuProfile";
 
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 }
 
 export function EditProfileFrom({onCloseMenu}: Props) {
-    let {validation, onChange, onSubmit, error, generateName, inputRef, isPending, nameValue, avatarId}: UseMenuProfile = useMenuProfile();
+    const {validation, onChange, onSubmit, error, generateName, inputRef, isPending, nameValue, avatarId}: UseMenuProfile = useMenuProfile();
 
     return (
         <form onSubmit={onSubmit} className={s.form}>

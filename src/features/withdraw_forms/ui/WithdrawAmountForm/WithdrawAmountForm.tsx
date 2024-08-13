@@ -1,12 +1,12 @@
-import {Field, Form, Formik} from "formik";
 import {ChangeEvent, useState} from "react";
+import {Field, Form, Formik} from "formik";
 import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {ButtonWithTooltip} from "shared/ui/button_with_tooltip";
+import s from './WithdrawAmountForm.scss';
 import {UseProcessPayout, useProcessPayout} from "../../lib/useProcessPayout";
 import {regex, withDollar} from "../../lib/WithdrawAmountUtils";
 import {WithdrawAmountForm} from "../../types";
-import s from './WithdrawAmountForm.scss';
 
 
 type WithdrawAmountProps = {
@@ -17,14 +17,14 @@ type WithdrawAmountProps = {
 }
 
 export function WithdrawAmountForm({setAmountValue, amountCurrency, setIsSubmit, isWithdrawFinish}: WithdrawAmountProps) {
-    let [apiError, setApiError] = useState('');
-    let {isPending, isProcessDisabled}: UseProcessPayout = useProcessPayout({isWithdrawFinish, setApiError});
+    const [apiError, setApiError] = useState('');
+    const {isPending, isProcessDisabled}: UseProcessPayout = useProcessPayout({isWithdrawFinish, setApiError});
 
     function validate(value: string): void {
         if (isProcessDisabled) {
             return;
         }
-        let replaceVal: number = +value.replace('$', '');
+        const replaceVal: number = +value.replace('$', '');
         if (replaceVal < 5) return setApiError('Minimal withdrawal amount is 5$');
         setApiError('');
     }

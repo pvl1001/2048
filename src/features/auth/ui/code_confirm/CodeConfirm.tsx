@@ -15,14 +15,14 @@ type Props = {
 }
 
 export function CodeConfirm({resetSendCode, submitHandler, nextStep, title}: Props) {
-    let initialValues: string[] = Array(6).fill('');
-    let [code, setCode] = useState(initialValues.join(''));
-    let [values, setValues] = useState(initialValues);
-    let [hasError, setHasError] = useState(false);
-    let [isPending, setIsPending] = useState(false);
+    const initialValues: string[] = Array(6).fill('');
+    const [code, setCode] = useState(initialValues.join(''));
+    const [values, setValues] = useState(initialValues);
+    const [hasError, setHasError] = useState(false);
+    const [isPending, setIsPending] = useState(false);
 
     function nextTab(i: number): void {
-        let $el: HTMLElement | null = document.getElementById('code_input_' + i);
+        const $el: HTMLElement | null = document.getElementById('code_input_' + i);
         $el?.focus();
     }
 

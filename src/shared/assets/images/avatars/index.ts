@@ -9,7 +9,7 @@ import TimImg from "./Tim.webp";
 import WendyImg from "./Wendy.webp";
 
 
-export let avatars: Record<TAvatarName, string> = {
+export const avatars: Record<TAvatarName, string> = {
     Bamby: BambyImg,
     Chang: ChangImg,
     Chonguk: ChongukImg,

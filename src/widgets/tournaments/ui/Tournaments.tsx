@@ -1,19 +1,19 @@
 import {Tournament, TournamentsCard, useSliderSpaceBetween, useTournaments} from "entities/tournaments_card";
-import 'swiper/css/grid';
 import {StartMatch} from "features/strat_match";
+import {TutorialRoutes} from "features/tutorial";
+import 'swiper/css/pagination';
+import 'swiper/css/grid';
 import {Grid, Navigation, Pagination} from 'swiper/modules';
 import {Swiper, SwiperProps, SwiperSlide} from "swiper/react";
-import {TutorialRoutes} from "../../../features/tutorial";
 import {SliderArrow} from "./SliderArrow";
 import s from "./Tournaments.scss";
-import 'swiper/css/pagination';
 
 
 export function Tournaments() {
-    let tournaments: Tournament[] = useTournaments();
+    const tournaments: Tournament[] = useTournaments();
     const pageRem: number = useSliderSpaceBetween(40);
 
-    let settings: SwiperProps = {
+    const settings: SwiperProps = {
         modules: [Pagination, Grid, Navigation],
         pagination: {clickable: true},
         grabCursor: true,

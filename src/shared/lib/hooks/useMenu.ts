@@ -9,7 +9,7 @@ export type UseMenu = {
 }
 
 export function useMenu(): UseMenu {
-    let [isShowMenu, setIsShowMenu] = useState<TMenu>({
+    const [isShowMenu, setIsShowMenu] = useState<TMenu>({
         burger: false,
         user: false,
         gift: false,

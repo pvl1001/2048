@@ -4,7 +4,7 @@ import {TSelectOption} from "shared/ui/select";
 export const WithdrawSelects = {
     accountType: (types: string[]) => {
         return types.reduce((acc, el) => {
-            let title = {
+            const title = {
                 C: 'Checkings account',
                 S: 'Savings account',
                 O: 'Joint checkings',
@@ -19,7 +19,7 @@ export const WithdrawSelects = {
     },
     documentType: (types: string[]) => {
         return types.reduce((acc, el) => {
-            let title = {
+            const title = {
                 CI: 'CI',
                 CIE: 'CIE',
                 PASS: 'PASS',

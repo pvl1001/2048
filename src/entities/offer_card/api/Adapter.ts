@@ -17,7 +17,7 @@ export class Adapter {
 
     static getOffers(response: OffersResponse): TOffers {
 
-        let groupResOffers = response.offers
+        const groupResOffers = response.offers
             .reduce((acc, offer: OfferResponse) => {
                 if (offer.deadlineSecondsLeft) { // с таймером
                     acc.withTimer.push(offer);
@@ -32,10 +32,10 @@ export class Adapter {
                 withTimer: OfferResponse[],
             });
 
-        let sortOffers: OfferResponse[] = [...groupResOffers.withoutTimer, ...groupResOffers.withTimer];
+        const sortOffers: OfferResponse[] = [...groupResOffers.withoutTimer, ...groupResOffers.withTimer];
 
         return sortOffers.reduce((acc: TOffers, offer: OfferResponse) => {
-            let key = this.routes[offer.id as keyof typeof this.routes];
+            const key = this.routes[offer.id as keyof typeof this.routes];
             return {
                 ...acc,
                 [key]: {
@@ -43,7 +43,7 @@ export class Adapter {
                     ...offersData[key as keyof typeof offersData],
                     price: {hard: Mask.hardCurrency(offer.price.CENTS)},
                     rewards: offer.rewards.map(reward => {
-                        let currency: ProfileCurrency = ProfileAdapter.getCurrency(reward.currency);
+                        const currency: ProfileCurrency = ProfileAdapter.getCurrency(reward.currency);
                         return {
                             ...reward,
                             currency: {

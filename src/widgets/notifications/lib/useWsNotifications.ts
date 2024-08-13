@@ -1,13 +1,13 @@
+import {useEffect} from "react";
 import {select, useAppDispatch, useAppSelector} from "app/store";
 import {wsNotificationActions} from "entities/notification";
-import {useEffect} from "react";
 import {Cookie} from "shared/lib/Cookie";
 
 
 function useWsNotifications() {
-    let dispatch = useAppDispatch();
-    let token = Cookie.get('token');
-    let status = useAppSelector(select.wsNotification._socketStatus);
+    const dispatch = useAppDispatch();
+    const token = Cookie.get('token');
+    const status = useAppSelector(select.wsNotification._socketStatus);
 
     useEffect(() => {
         if (token) {

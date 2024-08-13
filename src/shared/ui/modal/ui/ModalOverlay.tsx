@@ -1,7 +1,7 @@
-import cn from "classnames";
 import {FC} from "react";
-import {useOverlay} from "../lib/useOverlay";
+import cn from "classnames";
 import s from "./Modal.scss";
+import {useOverlay} from "../lib/useOverlay";
 
 
 interface IModalOverlayProps {
@@ -10,7 +10,7 @@ interface IModalOverlayProps {
 }
 
 export const ModalOverlay: FC<IModalOverlayProps> = ({disabledEventOverlay, opacity = 0.8}) => {
-    let {onClose} = useOverlay();
+    const {onClose} = useOverlay();
 
     function onClick() {
         if (!disabledEventOverlay) {

@@ -1,12 +1,12 @@
 import {createSlice, Slice} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
-import {Promotion} from "../types";
 import {extraReducers} from "./PromotionsThunks";
+import {Promotion} from "../types";
 
 
 export type PromotionsSlice = typeof initialState
 
-let initialState = {
+const initialState = {
     data: [] as Promotion[],
     status: '' as TStatusRequest,
     error: '',
@@ -20,4 +20,4 @@ const promotionsSlice: Slice<PromotionsSlice> = createSlice({
 });
 
 export let {} = promotionsSlice.actions;
-export let promotionsReducer = promotionsSlice.reducer;
+export const promotionsReducer = promotionsSlice.reducer;

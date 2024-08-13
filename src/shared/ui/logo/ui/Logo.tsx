@@ -5,6 +5,6 @@ type LogoProps = {
     className?: string
 }
 
-export let Logo = ({className = ''}: LogoProps) => {
+export const Logo = ({className = ''}: LogoProps) => {
     return <img src={logo} className={className} alt={"logo"}/>;
 };

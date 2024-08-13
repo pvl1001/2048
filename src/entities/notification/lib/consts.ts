@@ -39,7 +39,7 @@ export enum WSTopics {
     // levelUp = "LEVEL_UP",
 }
 
-export let variant: Partial<TVariant> = {
+export const variant: Partial<TVariant> = {
     [WSTopics.chMatchResult]: {
         finished: {
             text: 'Турнир завершился!',

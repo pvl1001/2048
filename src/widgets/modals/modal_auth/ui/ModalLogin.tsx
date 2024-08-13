@@ -2,9 +2,9 @@ import {CodeConfirm, RegistrationPhone, useCodeConfirm, UseCodeConfirm, UseFormR
 
 
 export function ModalLogin() {
-    let {step, nextStep}: UseModalRegistration = useModalRegistration();
-    let {onSubmitLogin, isPending}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
-    let {resetSendCode, confirmLoginPhone}: UseCodeConfirm = useCodeConfirm(nextStep);
+    const {step, nextStep}: UseModalRegistration = useModalRegistration();
+    const {onSubmitLogin, isPending}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
+    const {resetSendCode, confirmLoginPhone}: UseCodeConfirm = useCodeConfirm(nextStep);
 
     return (
         <>

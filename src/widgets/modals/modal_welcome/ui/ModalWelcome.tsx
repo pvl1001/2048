@@ -4,13 +4,13 @@ import {useNavigateModal} from "shared/lib/hooks";
 import {TutorialUtils} from "shared/lib/TutorialUtils";
 import {Button} from "shared/ui/button";
 import {ModalCurrencies} from "shared/ui/modal";
-import CubeWelcome from '../img/cube_welcome.webp';
 import s from "./ModalWelcome.scss";
+import CubeWelcome from '../img/cube_welcome.webp';
 
 
 export function ModalWelcome() {
-    let {navigateModal, closeModal} = useNavigateModal();
-    let {soft, formatBonus, exp} = useAppSelector(select.config._storeItemConfig).tutReward;
+    const {navigateModal, closeModal} = useNavigateModal();
+    const {soft, formatBonus, exp} = useAppSelector(select.config._storeItemConfig).tutReward;
 
     function refuseHandler() {
         closeModal();

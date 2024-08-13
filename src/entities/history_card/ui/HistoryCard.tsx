@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import {DateUtils} from "shared/lib/DateUtils";
 import {Mask} from "shared/lib/Mask";
-import {Transaction} from "../types";
 import s from "./HistoryCard.scss";
+import {Transaction} from "../types";
 
 
 type HistoryCardProps = {
@@ -10,12 +10,12 @@ type HistoryCardProps = {
 }
 
 export function HistoryCard({transaction}: HistoryCardProps) {
-    let {created, deltas, cause}: Transaction = transaction;
-    let date: string = DateUtils.getDateFromUnix(created).format('DD.MM.YY');
-    let title: string = cause.replaceAll('_', ' ');
-    let money: number = (deltas.ID_BONUS_CURRENCY ?? 0) + (deltas.ID_HARD_CURRENCY ?? 0);
-    let isPlus: boolean = money > 0;
-    let className: string = classNames(s.block_money, {
+    const {created, deltas, cause}: Transaction = transaction;
+    const date: string = DateUtils.getDateFromUnix(created).format('DD.MM.YY');
+    const title: string = cause.replaceAll('_', ' ');
+    const money: number = (deltas.ID_BONUS_CURRENCY ?? 0) + (deltas.ID_HARD_CURRENCY ?? 0);
+    const isPlus: boolean = money > 0;
+    const className: string = classNames(s.block_money, {
         [s.color_green]: isPlus,
         [s.color_red]: !isPlus,
     });

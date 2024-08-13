@@ -1,8 +1,8 @@
 import cn from "classnames";
 import {Offer, OfferCard, TOffers} from "entities/offer_card";
 import {RoutePaths} from "shared/common/RoutePaths";
-import {useOffers, UseOffers} from "../../lib/useOffers";
 import s from "./Offers.scss";
+import {useOffers, UseOffers} from "../../lib/useOffers";
 
 
 type Props = {
@@ -10,13 +10,13 @@ type Props = {
 }
 
 export function Offers({className}: Props) {
-    let {offers}: UseOffers = useOffers();
+    const {offers}: UseOffers = useOffers();
 
     if (!offers) {
         return null;
     }
 
-    let cardProps = {
+    const cardProps = {
         [RoutePaths.HAPPY_OFFER]: 'gift',
         [RoutePaths.LUCKY_OFFER]: 'mascot',
     } as const;
@@ -24,7 +24,7 @@ export function Offers({className}: Props) {
     return (
         <ul className={cn(className, s._)}>
             {Object.keys(cardProps).map((key) => {
-                let offer: Offer = offers?.[key as keyof TOffers];
+                const offer: Offer = offers?.[key as keyof TOffers];
                 return offer && <li key={key}>
                     <OfferCard
                         theme={cardProps[key as keyof typeof cardProps]}

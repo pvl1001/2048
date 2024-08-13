@@ -1,12 +1,12 @@
-import {useAppDispatch} from "app/store";
-import cn from "classnames";
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
+import {useAppDispatch} from "app/store";
+import cn from "classnames";
 import {RoutePaths} from "shared/common/RoutePaths";
+import s from "./OfferCard.scss";
 import {useOfferTimeLeft, UseOfferTimeLeft} from "../lib/useOfferTimeLeft";
 import {offersActions} from "../model/offersSlice";
 import {Offer} from "../types";
-import s from "./OfferCard.scss";
 
 
 type Props = {
@@ -16,8 +16,8 @@ type Props = {
 }
 
 export function OfferCard({theme, link, deadlineTs}: Props) {
-    let dispatch = useAppDispatch();
-    let offerTimeLeft: UseOfferTimeLeft = useOfferTimeLeft(deadlineTs);
+    const dispatch = useAppDispatch();
+    const offerTimeLeft: UseOfferTimeLeft = useOfferTimeLeft(deadlineTs);
 
     useEffect(() => {
         if (offerTimeLeft?.isTimeEnd) {

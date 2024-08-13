@@ -5,7 +5,7 @@ import s from "./Promotions.scss";
 
 
 export function Promotions() {
-    let {promotions}: UsePromotions = usePromotions();
+    const {promotions}: UsePromotions = usePromotions();
     // let {currencyName}: UsePaymentCurrency = usePaymentCurrency();
 
     if (!promotions) return null;

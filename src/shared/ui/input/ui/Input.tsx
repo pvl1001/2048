@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {InputHTMLAttributes, useState} from "react";
+import cn from "classnames";
 import {TooltipError} from "shared/ui/tooltip_error";
 import s from "./Input.scss";
 
@@ -14,7 +14,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export function Input({isBigStyle, className, label, code, error, icon, ...inputProps}: InputProps) {
-    let [isFocus, setIsFocus] = useState(false);
+    const [isFocus, setIsFocus] = useState(false);
 
     function onFocus(e: any) {
         inputProps.onFocus?.(e);

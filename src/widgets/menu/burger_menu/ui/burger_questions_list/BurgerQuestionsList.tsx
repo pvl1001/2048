@@ -1,8 +1,8 @@
-import cn from "classnames";
 import {memo} from "react";
+import cn from "classnames";
+import s from "./BurgerQuestionsList.module.scss";
 import {TFaqItem} from "../../types";
 import BurgerQuestion from "../burger_question/BurgerQuestion";
-import s from "./BurgerQuestionsList.module.scss";
 
 
 export type BurgerQuestionsListProps = {

@@ -3,7 +3,7 @@ import {defaultAvatar} from "shared/lib/avatarNames";
 import {MatchInfo} from "../../result_card";
 
 
-let mock_battleResults: MatchInfo = {
+const mock_battleResults: MatchInfo = {
     "id": "018b0c92-395a-4e0a-8316-30182659d99f",
     "tournamentId": "tournament2",
     "state": MatchState.FINISHED,

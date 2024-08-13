@@ -1,11 +1,11 @@
 import {select, useAppSelector} from "app/store";
 import {MatchState} from "shared/common/MatchState";
-import {MatchInfo, PlayerResult} from "../types";
 import {CardPlace} from "./card_place/CardPlace";
 import {CardState} from "./card_state/CardState";
 import {CardWins} from "./card_wins/CardWins";
 import {CardYouWon} from "./card_you_won/CardYouWon";
 import s from "./ResultCard.scss";
+import {MatchInfo, PlayerResult} from "../types";
 
 
 type ResultCardProps = {
@@ -14,13 +14,13 @@ type ResultCardProps = {
 }
 
 export function ResultCard({result, onClick}: ResultCardProps) {
-    let profileId: string = useAppSelector(select.profile._id);
-    let currentResult: PlayerResult | undefined = result.playersResults.find((p: PlayerResult) => String(p.playerId) === profileId);
+    const profileId: string = useAppSelector(select.profile._id);
+    const currentResult: PlayerResult | undefined = result.playersResults.find((p: PlayerResult) => String(p.playerId) === profileId);
     if (!currentResult) return null;
 
-    let {place, rewards, startDateTs}: PlayerResult = currentResult;
-    let disbanded: boolean = result.state === MatchState.CANCELLED;
-    let isRewards: boolean = JSON.stringify(rewards) !== '{}';
+    const {place, rewards, startDateTs}: PlayerResult = currentResult;
+    const disbanded: boolean = result.state === MatchState.CANCELLED;
+    const isRewards: boolean = JSON.stringify(rewards) !== '{}';
 
     return (
         <li className={s._}>

@@ -4,26 +4,26 @@ import {Cookie} from "shared/lib/Cookie";
 import {v4 as uuidv4} from 'uuid';
 
 
-let instanceConfig: AxiosRequestConfig = {
+const instanceConfig: AxiosRequestConfig = {
     baseURL: process.env.BASE_URL,
     transformResponse: (res: string) => {
         if (!res) return res;
-        let data = JSON.parse(res);
+        const data = JSON.parse(res);
         if (data.data) return data.data;
         return data;
     }
 };
 
-let instanceZendeskConfig: AxiosRequestConfig = {
+const instanceZendeskConfig: AxiosRequestConfig = {
     baseURL: process.env.ZENDESK_URL,
 };
 
-let request: AxiosInstance = axios.create(instanceConfig);
-let requestAuth: AxiosInstance = axios.create(instanceConfig);
-let requestZendesk: AxiosInstance = axios.create(instanceZendeskConfig);
+const request: AxiosInstance = axios.create(instanceConfig);
+const requestAuth: AxiosInstance = axios.create(instanceConfig);
+const requestZendesk: AxiosInstance = axios.create(instanceZendeskConfig);
 
 function authInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
-    let token: string = Cookie.get('token') ?? '';
+    const token: string = Cookie.get('token') ?? '';
     config.headers.authorization = `Bearer ${token}`;
     return config;
 }
@@ -35,7 +35,7 @@ function authZendeskInterceptor(config: InternalAxiosRequestConfig): InternalAxi
 
 function securityInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
     const secretAppKey = process.env.SECRET_APP_KEY;
-    let uuid: string = uuidv4();
+    const uuid: string = uuidv4();
     config.headers['x-request-uuid'] = uuid;
     config.headers['x-signature'] = md5(uuid + secretAppKey);
     return config;
@@ -43,7 +43,7 @@ function securityInterceptor(config: InternalAxiosRequestConfig): InternalAxiosR
 
 async function errorHandler(error: any) {
     const originalRequest = error.config;
-    let {status, data} = error.response;
+    const {status, data} = error.response;
     if (status === 500 && data.error.includes('JWT expired') && !originalRequest._retry) {
         originalRequest._retry = true;
         const access_token: string = Cookie.get('refreshToken') ?? '';

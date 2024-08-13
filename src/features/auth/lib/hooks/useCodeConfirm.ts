@@ -10,7 +10,7 @@ export type UseCodeConfirm = {
 }
 
 export function useCodeConfirm(nextStep: () => void): UseCodeConfirm {
-    let {closeModal} = useNavigateModal();
+    const {closeModal} = useNavigateModal();
 
     async function resetSendCode(): Promise<void> {
         // await Api.registerPhone(phone);
@@ -22,7 +22,7 @@ export function useCodeConfirm(nextStep: () => void): UseCodeConfirm {
     }
 
     async function confirmLoginPhone(code: string): Promise<void> {
-        let token: string = '1111';
+        const token: string = '1111';
         if (token) {
             Cookie.set('token', token);
             // await ServerService.setRefreshToken();

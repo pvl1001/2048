@@ -1,6 +1,6 @@
-import {ReactComponent as ArrowIcon} from 'shared/assets/icons/arrow_back.svg';
-import cn from "classnames";
 import {ComponentProps} from "react";
+import cn from "classnames";
+import {ReactComponent as ArrowIcon} from 'shared/assets/icons/arrow_back.svg';
 import s from "./ButtonBack.module.scss";
 
 

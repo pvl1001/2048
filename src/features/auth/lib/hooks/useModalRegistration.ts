@@ -1,5 +1,5 @@
-import {select, useAppDispatch, useAppSelector} from "app/store";
 import {useEffect} from "react";
+import {select, useAppDispatch, useAppSelector} from "app/store";
 import {StorageItem} from "shared/common/StorageItem";
 import {Cookie} from "shared/lib/Cookie";
 import {TutorialUtils} from "shared/lib/TutorialUtils";
@@ -18,10 +18,10 @@ export type UseModalRegistration = {
 }
 
 export function useModalRegistration(): UseModalRegistration {
-    let dispatch = useAppDispatch();
-    let step: number = useAppSelector(select.registration._step);
-    let formStep3: RegistrationDataStep3 = useAppSelector(select.registration._step3);
-    let isPendingModal: boolean = useAppSelector(select.registration._isPending);
+    const dispatch = useAppDispatch();
+    const step: number = useAppSelector(select.registration._step);
+    const formStep3: RegistrationDataStep3 = useAppSelector(select.registration._step3);
+    const isPendingModal: boolean = useAppSelector(select.registration._isPending);
 
     function resetStep() {
         dispatch(registrationActions.setStep(1));
@@ -32,7 +32,7 @@ export function useModalRegistration(): UseModalRegistration {
     }
 
     async function resetSendCodeEmail(): Promise<void> {
-        let payload: RegistrationPayloadStep3 = {
+        const payload: RegistrationPayloadStep3 = {
             ...formStep3,
             birthDay: +formStep3.birthDay.value,
             birthMonth: +formStep3.birthMonth.value,
@@ -49,7 +49,7 @@ export function useModalRegistration(): UseModalRegistration {
     }
 
     function confirmEmailCodeSubmit(code: string) {
-        let token: string | void = '1111';
+        const token: string | void = '1111';
         Cookie.set('token', token);
         clearLocalStorage();
         nextStep();

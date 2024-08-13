@@ -1,12 +1,12 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
-import {LeaderBoardResult, TournamentGroup} from "../types";
 import {extraReducers} from "./PlayersResultsThunks";
+import {LeaderBoardResult, TournamentGroup} from "../types";
 
 
 export type PlayersResultsSlice = typeof initialState
 
-let initialState = {
+const initialState = {
     tournamentGroups: [] as TournamentGroup[],
     leaderBoard: [] as LeaderBoardResult[],
     status: '' as TStatusRequest,
@@ -24,5 +24,5 @@ const playersResultsSlice = createSlice({
     extraReducers
 });
 
-export let playersResultsActions = playersResultsSlice.actions;
-export let playersResultsReducer = playersResultsSlice.reducer;
+export const playersResultsActions = playersResultsSlice.actions;
+export const playersResultsReducer = playersResultsSlice.reducer;

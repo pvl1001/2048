@@ -9,15 +9,15 @@ type UseSelectProps = {
 }
 
 function useSelect({clickOut, withSearch, searchValue}: UseSelectProps): TUseSelect {
-    let inputRef = useRef<HTMLInputElement>(null);
-    let dropdownRef = useRef<HTMLDivElement>(null);
-    let arrowRef = useRef<HTMLDivElement>(null);
-    let [isVisible, setIsVisible] = useState(false);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const arrowRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     function clickOutHandler(e: MouseEvent) {
-        let isArrow: boolean = !!arrowRef.current?.contains(e.target as HTMLElement);
-        let isMenu: boolean = !!inputRef.current?.contains(e.target as HTMLElement);
-        let isDropdown: boolean = !!dropdownRef.current?.contains(e.target as HTMLElement);
+        const isArrow: boolean = !!arrowRef.current?.contains(e.target as HTMLElement);
+        const isMenu: boolean = !!inputRef.current?.contains(e.target as HTMLElement);
+        const isDropdown: boolean = !!dropdownRef.current?.contains(e.target as HTMLElement);
         if (!isMenu && !isDropdown && !isArrow) {
             closeSelect();
         }

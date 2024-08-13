@@ -1,11 +1,11 @@
-import cn from "classnames";
 import React, {PropsWithChildren, ReactNode} from "react";
+import cn from "classnames";
 import {useNavigateModal} from "shared/lib/hooks";
 import {CloseButton} from "shared/ui/close_button";
 import {ModalWrapper} from "shared/ui/modal";
 import {Time} from "shared/ui/time";
-import {BigModalTitles} from "../lib/const";
 import s from "./BigModal.scss";
+import {BigModalTitles} from "../lib/const";
 
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 }
 
 export function BigModal({children, title, description, action, contentClass, wasPrice, time}: PropsWithChildren<Props>) {
-    let {closeModal} = useNavigateModal();
+    const {closeModal} = useNavigateModal();
 
     return (
         <ModalWrapper className={cn(s._, {

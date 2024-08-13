@@ -4,7 +4,7 @@ import s from "./WithdrawInfo.scss";
 
 
 function WithdrawInfo() {
-    let links = useAppSelector(select.config._links);
+    const links = useAppSelector(select.config._links);
 
     return (
         <div className={s._}>
@@ -26,7 +26,7 @@ function WithdrawInfo() {
                         Minimal withdrawal amount is 5$
                     </li>
                 </ul>
-                <p className={s.policy}>Check our <a target="_blank" href={links.privacyPolicy}>Withdrawal Policy</a> here</p>
+                <p className={s.policy}>Check our <a target="_blank" href={links.privacyPolicy} rel="noreferrer">Withdrawal Policy</a> here</p>
             </div>
 
         </div>

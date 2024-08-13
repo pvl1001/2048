@@ -1,7 +1,7 @@
 import cashImg from 'shared/assets/images/more_cash.webp';
 import {ScrollContent} from "shared/ui/scroll_content";
-import {PromoCode} from "../promo_code/PromoCode";
 import s from "./InviteMenu.module.scss";
+import {PromoCode} from "../promo_code/PromoCode";
 
 
 type InviteMenuProps = {

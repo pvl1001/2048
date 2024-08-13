@@ -1,6 +1,6 @@
+import {useRef, useState} from "react";
 import {useAppDispatch} from "app/store";
 import {FormikProps} from "formik";
-import {useRef, useState} from "react";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {registrationActions, RegistrationDataStep3} from "../../model/RegistrationSlice";
 import {RegistrationPayloadStep3, UseRegistrationStep3} from "../../types";
@@ -9,12 +9,12 @@ import {isServerErrors} from "../isServerErrors";
 
 
 function UseRegistrationStep3(nextStep: () => void): UseRegistrationStep3 {
-    let dispatch = useAppDispatch();
-    let refFormik = useRef<FormikProps<RegistrationDataStep3>>(null);
-    let [isPending, setIsPending] = useState(false);
+    const dispatch = useAppDispatch();
+    const refFormik = useRef<FormikProps<RegistrationDataStep3>>(null);
+    const [isPending, setIsPending] = useState(false);
 
     async function onSubmit(data: RegistrationDataStep3): Promise<void> {
-        let payload: RegistrationPayloadStep3 = {
+        const payload: RegistrationPayloadStep3 = {
             ...data,
             birthDay: +data.birthDay.value,
             birthMonth: +data.birthMonth.value,
@@ -29,7 +29,7 @@ function UseRegistrationStep3(nextStep: () => void): UseRegistrationStep3 {
         } catch (err) {
             if (isServerErrors(err)) { // записать ошибки от сервера
                 return err.forEach(error => {
-                    let key = error.field;
+                    const key = error.field;
                     refFormik.current?.setFieldError(
                         RegisterFields[key],
                         FieldErrors[RegisterFields[key]]?.(getErrorMessage(error.type))

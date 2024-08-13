@@ -1,9 +1,9 @@
-import cn from "classnames";
 import {PropsWithChildren} from "react";
+import cn from "classnames";
 import {ButtonBack} from "shared/ui/button_back";
 import {CloseButton} from "shared/ui/close_button";
-import MenuOverlay from "../menu_overlay/MenuOverlay";
 import s from "./MenuWrapper.module.scss";
+import MenuOverlay from "../menu_overlay/MenuOverlay";
 
 
 type MenuWrapperProps = {

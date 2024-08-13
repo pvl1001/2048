@@ -5,19 +5,19 @@ import {BuyStore} from "shared/common/BuyStore";
 import {Errors} from "shared/common/Errors";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage, {isAxiosError} from "shared/lib/GetErrorMessage";
+import {ProfileSlice} from "./ProfileSlice";
 import {ProfileAdapter} from "../api/adapter";
 import {ApiProfile} from "../api/ApiProfile";
 import {ChangeNameResponse, Profile, ProfileServerResponse, TAvatarName} from "../types";
-import {ProfileSlice} from "./ProfileSlice";
 
 
-export let thunkSetProfile = createAsyncThunk<Profile, {avatarId?: TAvatarName, name?: string}>(
+export const thunkSetProfile = createAsyncThunk<Profile, {avatarId?: TAvatarName, name?: string}>(
     'profile/thunkSetProfile',
     async (form, {rejectWithValue}) => {
         try {
             let profile = {} as Profile;
             if (form.name) {
-                let changeNameResponse: ChangeNameResponse = await ApiProfile.changeName(form.name);
+                const changeNameResponse: ChangeNameResponse = await ApiProfile.changeName(form.name);
                 profile = ProfileAdapter.getProfile(changeNameResponse.profile);
             }
             if (form.avatarId) {
@@ -30,7 +30,7 @@ export let thunkSetProfile = createAsyncThunk<Profile, {avatarId?: TAvatarName, 
     }
 );
 
-export let thunkSetProfileAttrs = createAsyncThunk<Profile, Record<string, any>>(
+export const thunkSetProfileAttrs = createAsyncThunk<Profile, Record<string, any>>(
     'profile/thunkSetProfileAttrs',
     async (attrs, {rejectWithValue}) => {
         try {
@@ -41,11 +41,11 @@ export let thunkSetProfileAttrs = createAsyncThunk<Profile, Record<string, any>>
     }
 );
 
-export let thunkGetProfile = createAsyncThunk<Profile>(
+export const thunkGetProfile = createAsyncThunk<Profile>(
     'profile/thunkGetProfile',
     async (_, {rejectWithValue}) => {
         try {
-            let profile: Profile = await ApiProfile.getProfile();
+            const profile: Profile = await ApiProfile.getProfile();
             return profile;
         } catch (err) {
             if (isAxiosError(err) && err.response?.data.exception === Errors.BANNED) {
@@ -56,7 +56,7 @@ export let thunkGetProfile = createAsyncThunk<Profile>(
     }
 );
 
-export let thunkBuyItem = createAsyncThunk<ProfileServerResponse, BuyStore | string>(
+export const thunkBuyItem = createAsyncThunk<ProfileServerResponse, BuyStore | string>(
     'profile/thunkBuyItem',
     async (buyStoreItem, {rejectWithValue}) => {
         try {
@@ -68,11 +68,11 @@ export let thunkBuyItem = createAsyncThunk<ProfileServerResponse, BuyStore | str
     }
 );
 
-export let thunkCreatePayout = createAsyncThunk<Profile, TWithdrawPayloadForm>(
+export const thunkCreatePayout = createAsyncThunk<Profile, TWithdrawPayloadForm>(
     'profile/thunkCreatePayout',
     async (data, {rejectWithValue}) => {
         try {
-            let {profile} = await Api.createPayout(data);
+            const {profile} = await Api.createPayout(data);
             return ProfileAdapter.getProfile(profile);
         } catch (err) {
             console.error(err);
@@ -81,7 +81,7 @@ export let thunkCreatePayout = createAsyncThunk<Profile, TWithdrawPayloadForm>(
     }
 );
 
-export let thunkGetClaim = createAsyncThunk<ClaimResponse, ClaimPayload | undefined>(
+export const thunkGetClaim = createAsyncThunk<ClaimResponse, ClaimPayload | undefined>(
     'profile/thunkGetClaim',
     async (payload = {} as ClaimPayload, {rejectWithValue}) => {
         try {
@@ -92,7 +92,7 @@ export let thunkGetClaim = createAsyncThunk<ClaimResponse, ClaimPayload | undefi
     }
 );
 
-export let thunkGetLevelClaim = createAsyncThunk<ProfileServerResponse>(
+export const thunkGetLevelClaim = createAsyncThunk<ProfileServerResponse>(
     'profile/thunkGetLevelClaim',
     async (_, {rejectWithValue}) => {
         try {
@@ -103,7 +103,7 @@ export let thunkGetLevelClaim = createAsyncThunk<ProfileServerResponse>(
     }
 );
 
-let builderProfile = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, thunk: AsyncThunk<Profile, T, any>) => {
+const builderProfile = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, thunk: AsyncThunk<Profile, T, any>) => {
     builder
         .addCase(thunk.pending, (state) => {
             state.status = StatusRequest.PENDING;
@@ -120,7 +120,7 @@ let builderProfile = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, thunk: 
         });
 };
 
-let builderWithCurrency = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, thunk: AsyncThunk<ProfileServerResponse, T, any>) => {
+const builderWithCurrency = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, thunk: AsyncThunk<ProfileServerResponse, T, any>) => {
     builder
         .addCase(thunk.pending, (state) => {
             state.status = StatusRequest.PENDING;
@@ -130,7 +130,7 @@ let builderWithCurrency = <T>(builder: ActionReducerMapBuilder<ProfileSlice>, th
             state.error = action.payload as string;
         })
         .addCase(thunk.fulfilled, (state, action: PayloadAction<ProfileServerResponse>) => {
-            let {profile} = action.payload;
+            const {profile} = action.payload;
             state.data = ProfileAdapter.getProfile(profile);
             state.status = StatusRequest.SUCCESS;
             state.error = '';
@@ -155,7 +155,7 @@ export function extraReducers(builder: ActionReducerMapBuilder<ProfileSlice>) {
             state.error = action.payload as string;
         })
         .addCase(thunkGetClaim.fulfilled, (state, action: PayloadAction<ClaimResponse>) => {
-            let {profileMutation} = action.payload;
+            const {profileMutation} = action.payload;
             state.data = ProfileAdapter.getProfile(profileMutation.profile);
             state.status = StatusRequest.SUCCESS;
             state.error = '';

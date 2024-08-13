@@ -8,7 +8,7 @@ import s from "../ProgressBar.module.scss";
 import {ProgressBarItemsCurrencyData, Variant} from "../types";
 
 
-let settings: TippyProps = {
+const settings: TippyProps = {
     theme: 'light',
     interactive: true,
     delay: 200,
@@ -42,7 +42,7 @@ export function Currency({value, variant}: CurrencyProps) {
         }
     };
 
-    let content: JSX.Element =
+    const content: JSX.Element =
         <div className={s.tippy_container}>
             <img {...data[variant].iconProps} className={s.tippy_img}/>
             {data[variant].tippyValue}{variant === 'hard' && '$'}

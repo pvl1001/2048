@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
 import {TSelectOption} from "shared/ui/select";
+import {extraReducers} from "./RegistrationThunks";
 import {RegisterFields} from "../lib/consts";
 import {RegistrationPhonePayload} from "../types";
-import {extraReducers} from "./RegistrationThunks";
 
 
 export type RegistrationSlice = typeof initialState
@@ -11,7 +11,7 @@ export type RegistrationDataStep1 = typeof initialState.data.step1
 export type RegistrationDataStep3 = typeof initialState.data.step3
 export type RegistrationDataSlice = typeof initialState.data
 
-let initialState = {
+const initialState = {
     step: 1,
     data: {
         step1: {
@@ -58,5 +58,5 @@ const registrationSlice = createSlice({
     extraReducers
 });
 
-export let registrationActions = registrationSlice.actions;
-export let registrationReducer = registrationSlice.reducer;
+export const registrationActions = registrationSlice.actions;
+export const registrationReducer = registrationSlice.reducer;

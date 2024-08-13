@@ -4,7 +4,7 @@ export class Mask {
     }
 
     private static getRegexCurrency(value: string): string {
-        let regex = RegExp(/-?\d+\.\d/);
+        const regex = RegExp(/-?\d+\.\d/);
         return regex.exec(value)?.[0] ?? value;
     }
 
@@ -34,9 +34,9 @@ export class Mask {
 
     static softCurrency(value: number | undefined): string | number {
         if (!value) return 0;
-        let isLessLength: boolean = String(value).length < 4;
+        const isLessLength: boolean = String(value).length < 4;
         if (isLessLength) return value;
-        let currency = String(value / 1000);
+        const currency = String(value / 1000);
         return this.getRegexCurrency(currency) + (isLessLength ? '' : 'K');
     }
 

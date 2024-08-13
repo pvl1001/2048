@@ -13,9 +13,9 @@ export function useOfferTimeLeft(deadlineTs: number): UseOfferTimeLeft {
     if (!deadlineTs) {
         return null;
     }
-    let durationTime = DateUtils.getDiff({startDate: DateUtils.getDateFromUnix(deadlineTs), endDate: dayjs()});
-    let isTimeEnd: boolean = durationTime.seconds() < 0;
-    let time: string = durationTime.format('HH:mm:ss');
+    const durationTime = DateUtils.getDiff({startDate: DateUtils.getDateFromUnix(deadlineTs), endDate: dayjs()});
+    const isTimeEnd: boolean = durationTime.seconds() < 0;
+    const time: string = durationTime.format('HH:mm:ss');
 
     return {time, isTimeEnd};
 }

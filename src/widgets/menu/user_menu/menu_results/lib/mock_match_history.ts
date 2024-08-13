@@ -2,7 +2,7 @@ import {MatchInfo} from "entities/result_card";
 import {MatchState} from "shared/common/MatchState";
 
 
-let mock_match_history: MatchInfo[] = [
+const mock_match_history: MatchInfo[] = [
     {
         "id": "0c3233c6-9262-4723-93e9-4a41f990a59e",
         "tournamentId": "tournament2",

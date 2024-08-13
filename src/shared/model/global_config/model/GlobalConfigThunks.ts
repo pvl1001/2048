@@ -1,12 +1,12 @@
 import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
+import {GlobalConfigSlice} from "./GlobalConfigSlice";
 import {ApiConfig} from "../api/ApiConfig";
 import {GlobalConfig} from "../types";
-import {GlobalConfigSlice} from "./GlobalConfigSlice";
 
 
-export let thunkGetGlobalConfig = createAsyncThunk<GlobalConfig>(
+export const thunkGetGlobalConfig = createAsyncThunk<GlobalConfig>(
     'globalConfig/thunkGetGlobalConfig',
     async (_, {rejectWithValue}) => {
         try {

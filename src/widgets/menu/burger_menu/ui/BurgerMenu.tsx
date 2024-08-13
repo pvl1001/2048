@@ -1,12 +1,12 @@
-import cn from "classnames";
 import {useCallback, useState} from "react";
-import helpData from '../lib/FAQ';
-import {TFaqItem, TFaqKey, THelpMenu, THelpMenuKeys} from "../types";
+import cn from "classnames";
 import BurgerAnswerMenu from "./burger_answer_menu/BurgerAnswerMenu";
 import BurgerHelpMenu from "./burger_help_menu/BurgerHelpMenu";
 import {BurgerMainMenu} from "./burger_main_menu/BurgerMainMenu";
 import BurgerQuestionsList from "./burger_questions_list/BurgerQuestionsList";
 import s from './BurgerMenu.scss';
+import helpData from '../lib/FAQ';
+import {TFaqItem, TFaqKey, THelpMenu, THelpMenuKeys} from "../types";
 
 
 type BurgerMenuProps = {
@@ -14,7 +14,7 @@ type BurgerMenuProps = {
     onCloseMenu: () => void
 }
 
-export let initialHelpMenu = {
+export const initialHelpMenu = {
     help: false,
     payments: false,
     account: false,
@@ -26,17 +26,17 @@ export let initialHelpMenu = {
 };
 
 export function BurgerMenu({isShowMenu, onCloseMenu}: BurgerMenuProps) {
-    let [menu, setMenu] = useState<THelpMenu>(initialHelpMenu);
-    let [currentQuestion, setCurrentQuestion] = useState<TFaqItem | null>(null);
-    let helpDataKeys = Object.keys(helpData) as TFaqKey[];
+    const [menu, setMenu] = useState<THelpMenu>(initialHelpMenu);
+    const [currentQuestion, setCurrentQuestion] = useState<TFaqItem | null>(null);
+    const helpDataKeys = Object.keys(helpData) as TFaqKey[];
 
-    let goToMenu = useCallback((key: THelpMenuKeys | null, bool: boolean = true) => {
+    const goToMenu = useCallback((key: THelpMenuKeys | null, bool: boolean = true) => {
         if (key) {
             setMenu(prev => ({...prev, [key]: bool}));
         }
     }, []);
 
-    let openAnswer = useCallback((faqItem: TFaqItem) => {
+    const openAnswer = useCallback((faqItem: TFaqItem) => {
         setCurrentQuestion(faqItem);
         goToMenu('answer');
     }, []);
@@ -62,7 +62,7 @@ export function BurgerMenu({isShowMenu, onCloseMenu}: BurgerMenuProps) {
             </BurgerHelpMenu>
 
             {helpDataKeys.map((key: TFaqKey) => {
-                let {title, faq} = helpData[key];
+                const {title, faq} = helpData[key];
                 return <BurgerHelpMenu
                     key={key}
                     faqKey={key}

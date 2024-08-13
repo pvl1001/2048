@@ -2,17 +2,17 @@ import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {TSelectOption} from "shared/ui/select";
+import {WithdrawState} from "./withdrawSlice";
 import {Adapter} from "../api/Adapter";
 import {Api} from "../api/Api";
 import {BankCodesResponse} from "../api/types";
-import {WithdrawState} from "./withdrawSlice";
 
 
-export let thunkGetBanks = createAsyncThunk<TSelectOption[], void>(
+export const thunkGetBanks = createAsyncThunk<TSelectOption[], void>(
     'withdraw/thunkGetBanks',
     async (_, {rejectWithValue}) => {
         try {
-            let res: BankCodesResponse = await Api.getBankCodes();
+            const res: BankCodesResponse = await Api.getBankCodes();
             return Adapter.bankCodes(res);
         } catch (err: unknown) {
             return rejectWithValue(getErrorMessage(err));

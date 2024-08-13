@@ -1,6 +1,6 @@
+import {useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {useState} from "react";
 import {ConfigDailyReward} from "shared/api/adapters";
 import {ReactComponent as DoneIcon} from 'shared/assets/icons/check.svg';
 import coinImg from 'shared/assets/icons/coin.png';
@@ -20,15 +20,15 @@ type DailyCardProps = {
 }
 
 export function DailyCard({day, currentDay, rewardDay}: DailyCardProps) {
-    let {exp, bonus, soft}: ConfigDailyReward = useAppSelector(select.config._getDailyReward(day));
-    let {rewardDays}: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
-    let status = rewardDays?.[day];
-    let expTemplate: string = exp ? exp + '%' : '';
-    let bonusTemplate: string = bonus ? Mask.hardCurrency(+bonus) + '$' : '';
-    let [isToday] = useState(day === currentDay);
-    let [isDone] = useState(status === 0);
-    let [isMiss] = useState(day < currentDay && status === undefined);
-    let [isTodayClass] = useState((rewardDay === day) || (isToday && status));
+    const {exp, bonus, soft}: ConfigDailyReward = useAppSelector(select.config._getDailyReward(day));
+    const {rewardDays}: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
+    const status = rewardDays?.[day];
+    const expTemplate: string = exp ? exp + '%' : '';
+    const bonusTemplate: string = bonus ? Mask.hardCurrency(+bonus) + '$' : '';
+    const [isToday] = useState(day === currentDay);
+    const [isDone] = useState(status === 0);
+    const [isMiss] = useState(day < currentDay && status === undefined);
+    const [isTodayClass] = useState((rewardDay === day) || (isToday && status));
 
     return (
         <li className={cn(s._, s['_' + day], {

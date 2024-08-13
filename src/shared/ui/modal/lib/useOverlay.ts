@@ -9,7 +9,7 @@ export type UseModalProps = {
 }
 
 export function useOverlay(): UseModalProps {
-    let {closeModal} = useNavigateModal();
+    const {closeModal} = useNavigateModal();
     const [visible, setVisible] = useState(false);
 
     function onOpen() {

@@ -1,21 +1,21 @@
 import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
+import {HistorySlice} from "./HistorySlice";
 import {ApiHistory} from "../api/ApiHistory";
 import {Cause} from "../lib/const";
 import {Transaction} from "../types";
-import {HistorySlice} from "./HistorySlice";
 
 
 function getInapps(arr: Transaction[]): Transaction[] {
     return arr.filter(el => [Cause.INAPP_DEPOSIT, Cause.INAPP_WITHDRAW].includes(el.cause));
 }
 
-export let thunkGetTransactions = createAsyncThunk<Transaction[], void>(
+export const thunkGetTransactions = createAsyncThunk<Transaction[], void>(
     'history/thunkGetHistory',
     async (_, {rejectWithValue}) => {
         try {
-            let transaction: Transaction[] = await ApiHistory.getTransactions();
+            const transaction: Transaction[] = await ApiHistory.getTransactions();
             return getInapps(transaction);
         } catch (err) {
             return rejectWithValue(getErrorMessage(err));

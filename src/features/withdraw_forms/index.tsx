@@ -11,7 +11,7 @@ import {WithdrawBank} from "./ui/WithdrawModalForms/WithdrawBank";
 import {WithdrawForm} from "./ui/WithdrawModalForms/WithdrawForm";
 
 
-export let ModalWithdraw = {
+export const ModalWithdraw = {
     Bank: WithdrawBank,
     Form: WithdrawForm,
 };

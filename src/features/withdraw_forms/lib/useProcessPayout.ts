@@ -13,13 +13,13 @@ type Props = {
 }
 
 export function useProcessPayout({isWithdrawFinish, setApiError}: Props) {
-    let [isPending, setIsPending] = useState(false);
-    let [isProcessDisabled, setIsProcessDisabled] = useState(false);
+    const [isPending, setIsPending] = useState(false);
+    const [isProcessDisabled, setIsProcessDisabled] = useState(false);
 
     async function checkProcessPayout() {
         try {
             setIsPending(true);
-            let {profile} = await Api.processPayout();
+            const {profile} = await Api.processPayout();
             if (profile.money.ST_PAYOUT_STATUS < 3) {
                 throw Error();
             }

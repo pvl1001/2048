@@ -1,8 +1,8 @@
+import {useState} from "react";
+import {Navigate, useLocation} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {CreateDepositPayin} from "features/create_deposit_payin";
-import {useState} from "react";
-import {Navigate, useLocation} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {ProfileCurrency} from "shared/model/profile";
 import {Checkbox} from "shared/ui/checkbox";
@@ -11,19 +11,19 @@ import s from "./ModalDepositInfo.module.scss";
 
 
 export function ModalDepositInfo() {
-    let location = useLocation();
-    let currentEvent = useAppSelector(select.modalEvents._getCurrentEvent(location.pathname as RoutePaths));
-    let [deposit] = useState(currentEvent);
+    const location = useLocation();
+    const currentEvent = useAppSelector(select.modalEvents._getCurrentEvent(location.pathname as RoutePaths));
+    const [deposit] = useState(currentEvent);
 
     if (!deposit) {
         return <Navigate to={'/'}/>;
     }
 
-    let {hardCurrency, bonusCurrency, sku} = deposit;
-    let links = useAppSelector(select.config._links);
-    let profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
-    let totalCurrency: string = (profileCurrency.formatUniteHard + hardCurrency + (bonusCurrency ?? 0)).toFixed(1);
-    let [isCheck, setIsCheck] = useState(false);
+    const {hardCurrency, bonusCurrency, sku} = deposit;
+    const links = useAppSelector(select.config._links);
+    const profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
+    const totalCurrency: string = (profileCurrency.formatUniteHard + hardCurrency + (bonusCurrency ?? 0)).toFixed(1);
+    const [isCheck, setIsCheck] = useState(false);
 
     return (
         <div className={s._}>
@@ -54,7 +54,7 @@ export function ModalDepositInfo() {
 
             <div className={s.terms}>
                 <Checkbox onChange={e => setIsCheck(e.target.checked)}/>
-                <p>By continuing, I state that I am over 18 years old, and agree to the <a target={'_blank'} href={links.termsOfService}>Terms and Conditions.</a></p>
+                <p>By continuing, I state that I am over 18 years old, and agree to the <a target={'_blank'} href={links.termsOfService} rel="noreferrer">Terms and Conditions.</a></p>
             </div>
 
             <CreateDepositPayin

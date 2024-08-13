@@ -1,15 +1,15 @@
+import {Link} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {Link} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {LevelStar} from "shared/ui/level_star";
 import s from "../ProgressBar.module.scss";
 
 
 export function Level() {
-    let {maxLevel} = useAppSelector(select.config._storeLevelConfig);
-    let percent: number = useAppSelector(select.profile._progressPercent);
-    let level: number = useAppSelector(select.profile._level);
+    const {maxLevel} = useAppSelector(select.config._storeLevelConfig);
+    const percent: number = useAppSelector(select.profile._progressPercent);
+    const level: number = useAppSelector(select.profile._level);
 
     return (
         <Link to={RoutePaths.LEVEL_PROGRESS} replace className={cn(s.bar, s.star)}>

@@ -9,7 +9,7 @@ type WithdrawCurrencyProps = {
 
 function WithdrawCurrency({currency}: WithdrawCurrencyProps) {
 
-    let content: JSX.Element = (
+    const content: JSX.Element = (
         <div className={s.tooltip__content}>
             <ul className={s.tooltip__list}>
                 <li>

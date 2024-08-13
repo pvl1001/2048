@@ -1,5 +1,5 @@
-import {select, useAppSelector} from "app/store";
 import {useEffect, useState} from "react";
+import {select, useAppSelector} from "app/store";
 import {RoutePaths} from "shared/common/RoutePaths";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {useNavigateModal} from "shared/lib/hooks/useNavigateModal";
@@ -12,14 +12,14 @@ export type UseValidateRegion = {
 }
 
 export function useValidateRegion(): UseValidateRegion {
-    let {navigateModal} = useNavigateModal();
-    let regionConfig = useAppSelector(select.config._region);
-    let [isPending, setIsPending] = useState(false);
+    const {navigateModal} = useNavigateModal();
+    const regionConfig = useAppSelector(select.config._region);
+    const [isPending, setIsPending] = useState(false);
 
     async function onValidateRegion(): Promise<void> {
         try {
             setIsPending(true);
-            let region: FlagId = await Api.validateRegion();
+            const region: FlagId = await Api.validateRegion();
             if (!regionConfig.keys.includes(region)) {
                 throw Error('invalid region');
             }

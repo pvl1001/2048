@@ -6,29 +6,29 @@ import {StorageItem} from "shared/common/StorageItem";
 import {DateUtils} from "shared/lib/DateUtils";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {LocalStorage} from "shared/lib/LocalStorage";
-import {FlagId, RegistrationPayloadStep3} from "../types";
 import {CheckRegDataResponse, RegistrationDataResponse, RegistrationStep3Response} from "./types";
+import {FlagId, RegistrationPayloadStep3} from "../types";
 
 
 export class Api {
     private static setError(message: string) {
-        let error: any = new AxiosError();
+        const error: any = new AxiosError();
         error.response = {data: {strCode: message}};
         throw error;
     }
 
     private static setLocalCounter(phone: string) {
-        let counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
-        let payloadCounter: {[p: string]: number} = counter
+        const counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
+        const payloadCounter: {[p: string]: number} = counter
             ? {...counter, [phone]: ++counter[phone]}
             : {[phone]: 1};
         LocalStorage.setKeyValue(StorageItem.REQUEST_COUNTER, payloadCounter);
     }
 
     private static withBlockTimer({storageName, sec, phone}: BlockTimerPayload, req: () => Promise<{data: string}>): Promise<{data: string}> | void {
-        let unixTime: string = localStorage.getItem(storageName) ?? '';
-        let diff: number = unixTime ? DateUtils.codeTimer(+unixTime) : 0;
-        let counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
+        const unixTime: string = localStorage.getItem(storageName) ?? '';
+        const diff: number = unixTime ? DateUtils.codeTimer(+unixTime) : 0;
+        const counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
 
         if (!counter?.[phone] || diff === null || diff > sec) {
             console.log('success!');
@@ -37,7 +37,7 @@ export class Api {
                 this.setLocalCounter(phone);
             }
 
-            let dateNow: number = dayjs().unix();
+            const dateNow: number = dayjs().unix();
             LocalStorage.setKeyValue(storageName, dateNow);
             return req();
         } else {
@@ -47,7 +47,7 @@ export class Api {
     }
 
     private static withCounterTimer(phone: string, fnCb: (sec: number) => Promise<{data: string}> | void) {
-        let counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
+        const counter: {[p: string]: number} = LocalStorage.getValue(StorageItem.REQUEST_COUNTER);
         if (counter?.[phone] && counter[phone] % 3 === 0) {
             console.log('diff 600', counter?.[phone]);
             return fnCb(600);
@@ -58,7 +58,7 @@ export class Api {
 
     /** Валидация региона */
     static async validateRegion(): Promise<FlagId> {
-        let res: AxiosResponse<FlagId> = await request.post('login/validate_region');
+        const res: AxiosResponse<FlagId> = await request.post('login/validate_region');
         return res.data;
     }
 
@@ -72,13 +72,13 @@ export class Api {
 
     /** Регистрация шаг 2. Подтверждение номера телефона*/
     static async confirmRegisterPhone(data: {phone: string, code: string}): Promise<string> {
-        let res: AxiosResponse<string> = await requestAuth.post('login/confirm_phone', data);
+        const res: AxiosResponse<string> = await requestAuth.post('login/confirm_phone', data);
         return res.data;
     }
 
     /** Валидация полей регистрации для запроса register_account */
     private static async checkRegData(data: RegistrationPayloadStep3): Promise<CheckRegDataResponse> {
-        let res: AxiosResponse<CheckRegDataResponse> = await requestAuth.post('/login/check_reg_data', {
+        const res: AxiosResponse<CheckRegDataResponse> = await requestAuth.post('/login/check_reg_data', {
             "firstName": data.firstName,
             "lastName": data.lastName,
             "email": data.email,
@@ -90,18 +90,18 @@ export class Api {
 
     /** Регистрация шаг 3. Форма с данными юзера */
     static async registerAccount(data: RegistrationPayloadStep3): Promise<RegistrationStep3Response> {
-        let check = await this.checkRegData(data);
+        const check = await this.checkRegData(data);
         if (check.result === 'ERROR') {
             throw check.errors;
         }
-        let res: AxiosResponse<RegistrationStep3Response> = await requestAuth.post('login/register_account', data);
+        const res: AxiosResponse<RegistrationStep3Response> = await requestAuth.post('login/register_account', data);
         return res.data;
     }
 
     /** Регистрация шаг 4. Подтверждение почты */
     static async confirmAccount(data: {code: string}): Promise<string | void> {
         try {
-            let res: AxiosResponse<string> = await requestAuth.post('login/confirm_account', data);
+            const res: AxiosResponse<string> = await requestAuth.post('login/confirm_account', data);
             return res.data;
         } catch (err) {
             console.log(getErrorMessage(err));
@@ -110,7 +110,7 @@ export class Api {
 
     /** Проверить, завершена ли регистрация, и получить новый токен для логина, если регистрация пройдена. */
     static async getRegistrationData(): Promise<RegistrationDataResponse> {
-        let res: AxiosResponse<RegistrationDataResponse> = await requestAuth.get('login/get_reg_data');
+        const res: AxiosResponse<RegistrationDataResponse> = await requestAuth.get('login/get_reg_data');
         return res.data;
     }
 
@@ -121,7 +121,7 @@ export class Api {
 
     /** Логин шаг 2. Подтверждение номера телефона */
     static async confirmLoginPhone(data: {login: string, code: string}): Promise<string> {
-        let res: AxiosResponse<string> = await request.post('login/confirm_login', data);
+        const res: AxiosResponse<string> = await request.post('login/confirm_login', data);
         return res.data;
     }
 }

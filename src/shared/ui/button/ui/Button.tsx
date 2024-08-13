@@ -1,7 +1,7 @@
-import classNames from "classnames";
 import {ComponentProps, PropsWithChildren} from "react";
-import {Loader} from "../../loader/ui/Loader";
+import classNames from "classnames";
 import s from "./Button.scss";
+import {Loader} from "../../loader/ui/Loader";
 
 
 export type ButtonProps = ComponentProps<'button'> & {
@@ -11,7 +11,7 @@ export type ButtonProps = ComponentProps<'button'> & {
 }
 
 export function Button({children, theme = 'blue', className, isPending, currency, ...props}: PropsWithChildren<ButtonProps>) {
-    let classes: string = classNames(s._, className, {
+    const classes: string = classNames(s._, className, {
         [s[theme]]: !props.disabled,
         [s.disabled]: isPending || props.disabled,
         [s.currency]: !!currency,

@@ -1,6 +1,6 @@
+import {useEffect, useState} from "react";
 import {select, useAppSelector} from "app/store";
 import {Offer, TOffers} from "entities/offer_card";
-import {useEffect, useState} from "react";
 import {RoutePaths} from "shared/common/RoutePaths";
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {useNavigateModal, useTutorial, UseTutorial} from "shared/lib/hooks";
@@ -10,17 +10,17 @@ import {ProfileDailyRewards} from "shared/model/profile";
 /** Проверить доступные награды при загрузке страницы.
  * Показ модальных окон при доступных наградах */
 export function useModalEvents() {
-    let {navigateEventModal, navigateModal} = useNavigateModal();
-    let hasLevelUp: boolean = useAppSelector(select.profile._hasLevelUp);
-    let dailyRewards: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
-    let hasLevelRewards: boolean = !!useAppSelector(select.profile._levelRewards).length;
-    let modalEvents = useAppSelector(select.modalEvents._events);
-    let hasProfile: boolean = useAppSelector(select.profile._hasProfile);
-    let {isTutorial}: UseTutorial = useTutorial();
-    let [init, setInit] = useState(false);
-    let currentModalEvent = Object.keys(modalEvents)[0] as RoutePaths;
-    let offers: TOffers = useAppSelector(select.offers._data);
-    let isPlayedGame: boolean = /\?token/.test(document.referrer); // после игры
+    const {navigateEventModal, navigateModal} = useNavigateModal();
+    const hasLevelUp: boolean = useAppSelector(select.profile._hasLevelUp);
+    const dailyRewards: ProfileDailyRewards = useAppSelector(select.profile._dailyRewards);
+    const hasLevelRewards: boolean = !!useAppSelector(select.profile._levelRewards).length;
+    const modalEvents = useAppSelector(select.modalEvents._events);
+    const hasProfile: boolean = useAppSelector(select.profile._hasProfile);
+    const {isTutorial}: UseTutorial = useTutorial();
+    const [init, setInit] = useState(false);
+    const currentModalEvent = Object.keys(modalEvents)[0] as RoutePaths;
+    const offers: TOffers = useAppSelector(select.offers._data);
+    const isPlayedGame: boolean = /\?token/.test(document.referrer); // после игры
 
     async function unclaimed() {
         try {
@@ -69,9 +69,9 @@ export function useModalEvents() {
 
     useEffect(() => { // показать офферы
         if (init && !isTutorial && offers) {
-            for (let offerPath in offers) {
-                let offer: Offer = offers[offerPath as keyof typeof offers];
-                let isOneOffOffer: boolean = !offer.deadlineTs;
+            for (const offerPath in offers) {
+                const offer: Offer = offers[offerPath as keyof typeof offers];
+                const isOneOffOffer: boolean = !offer.deadlineTs;
                 if (isOneOffOffer && !isPlayedGame) continue; // одноразовые офферы показать после игры
                 navigateEventModal(offerPath);
             }

@@ -1,5 +1,5 @@
-import {useAppDispatch} from "app/store";
 import {useLocation, useNavigate} from "react-router-dom";
+import {useAppDispatch} from "app/store";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {modalEventsActions} from "shared/ui/modal";
 import getErrorMessage from "../GetErrorMessage";
@@ -14,9 +14,9 @@ export type UseNavigateModal = {
 }
 
 export function useNavigateModal(): UseNavigateModal {
-    let dispatch = useAppDispatch();
-    let location = useLocation();
-    let navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     function navigateEventModal(path: RoutePaths | string, state?: any, isForward?: boolean) {
         dispatch(modalEventsActions.addEvent({

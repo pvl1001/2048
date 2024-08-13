@@ -11,10 +11,10 @@ export type UseTutorial = {
 }
 
 export function useTutorial() {
-    let dispatch = useAppDispatch();
-    let {buyItem} = useGetCurrency();
-    let isTutorial: boolean = !!localStorage[StorageItem.TUTORIAL];
-    let {navigateModalError}: UseNavigateModal = useNavigateModal();
+    const dispatch = useAppDispatch();
+    const {buyItem} = useGetCurrency();
+    const isTutorial: boolean = !!localStorage[StorageItem.TUTORIAL];
+    const {navigateModalError}: UseNavigateModal = useNavigateModal();
 
     function dispatchTutorialFinish() {
         if (localStorage[StorageItem.TUTORIAL_FINISH]) {

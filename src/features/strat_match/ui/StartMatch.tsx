@@ -6,9 +6,9 @@ import s from "./StartMatch.scss";
 
 
 export function StartMatch() {
-    let {navigateEventModal} = useNavigateModal();
+    const {navigateEventModal} = useNavigateModal();
 
-    let startMatchHandler = () => {
+    const startMatchHandler = () => {
         if (TutorialUtils.isTutorial()) {
             navigateEventModal(RoutePaths.SUCCESS, {
                 currency: {

@@ -4,8 +4,8 @@ import {useNavigateModal} from "shared/lib/hooks";
 
 
 export function useTransitionOutlet(routes: ReturnType<typeof useRoutes>) {
-    let location = useLocation();
-    let {removeEventModal} = useNavigateModal();
+    const location = useLocation();
+    const {removeEventModal} = useNavigateModal();
 
     return {
         transitionOutlet:

@@ -23,14 +23,14 @@ import {useEffect} from "react";
 
 
 export function useCreateZendeskToken() {
-    let zendeskName = 'test1001';
-    let clientId = location.origin === 'http://localhost:4200'
+    const zendeskName = 'test1001';
+    const clientId = location.origin === 'http://localhost:4200'
         ? 'test1001'
         : 'pixicube-1-js-web.k8s.azurgames.dev';
 
     console.log({clientId});
-    let urlParams = new URLSearchParams(location.hash.substring(1));
-    let accessToken = urlParams.get('access_token') ?? '';
+    const urlParams = new URLSearchParams(location.hash.substring(1));
+    const accessToken = urlParams.get('access_token') ?? '';
 
     function setAccessToken(accessToken: string) {
         localStorage.accessToken = accessToken;
@@ -39,8 +39,8 @@ export function useCreateZendeskToken() {
     }
 
     function getZendeskToken() {
-        let endpoint = `https://${zendeskName}help.zendesk.com/oauth/authorizations/new`;
-        let urlParams = new URLSearchParams({
+        const endpoint = `https://${zendeskName}help.zendesk.com/oauth/authorizations/new`;
+        const urlParams = new URLSearchParams({
             response_type: 'token',
             redirect_uri: location.origin,
             client_id: clientId,

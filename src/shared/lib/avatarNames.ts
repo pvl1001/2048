@@ -1,7 +1,7 @@
 import {TAvatarName} from "shared/model/profile";
 
 
-export let avatarNames: TAvatarName[] = [
+export const avatarNames: TAvatarName[] = [
     'Chang',
     'Milana',
     'Chonguk',
@@ -12,4 +12,4 @@ export let avatarNames: TAvatarName[] = [
     'Rubi',
 ];
 
-export let defaultAvatar: TAvatarName = 'Milana';
+export const defaultAvatar: TAvatarName = 'Milana';

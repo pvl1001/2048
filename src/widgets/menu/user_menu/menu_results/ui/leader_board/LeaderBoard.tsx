@@ -5,9 +5,9 @@ import {Button} from "shared/ui/button";
 import {MenuTitle} from "shared/ui/menu_title";
 import {ScrollContent} from "shared/ui/scroll_content";
 import {TooltipQuestion} from "shared/ui/tooltip_question";
+import s from "./LeaderBoard.scss";
 import {sortLeaderBoard} from "../../lib/sortLeaderBoard";
 import ResultTitle from "../result_title/ResultTitle";
-import s from "./LeaderBoard.scss";
 
 
 type LeaderBoardProps = {
@@ -15,8 +15,8 @@ type LeaderBoardProps = {
 }
 
 function LeaderBoard({onCloseMenu}: LeaderBoardProps) {
-    let playersResults: LeaderBoardResult[] = useAppSelector(select.playersResults._leaderBoard);
-    let isWaiting: boolean = playersResults.some((r: LeaderBoardResult) => r === 'searching');
+    const playersResults: LeaderBoardResult[] = useAppSelector(select.playersResults._leaderBoard);
+    const isWaiting: boolean = playersResults.some((r: LeaderBoardResult) => r === 'searching');
 
     return (
         <>

@@ -37,10 +37,10 @@ export class DateUtils {
     }
 
     static buttonTimer(): Dayjs {
-        let t1: Dayjs = dayjs({hour: 6, second: 5});
-        let t2: Dayjs = dayjs({hour: 18, second: 5});
-        let nowUtc: Dayjs = dayjs.utc();
-        let diffTime: number = dayjs(t2.diff(nowUtc)).hour() < 12 ? t2.diff(nowUtc) : t1.diff(nowUtc);
+        const t1: Dayjs = dayjs({hour: 6, second: 5});
+        const t2: Dayjs = dayjs({hour: 18, second: 5});
+        const nowUtc: Dayjs = dayjs.utc();
+        const diffTime: number = dayjs(t2.diff(nowUtc)).hour() < 12 ? t2.diff(nowUtc) : t1.diff(nowUtc);
         return dayjs(diffTime);
     }
 
@@ -61,8 +61,8 @@ export class DateUtils {
     }
 
     static codeTimer(unixTime: number) {
-        let timer: Dayjs = this.getDateFromUnix(unixTime);
-        let now: Dayjs = this.now();
+        const timer: Dayjs = this.getDateFromUnix(unixTime);
+        const now: Dayjs = this.now();
         return now.diff(timer, 's');
     }
 }

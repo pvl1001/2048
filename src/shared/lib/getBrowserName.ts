@@ -9,7 +9,7 @@ export enum BrowserName {
 }
 
 export function getBrowserName(): BrowserName | 'unknown' {
-    let {userAgent} = navigator;
+    const {userAgent} = navigator;
 
     if (userAgent.includes("Firefox")) {
         // "Mozilla/5.0 (X11; Linux i686; rv:104.0) Gecko/20100101 Firefox/104.0"

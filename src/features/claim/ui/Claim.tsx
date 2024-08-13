@@ -1,6 +1,6 @@
+import {PropsWithChildren, useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {PropsWithChildren, useState} from "react";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {UseNavigateModal, useNavigateModal} from "shared/lib/hooks";
 import {ProfileCurrency} from "shared/model/profile";
@@ -18,9 +18,9 @@ type Props = {
 }
 
 export function Claim({currency, className, clickHandler, children}: PropsWithChildren<Props>) {
-    let [isClaimed, setIsClaimed] = useState(false);
-    let isPending: boolean = useAppSelector(select.profile._isPending);
-    let {navigateEventModal}: UseNavigateModal = useNavigateModal();
+    const [isClaimed, setIsClaimed] = useState(false);
+    const isPending: boolean = useAppSelector(select.profile._isPending);
+    const {navigateEventModal}: UseNavigateModal = useNavigateModal();
 
     async function claimHandler() {
         // await buyItem(buyStoreItem);

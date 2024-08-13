@@ -1,5 +1,5 @@
-import {FaqCategory} from "features/support_form";
 import {Link} from "react-router-dom";
+import {FaqCategory} from "features/support_form";
 import {TFaq} from "../types";
 
 

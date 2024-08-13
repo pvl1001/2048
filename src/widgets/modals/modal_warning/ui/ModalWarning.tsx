@@ -2,8 +2,8 @@ import cn from "classnames";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {UseNavigateModal, useNavigateModal} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
-import {data, Warnings} from "../lib/consts";
 import s from "./ModalWarning.scss";
+import {data, Warnings} from "../lib/consts";
 
 
 type ModalWarningProps = {
@@ -11,7 +11,7 @@ type ModalWarningProps = {
 }
 
 export function ModalWarning({theme}: ModalWarningProps) {
-    let {closeModal}: UseNavigateModal = useNavigateModal();
+    const {closeModal}: UseNavigateModal = useNavigateModal();
 
     return (
         <div className={cn(s._, s[theme])}>
@@ -24,7 +24,7 @@ export function ModalWarning({theme}: ModalWarningProps) {
 
                 {theme !== 'unfrozen' &&
                     <p className={s.text__link}>
-                        <a href={RoutePaths.CONTACT} target="_blank">Contact our support</a>
+                        <a href={RoutePaths.CONTACT} target="_blank" rel="noreferrer">Contact our support</a>
                     </p>}
             </div>
 

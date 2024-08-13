@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {ComponentProps} from "react";
+import cn from "classnames";
 import s from './Tournaments.scss';
 
 

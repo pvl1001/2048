@@ -1,9 +1,9 @@
 import {WithAuth} from "shared/lib/hocs";
 import {Logo} from "shared/ui/logo";
-import useViewHeader from "../lib/useViewHeader";
 import s from "./Header.scss";
 import Nav from "./nav/Nav";
 import {Offers} from "./offers/Offers";
+import useViewHeader from "../lib/useViewHeader";
 
 
 type HeaderProps = {
@@ -11,7 +11,7 @@ type HeaderProps = {
 }
 
 export function Header({setIsShowUpButton}: HeaderProps) {
-    let ref = useViewHeader(setIsShowUpButton);
+    const ref = useViewHeader(setIsShowUpButton);
 
     return (
         <header ref={ref} className={s._}>

@@ -1,5 +1,5 @@
-import cn from "classnames";
 import React, {PropsWithChildren} from "react";
+import cn from "classnames";
 import clockImg from 'shared/assets/icons/clock.svg';
 import s from "./Time.scss";
 

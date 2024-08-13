@@ -1,12 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
-import {Profile} from "../types";
 import {extraReducers} from "./ProfileThunks";
+import {Profile} from "../types";
 
 
 export type ProfileSlice = typeof initialState
 
-let initialState = {
+const initialState = {
     isAuth: false,
     data: null as Profile | null,
     status: '' as TStatusRequest,
@@ -20,5 +20,5 @@ const profileSlice = createSlice({
     extraReducers
 });
 
-export let profileActions = profileSlice.actions;
-export let profileReducer = profileSlice.reducer;
+export const profileActions = profileSlice.actions;
+export const profileReducer = profileSlice.reducer;

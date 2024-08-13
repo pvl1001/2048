@@ -1,8 +1,8 @@
-import cn from "classnames";
 import {memo, PropsWithChildren} from "react";
 import {CSSTransition} from "react-transition-group";
-import MenuOverlay from "../../../ui/menu_overlay/MenuOverlay";
+import cn from "classnames";
 import s from "./BurgerMenuWrapper.module.scss";
+import MenuOverlay from "../../../ui/menu_overlay/MenuOverlay";
 
 
 type BurgerMenuWrapperProps = {

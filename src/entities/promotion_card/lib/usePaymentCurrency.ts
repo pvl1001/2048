@@ -10,10 +10,10 @@ export type UsePaymentCurrency = {
 }
 
 export function usePaymentCurrency() {
-    let paymentCurrency: PaymentCurrency | undefined = useAppSelector(select.promotions._currency);
-    let currencySymbol: CurrencySymbols = useCurrencySymbol();
+    const paymentCurrency: PaymentCurrency | undefined = useAppSelector(select.promotions._currency);
+    const currencySymbol: CurrencySymbols = useCurrencySymbol();
 
-    let currencyName: string = paymentCurrency?.Currency ?? 'USD';
+    const currencyName: string = paymentCurrency?.Currency ?? 'USD';
 
     function getConvertPaymentCurrency(centum: number): string {
         return ((+Mask.hardCurrency(centum) ?? 0) * +(paymentCurrency?.ConversionRate ?? 0)).toFixed(0) + currencySymbol;

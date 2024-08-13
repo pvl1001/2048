@@ -2,7 +2,7 @@ import {defaultAvatar} from "shared/lib/avatarNames";
 import {Profile} from "shared/model/profile";
 
 
-export let mockProfile: Profile = {
+export const mockProfile: Profile = {
     "id": '1634',
     "name": 'Test',
     "money": {

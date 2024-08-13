@@ -1,10 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {NotificationsUtils} from "shared/lib/NotificationsUtils";
-import {NotificationResponse, TNotification} from "../types";
 import {NotificationsAdapter} from "./adapter";
+import {NotificationResponse, TNotification} from "../types";
 
 
-let initialState = {
+const initialState = {
     url: '',
     data: NotificationsUtils.getNotifications() as TNotification[],
     sendMessage: null as any,
@@ -28,7 +28,7 @@ const wsNotificationSlice = createSlice({
             state.status = 'error';
         },
         get(state, action: PayloadAction<NotificationResponse>) {
-            let notification: TNotification = NotificationsAdapter.get(action.payload);
+            const notification: TNotification = NotificationsAdapter.get(action.payload);
             if (!NotificationsUtils.isDouble(notification)) {
                 state.data.unshift(notification);
             }
@@ -45,5 +45,5 @@ const wsNotificationSlice = createSlice({
     },
 });
 
-export let wsNotificationActions = wsNotificationSlice.actions;
-export let wsNotificationReducer = wsNotificationSlice.reducer;
+export const wsNotificationActions = wsNotificationSlice.actions;
+export const wsNotificationReducer = wsNotificationSlice.reducer;

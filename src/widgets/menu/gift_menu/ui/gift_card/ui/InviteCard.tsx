@@ -1,6 +1,6 @@
+import {Link} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {Link} from "react-router-dom";
 import CubeIcon from "shared/assets/icons/happy_cube_dark.png";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {Button} from "shared/ui/button";
@@ -12,9 +12,9 @@ type InviteProps = {
 }
 
 export function InviteCard({onClick}: InviteProps) {
-    let isAuth: boolean = useAppSelector(select.profile._isAuth);
-    let inviteCount: number = useAppSelector(select.profile._inviteRewards);
-    let {maxInvites} = useAppSelector(select.config._designInt);
+    const isAuth: boolean = useAppSelector(select.profile._isAuth);
+    const inviteCount: number = useAppSelector(select.profile._inviteRewards);
+    const {maxInvites} = useAppSelector(select.config._designInt);
 
     return (
         <li className={cn(s._, s._invite)}>

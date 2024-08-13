@@ -1,12 +1,12 @@
-import cn from "classnames";
 import {ChangeEvent, memo, useState} from "react";
+import cn from "classnames";
 import loupeImg from "shared/assets/icons/search-gray.webp";
 import {debounce} from "shared/lib/Debounce";
 import {StringUtils} from "shared/lib/StringUtils";
 import {Input} from "shared/ui/input";
+import s from "./BurgerSearch.module.scss";
 import faq from '../../lib/FAQ';
 import {TFaqItem, TFaqKey} from "../../types";
-import s from "./BurgerSearch.module.scss";
 
 
 export type BurgerSearchProps = {
@@ -17,13 +17,13 @@ export type BurgerSearchProps = {
 }
 
 function BurgerSearch({onSearch, faqKey, className, setValue}: BurgerSearchProps) {
-    let [questions] = useState<TFaqItem[]>(() => faqKey
+    const [questions] = useState<TFaqItem[]>(() => faqKey
         ? faq[faqKey].faq
         : Object.values(faq).map(el => el.faq).flat()
     );
 
     function onSubmit(value: string) {
-        let result: TFaqItem[] = questions.filter(item => item.question.toLowerCase().includes(value.toLowerCase()));
+        const result: TFaqItem[] = questions.filter(item => item.question.toLowerCase().includes(value.toLowerCase()));
         onSearch(result);
     }
 
@@ -33,7 +33,7 @@ function BurgerSearch({onSearch, faqKey, className, setValue}: BurgerSearchProps
                 placeholder={'Search...'}
                 autoComplete={'off'}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                    let value: string = StringUtils.removeSpaces(e.target.value);
+                    const value: string = StringUtils.removeSpaces(e.target.value);
                     debounce(() => onSubmit(value), 300);
                     return setValue(value);
                 }}

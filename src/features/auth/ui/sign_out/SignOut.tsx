@@ -8,7 +8,7 @@ import s from "./SignOut.scss";
 
 
 export function SignOut() {
-    let dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     function onLogout() {
         Cookie.delete('token');

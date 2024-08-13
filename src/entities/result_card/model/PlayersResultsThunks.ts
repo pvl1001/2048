@@ -2,23 +2,23 @@ import {ActionReducerMapBuilder, createAsyncThunk, PayloadAction} from "@reduxjs
 import {MatchState} from "shared/common/MatchState";
 import {StatusRequest} from "shared/common/StatusRequest";
 import getErrorMessage from "shared/lib/GetErrorMessage";
+import {PlayersResultsSlice} from "./PlayersResultsSlice";
 import mock_match_history from "../../../widgets/menu/user_menu/menu_results/lib/mock_match_history";
 import {MatchInfo, TournamentGroup} from "../types";
-import {PlayersResultsSlice} from "./PlayersResultsSlice";
 
 
-export let thunkGetMatchResults = createAsyncThunk<TournamentGroup[]>(
+export const thunkGetMatchResults = createAsyncThunk<TournamentGroup[]>(
     'playersResults/thunkGetMatchResults',
     async (_, {rejectWithValue}) => {
         try {
-            let initialState: TournamentGroup[] = [
+            const initialState: TournamentGroup[] = [
                 {title: 'Current Tournaments', matchInfo: []},
                 {title: 'Completed Tournaments', matchInfo: []},
                 {title: 'Incomplete Tournaments', matchInfo: []},
             ];
 
             // let matchHistoryResponse: MatchInfo[] = await Api.getMatchHistory();
-            let matchHistoryResponse: MatchInfo[] = mock_match_history;
+            const matchHistoryResponse: MatchInfo[] = mock_match_history;
             return matchHistoryResponse.length
                 ? matchHistoryResponse.reduce((acc: TournamentGroup[], el: MatchInfo) => {
                     switch (el.state) {

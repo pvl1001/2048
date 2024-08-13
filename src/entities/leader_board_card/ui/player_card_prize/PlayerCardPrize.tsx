@@ -9,13 +9,13 @@ type PlayerCardPrizeProps = {
 }
 
 function PlayerCardPrize({rewards}: PlayerCardPrizeProps) {
-    let {
+    const {
         ID_SOFT_CURRENCY,
         ID_HARD_CURRENCY,
         ID_BONUS_CURRENCY
     } = rewards;
-    let hardCurrency: number = Mask.hardCurrency((ID_HARD_CURRENCY || 0) + (ID_BONUS_CURRENCY || 0));
-    let softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
+    const hardCurrency: number = Mask.hardCurrency((ID_HARD_CURRENCY || 0) + (ID_BONUS_CURRENCY || 0));
+    const softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
 
     return (
         <div className={s._}>

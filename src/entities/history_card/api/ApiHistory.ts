@@ -11,7 +11,7 @@ export class ApiHistory {
         //         limit: 200
         //     }
         // });
-        let res = mockHistoryResponse;
+        const res = mockHistoryResponse;
         return res.data;
     }
 }

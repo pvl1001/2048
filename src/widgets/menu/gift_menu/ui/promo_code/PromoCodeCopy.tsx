@@ -1,6 +1,6 @@
+import {useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {useState} from "react";
 import {ReactComponent as CheckIcon} from 'shared/assets/icons/check.svg';
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
@@ -8,8 +8,8 @@ import s from "./PromoCode.scss";
 
 
 export function PromoCodeCopy() {
-    let referralCode: string = useAppSelector(select.profile._referralCode);
-    let [isCopied, setIsCopied] = useState(false);
+    const referralCode: string = useAppSelector(select.profile._referralCode);
+    const [isCopied, setIsCopied] = useState(false);
 
     async function copyHandler() {
         await navigator.clipboard.writeText(referralCode);

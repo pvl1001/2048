@@ -1,5 +1,5 @@
-import {Country, TRegisterFieldErrors} from "../types";
 import {LocalErrors} from "./LocalErrors";
+import {Country, TRegisterFieldErrors} from "../types";
 
 
 export enum RegisterFields {
@@ -17,10 +17,10 @@ export const FieldErrors: Partial<TRegisterFieldErrors> = {
     [RegisterFields.FIRST_NAME]: (err: string) => LocalErrors.firstName(err),
     [RegisterFields.LAST_NAME]: (err: string) => LocalErrors.lastName(err),
     [RegisterFields.EMAIL]: (err: string) => LocalErrors.email(err),
-    [RegisterFields.INVITE_CODE]: (err: string) => !!err ? 'Referral code not found' : '',
+    [RegisterFields.INVITE_CODE]: (err: string) => err ? 'Referral code not found' : '',
 };
 
-export let countries: Country[] = [
+export const countries: Country[] = [
     {
         "id": "ATA",
         "codeClass": "CountryConfig",

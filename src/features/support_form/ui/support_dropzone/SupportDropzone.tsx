@@ -1,16 +1,16 @@
-import cn from "classnames";
 import {Dispatch, memo, SetStateAction, useEffect} from "react";
 import {DropzoneState, useDropzone} from "react-dropzone";
+import cn from "classnames";
 import attachIcon from 'shared/assets/icons/attach.png';
 import {TooltipError} from "shared/ui/tooltip_error";
 import {v4 as uuidv4} from 'uuid';
-import {TSupportFile} from "../../types";
 import FileCard from "./file_card/FileCard";
 import s from "./SupportDropzone.scss";
+import {TSupportFile} from "../../types";
 
 
-let mb: number = 10;
-let maxFiles: number = 3;
+const mb: number = 10;
+const maxFiles: number = 3;
 
 export type SupportDropzoneProps = {
     files: TSupportFile[]
@@ -20,7 +20,7 @@ export type SupportDropzoneProps = {
 }
 
 export function SupportDropzone({files, setFiles, errorMessage, setErrorMessage}: SupportDropzoneProps) {
-    let {getRootProps, getInputProps, open, isDragActive}: DropzoneState = useDropzone({
+    const {getRootProps, getInputProps, open, isDragActive}: DropzoneState = useDropzone({
         accept: {
             'image/jpeg': ['.png'],
             'video/*': ['.mov', '.mp4', '.avi', '.wmv'],
@@ -29,7 +29,7 @@ export function SupportDropzone({files, setFiles, errorMessage, setErrorMessage}
         disabled: files.length >= maxFiles,
         onDrop: (acceptedFiles: File[]) => {
             if (acceptedFiles.length) {
-                let supportFiles: TSupportFile[] = checkSizeFiles(acceptedFiles);
+                const supportFiles: TSupportFile[] = checkSizeFiles(acceptedFiles);
 
                 setFiles(prev => {
                     if (supportFiles.length > maxFiles - prev.length) {
@@ -55,7 +55,7 @@ export function SupportDropzone({files, setFiles, errorMessage, setErrorMessage}
     }
 
     function resetError() {
-        let hasErrors: boolean = files.some(f => {
+        const hasErrors: boolean = files.some(f => {
             if (f.error) {
                 setErrorMessage(f.error);
             }
@@ -80,13 +80,13 @@ export function SupportDropzone({files, setFiles, errorMessage, setErrorMessage}
 
             {errorMessage && <TooltipError content={errorMessage} className={s.error}/>}
 
-            {!!files.length
+            {files.length
                 ? <ul className={s.file_list}>
                     {Array(3).fill(undefined).map((_, i) => {
-                            let item = files[i] as TSupportFile | undefined;
+                            const item = files[i] as TSupportFile | undefined;
                             if (item) {
-                                let {file, error, id} = item;
-                                let name = file.name.replace(/^.+\./g, `${i + 1}.`);
+                                const {file, error, id} = item;
+                                const name = file.name.replace(/^.+\./g, `${i + 1}.`);
                                 return <FileCard
                                     key={id}
                                     name={name}

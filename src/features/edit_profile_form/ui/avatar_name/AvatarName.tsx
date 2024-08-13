@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import {forwardRef, InputHTMLAttributes, Ref, useState} from "react";
+import classNames from "classnames";
 import {MenuTitle} from "shared/ui/menu_title";
 import {TooltipError} from "shared/ui/tooltip_error";
 import s from "./AvatarName.scss";
@@ -11,7 +11,7 @@ type AvatarNameProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 function AvatarName({error, generateName, ...inputProps}: AvatarNameProps, ref: Ref<HTMLInputElement>) {
-    let [isFocus, setIsFocus] = useState(false);
+    const [isFocus, setIsFocus] = useState(false);
 
     return (
         <div className={s._}>

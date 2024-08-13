@@ -5,7 +5,7 @@ import s from "./TooltipQuestion.module.scss";
 
 export function TooltipQuestion({className, ...props}: TippyProps) {
 
-    let settings: TippyProps = {
+    const settings: TippyProps = {
         theme: 'light',
         maxWidth: '38.6rem',
         ...props

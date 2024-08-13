@@ -1,6 +1,6 @@
+import {DateUtils} from "./DateUtils";
 import {TNotification, TNotificationPersistent} from "../../entities/notification/types";
 import {StorageItem} from "../common/StorageItem";
-import {DateUtils} from "./DateUtils";
 
 
 /**
@@ -20,8 +20,8 @@ export class NotificationsUtils {
 
     /** Удалить уведомление, если срок создания больше 1 дня */
     private static checkDiffDate(notifications: TNotificationPersistent[]): TNotificationPersistent[] {
-        let filteredNotifications: TNotificationPersistent[] = notifications.filter((n) => {
-            let diff: number = +DateUtils.getDiff({endDate: DateUtils.getDateFromUnix(n.readTime as number)}).format('D');
+        const filteredNotifications: TNotificationPersistent[] = notifications.filter((n) => {
+            const diff: number = +DateUtils.getDiff({endDate: DateUtils.getDateFromUnix(n.readTime as number)}).format('D');
             return diff === 0;
         });
         this.setNotifications(filteredNotifications);
@@ -29,20 +29,20 @@ export class NotificationsUtils {
     }
 
     static getNotifications(): TNotificationPersistent[] {
-        let notifications = JSON.parse(localStorage[StorageItem.NOTIFICATIONS] || null) || [];
+        const notifications = JSON.parse(localStorage[StorageItem.NOTIFICATIONS] || null) || [];
         return this.checkDiffDate(notifications);
     }
 
     static setItem(item: TNotification) {
         if ('id' in item && !this.isDouble(item)) {
-            let notifications: TNotificationPersistent[] = this.getNotifications();
+            const notifications: TNotificationPersistent[] = this.getNotifications();
             item.readTime = DateUtils.now().unix();
             localStorage[StorageItem.NOTIFICATIONS] = JSON.stringify([item, ...notifications]);
         }
     }
 
     static isDouble(notification: TNotification): boolean {
-        let notifications: TNotificationPersistent[] = this.getNotifications();
+        const notifications: TNotificationPersistent[] = this.getNotifications();
         return notifications.some(el => el.id === (notification as TNotificationPersistent).id);
     }
 

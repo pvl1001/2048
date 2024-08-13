@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {PropsWithChildren} from "react";
+import cn from "classnames";
 import {Button, ButtonProps} from "shared/ui/button";
 import {TooltipError} from "shared/ui/tooltip_error";
 import s from "./ButtonWithTooltip.module.scss";

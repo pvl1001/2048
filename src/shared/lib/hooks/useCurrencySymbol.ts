@@ -22,6 +22,6 @@ export enum CurrencySymbols {
 }
 
 export function useCurrencySymbol(): CurrencySymbols {
-    let code = useAppSelector(select.profile._registrationCountryCode) as keyof typeof CurrencySymbols;
+    const code = useAppSelector(select.profile._registrationCountryCode) as keyof typeof CurrencySymbols;
     return CurrencySymbols[code];
 }

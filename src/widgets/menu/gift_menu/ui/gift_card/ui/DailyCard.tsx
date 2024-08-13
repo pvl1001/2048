@@ -6,7 +6,7 @@ import s from "./GiftCard.scss";
 
 
 export function DailyCard() {
-    let giftCount: number = useAppSelector(select.profile._dailyGiftTkn);
+    const giftCount: number = useAppSelector(select.profile._dailyGiftTkn);
 
     return (
         <li className={cn(s._, s._daily)}>
@@ -15,7 +15,7 @@ export function DailyCard() {
                 <p className={s.img__text}>DAILY <br/> GIFT</p>
             </div>
 
-            {!!giftCount
+            {giftCount
                 ? <Claim className={s.button} currency={{formatUniteHard: 100, soft: 25}}/>
                 : <ButtonTimer className={s.button}/>
             }

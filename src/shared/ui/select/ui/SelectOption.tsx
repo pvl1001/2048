@@ -1,7 +1,7 @@
-import cn from "classnames";
 import {InputHTMLAttributes} from "react";
-import {TSelectOption} from "../types";
+import cn from "classnames";
 import s from "./select_option/SelectOption.module.scss";
+import {TSelectOption} from "../types";
 
 
 type SelectOptionProps = InputHTMLAttributes<HTMLInputElement> & {

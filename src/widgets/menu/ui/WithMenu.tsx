@@ -10,8 +10,8 @@ type Props = {
     className?: string
 }
 
-export let withMenu = (WrappedComponent: (props: Props) => JSX.Element | null) => (props: Props) => {
-    let transitionRef = useRef(null);
+export const withMenu = (WrappedComponent: (props: Props) => JSX.Element | null) => (props: Props) => {
+    const transitionRef = useRef(null);
 
     return <CSSTransition
         in={props.isShowMenu}

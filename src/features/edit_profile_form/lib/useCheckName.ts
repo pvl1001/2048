@@ -1,8 +1,8 @@
-import {select, useAppSelector} from "app/store";
 import {useCallback, useEffect, useState} from "react";
+import {select, useAppSelector} from "app/store";
 import {useDebounce} from "shared/lib/hooks";
-import {ApiProfileMenu} from "../api/ApiProfileMenu";
 import {LocalErrors} from "./LocalErrors";
+import {ApiProfileMenu} from "../api/ApiProfileMenu";
 
 
 export type UseCheckName = {
@@ -11,19 +11,19 @@ export type UseCheckName = {
 }
 
 export function useCheckName(name: string): UseCheckName {
-    let debounceName: string = useDebounce(name, 500);
-    let config = useAppSelector(select.config._designInt);
-    let [error, setError] = useState('');
-    let [isPending, setIsPending] = useState(false);
-    let [init, setInit] = useState(false);
+    const debounceName: string = useDebounce(name, 500);
+    const config = useAppSelector(select.config._designInt);
+    const [error, setError] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    const [init, setInit] = useState(false);
 
-    let checkName = useCallback(async () => {
+    const checkName = useCallback(async () => {
         try {
             setIsPending(true);
             await ApiProfileMenu.checkName(name);
             setError('');
         } catch (err) {
-            let error = LocalErrors.nickname(err, {
+            const error = LocalErrors.nickname(err, {
                 min: config.minNicknameLength,
                 max: config.maxNicknameLength,
             });

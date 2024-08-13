@@ -12,7 +12,7 @@ import {ProfileSelectors} from "shared/model/profile";
 import {ModalEventsSelectors} from "shared/ui/modal";
 
 
-export let select = {
+export const select = {
     profile: ProfileSelectors,
     playersResults: PlayersResultsSelectors,
     promotions: PromotionsSelectors,

@@ -4,14 +4,14 @@ import s from './ModalRegistration.scss';
 
 export function ModalRegistration() {
     useContinueRegistration();
-    let {
+    const {
         step,
         nextStep,
         resetSendCodeEmail,
         confirmEmailCodeSubmit,
     }: UseModalRegistration = useModalRegistration();
-    let {resetSendCode, confirmRegistrationPhone}: UseCodeConfirm = useCodeConfirm(nextStep);
-    let {onSubmitRegistration}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
+    const {resetSendCode, confirmRegistrationPhone}: UseCodeConfirm = useCodeConfirm(nextStep);
+    const {onSubmitRegistration}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
     // let {isPending: isPendingValidate}: UseValidateRegion = useValidateRegion();
 
     return (

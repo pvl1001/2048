@@ -1,32 +1,32 @@
+import {useState} from "react";
+import {Navigate, useLocation} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {Offer, TOffers, useOfferTimeLeft} from "entities/offer_card";
 import {OpenModalDeposit} from "features/open_modal_deposit";
-import {useState} from "react";
-import {Navigate, useLocation} from "react-router-dom";
 import {CurrencySymbols, useCurrencySymbol} from "shared/lib/hooks";
 import {Mask} from "shared/lib/Mask";
 import {ProfileCurrency} from "shared/model/profile";
 import {BigModal} from "shared/ui/big_modal";
-import {useOfferShowed} from "../lib/useOfferShowed";
 import s from './OfferModal.scss';
 import {SaleBanner} from "./sale_banner/SaleBanner";
+import {useOfferShowed} from "../lib/useOfferShowed";
 
 
 export function OfferModal() {
-    let location = useLocation();
-    let offers: TOffers = useAppSelector(select.offers._data);
-    let [offer] = useState<Offer>(offers?.[location.pathname as keyof typeof offers]);
+    const location = useLocation();
+    const offers: TOffers = useAppSelector(select.offers._data);
+    const [offer] = useState<Offer>(offers?.[location.pathname as keyof typeof offers]);
     useOfferShowed(offer);
-    let offerTimeLeft = useOfferTimeLeft(offer?.deadlineTs ?? 0);
-    let currencySymbol: CurrencySymbols = useCurrencySymbol();
+    const offerTimeLeft = useOfferTimeLeft(offer?.deadlineTs ?? 0);
+    const currencySymbol: CurrencySymbols = useCurrencySymbol();
 
     if (offerTimeLeft?.isTimeEnd) {
         return <Navigate to={'/'} replace/>;
     }
 
-    let wasPrice: number = offer.price.hard + (offer.price.hard / 100 * offer.discount);
-    let offersLength: number = offers ? Object.values(offers).length : 0;
+    const wasPrice: number = offer.price.hard + (offer.price.hard / 100 * offer.discount);
+    const offersLength: number = offers ? Object.values(offers).length : 0;
 
     return (
         <BigModal

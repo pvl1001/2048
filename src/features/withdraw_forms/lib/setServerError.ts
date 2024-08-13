@@ -1,11 +1,11 @@
 import {FormikProps} from "formik";
 import getErrorMessage from "shared/lib/GetErrorMessage";
-import {TWithdrawValues} from "../types";
 import {Fields} from "./const";
+import {TWithdrawValues} from "../types";
 
 
 export function setServerError(err: unknown, formik?: FormikProps<TWithdrawValues> | null) {
-    let error: string = getErrorMessage(err, 'error');
+    const error: string = getErrorMessage(err, 'error');
     if (error.includes('Invalid document number')) {
         formik?.setFieldError(Fields.DOCUMENT_ID, 'Invalid document number');
     }

@@ -1,5 +1,5 @@
-import {FormikProps} from "formik";
 import {Ref} from "react";
+import {FormikProps} from "formik";
 import {TSelectOption} from "shared/ui/select";
 import {RegisterFields} from "./lib/consts";
 import {RegistrationDataStep3} from "./model/RegistrationSlice";

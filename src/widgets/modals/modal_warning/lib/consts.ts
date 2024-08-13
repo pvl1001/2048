@@ -9,7 +9,7 @@ export enum Warnings {
     REGION = 'region',
 }
 
-export let data: Record<Warnings, {image: string, text: string}> = {
+export const data: Record<Warnings, {image: string, text: string}> = {
     frozen: {image: frozen_cube, text: 'Your account has been frozen, please'},
     unfrozen: {image: happy_cube, text: 'Your funds have been unfrozen, you can continue to withdraw them'},
     region: {image: block_cube, text: 'Registration is not available in your jurisdiction'},

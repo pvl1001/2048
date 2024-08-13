@@ -8,7 +8,7 @@ type CodeTimerProps = {
 }
 
 function CodeTimer({reset}: CodeTimerProps) {
-    let {timer, resetTimer}: UseTimer = useTimer(90);
+    const {timer, resetTimer}: UseTimer = useTimer(90);
 
     async function sendCode() {
         await reset();

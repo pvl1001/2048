@@ -1,12 +1,12 @@
-import cn from "classnames";
 import {ChangeEvent, ComponentProps, useEffect, useState} from "react";
+import cn from "classnames";
 import {ReactComponent as InputArrowIcon} from 'shared/assets/icons/arrow_back.svg';
 import {ScrollContent} from "shared/ui/scroll_content";
 import {TooltipError} from "shared/ui/tooltip_error";
-import useSelect from "../lib/useSelect";
-import {TSelectOption, TUseSelect} from "../types";
 import s from "./Select.module.scss";
 import {SelectOption} from "./SelectOption";
+import useSelect from "../lib/useSelect";
+import {TSelectOption, TUseSelect} from "../types";
 
 
 export type SelectProps = ComponentProps<'input'> & {
@@ -24,14 +24,14 @@ export type SelectProps = ComponentProps<'input'> & {
 }
 
 export function Select({afterChange, onChangeHandler, label, options, setFieldValue, currentOption, toggleFocus, error, withTooltipError, value, withSearch, ...inputProps}: SelectProps) {
-    let [searchValue, setSearchValue] = useState('');
-    let [filteredOptions, setFilteredOptions] = useState<TSelectOption[]>(options);
-    let {arrowRef, inputRef, isVisible, openSelect, closeSelect, setIsVisible}: TUseSelect = useSelect({
+    const [searchValue, setSearchValue] = useState('');
+    const [filteredOptions, setFilteredOptions] = useState<TSelectOption[]>(options);
+    const {arrowRef, inputRef, isVisible, openSelect, closeSelect, setIsVisible}: TUseSelect = useSelect({
         withSearch,
         searchValue,
         clickOut: withSearch ? () => setSearchValueHandler(value.title) : undefined,
     });
-    let [data, setData] = useState<string | number>();
+    const [data, setData] = useState<string | number>();
     
     useEffect(() => {
         data && afterChange?.(data);
@@ -52,12 +52,12 @@ export function Select({afterChange, onChangeHandler, label, options, setFieldVa
     }
 
     function getDefaultTitle(value: string | number): string {
-        let option: TSelectOption | undefined = options.find((el: TSelectOption) => el.value == value);
+        const option: TSelectOption | undefined = options.find((el: TSelectOption) => el.value == value);
         return option?.title ?? '';
     }
 
     function onChangeSearch(e: ChangeEvent<HTMLInputElement>) {
-        let {value} = e.target;
+        const {value} = e.target;
         setSearchValue(value);
         setIsVisible(true);
         setFilteredOptions(options.filter((op: TSelectOption) => {

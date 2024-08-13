@@ -1,8 +1,8 @@
-import cn from "classnames";
 import {ReactElement} from "react";
+import cn from "classnames";
+import s from "./PromotionCard.scss";
 import {getPromotionCardData, PromotionData} from "../lib/getPromotionCardData";
 import {Promotion} from "../types";
-import s from "./PromotionCard.scss";
 
 
 type Props = {
@@ -12,8 +12,8 @@ type Props = {
 }
 
 export function PromotionCard({currency, sku, action}: Props) {
-    let {id}: PromotionData = getPromotionCardData(sku);
-    let {formatBonus, formatHard} = currency;
+    const {id}: PromotionData = getPromotionCardData(sku);
+    const {formatBonus, formatHard} = currency;
 
     return (
         <li className={cn(s._, s[id], {

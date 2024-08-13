@@ -1,13 +1,13 @@
 import {createSlice, Slice} from '@reduxjs/toolkit';
 import {TStatusRequest} from "shared/common/StatusRequest";
-import {GlobalConfig} from "../types";
 import {extraReducers} from "./GlobalConfigThunks";
+import {GlobalConfig} from "../types";
 
 
 export type GlobalConfigSlice = typeof initialState
 export type GlobalConfigDataSlice = typeof initialState.data
 
-let initialState = {
+const initialState = {
     data: {} as GlobalConfig,
     status: '' as TStatusRequest,
     error: '',
@@ -21,4 +21,4 @@ const globalConfigSlice: Slice<GlobalConfigSlice> = createSlice({
 });
 
 export let {} = globalConfigSlice.actions;
-export let globalConfigReducer = globalConfigSlice.reducer;
+export const globalConfigReducer = globalConfigSlice.reducer;

@@ -1,20 +1,20 @@
+import {useEffect, useState} from "react";
+import {CSSTransition} from "react-transition-group";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {Notification, TNotification} from "entities/notification";
-import {useEffect, useState} from "react";
-import {CSSTransition} from "react-transition-group";
 import NotificationsIcon from "shared/assets/icons/button_notifications.svg";
 import {ReactComponent as TippyArrow} from 'shared/assets/icons/tooltip-arrow.svg';
 import NavButton from "shared/ui/nav_button";
-// import useWsNotifications from "../lib/useWsNotifications";
 import s from "./Notifications.scss";
+// import useWsNotifications from "../lib/useWsNotifications";
 
 
 export function Notifications() {
     // useWsNotifications();
-    let [isVisible, setIsVisible] = useState(false);
-    let notifications: TNotification[] = useAppSelector(select.wsNotification._data);
-    let hasActive: boolean = notifications.some((n: TNotification) => !n.isRead);
+    const [isVisible, setIsVisible] = useState(false);
+    const notifications: TNotification[] = useAppSelector(select.wsNotification._data);
+    const hasActive: boolean = notifications.some((n: TNotification) => !n.isRead);
 
     useEffect(() => {
         window.addEventListener('scroll', () => setIsVisible(false), {once: true});

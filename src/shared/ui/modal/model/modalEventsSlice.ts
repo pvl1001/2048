@@ -6,10 +6,10 @@ export type ModalEvent = Partial<Record<RoutePaths, Record<string, any> & {
     order: number
 }>>
 
-let initialState = {} as ModalEvent;
+const initialState = {} as ModalEvent;
 
 // Порядок вызовов окон. Чем ниже по списку, тем приоритетнее окно
-let orders = [
+const orders = [
     RoutePaths.DAILY_REWARDS,
     RoutePaths.LEVEL_PROGRESS,
     RoutePaths.LEVEL_UP,
@@ -20,20 +20,20 @@ let orders = [
     RoutePaths.ERROR,
 ];
 
-let modalEventsSlice = createSlice({
+const modalEventsSlice = createSlice({
     name: 'modalEvents',
     initialState,
     reducers: {
         addEvent(state, action: PayloadAction<{event: ModalEvent, isForward?: boolean}>) {
-            let {isForward, event} = action.payload;
+            const {isForward, event} = action.payload;
 
             if (isForward) { // вызвать окно вне очереди
                 return {...event, ...state};
             }
 
-            let eventKey = Object.keys(event)[0] as keyof ModalEvent;
+            const eventKey = Object.keys(event)[0] as keyof ModalEvent;
             let eventValue = event[eventKey];
-            let order: number = orders.findIndex(el => el === eventKey);
+            const order: number = orders.findIndex(el => el === eventKey);
 
             if (eventValue === null) {
                 eventValue = {order};
@@ -54,5 +54,5 @@ let modalEventsSlice = createSlice({
     },
 });
 
-export let modalEventsActions = modalEventsSlice.actions;
-export let modalEventsReducer = modalEventsSlice.reducer;
+export const modalEventsActions = modalEventsSlice.actions;
+export const modalEventsReducer = modalEventsSlice.reducer;

@@ -10,9 +10,9 @@ type CardYouWonProps = {
 }
 
 export function CardYouWon({rewards}: CardYouWonProps) {
-    let {ID_HARD_CURRENCY, ID_BONUS_CURRENCY, ID_SOFT_CURRENCY} = rewards;
-    let hardCurrency = Mask.hardCurrency((ID_HARD_CURRENCY || 0) + (ID_BONUS_CURRENCY || 0));
-    let softCurrency = Mask.softCurrency(ID_SOFT_CURRENCY || 0);
+    const {ID_HARD_CURRENCY, ID_BONUS_CURRENCY, ID_SOFT_CURRENCY} = rewards;
+    const hardCurrency = Mask.hardCurrency((ID_HARD_CURRENCY || 0) + (ID_BONUS_CURRENCY || 0));
+    const softCurrency = Mask.softCurrency(ID_SOFT_CURRENCY || 0);
 
     return (
         <div className={s._}>

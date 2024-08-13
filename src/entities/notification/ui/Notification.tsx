@@ -2,10 +2,10 @@ import {useAppDispatch} from "app/store";
 import cn from "classnames";
 import {ReactComponent as ArrowIcon} from 'shared/assets/icons/arrow_back.svg';
 import {useGetCurrency, UseGetCurrency} from "shared/lib/hooks";
+import s from "./Notification.scss";
 import {variant} from "../lib/consts";
 import {wsNotificationActions} from "../model/NotificationSlice";
 import {TNotification, TNotificationPersistent} from "../types";
-import s from "./Notification.scss";
 
 
 type NotificationProps = {
@@ -14,14 +14,14 @@ type NotificationProps = {
 }
 
 export function Notification({index, data}: NotificationProps) {
-    let dispatch = useAppDispatch();
-    let {isRead, matchState, rewardId, topic, status}: TNotification = data;
-    let key: string = status || matchState;
-    let variantData = variant[topic]?.[key] ?? {
+    const dispatch = useAppDispatch();
+    const {isRead, matchState, rewardId, topic, status}: TNotification = data;
+    const key: string = status || matchState;
+    const variantData = variant[topic]?.[key] ?? {
         text: `${topic} / ${key}`,
         className: s.cancelled
     };
-    let {getClaim}: UseGetCurrency = useGetCurrency();
+    const {getClaim}: UseGetCurrency = useGetCurrency();
 
     function readNotification() {
         console.log(data);

@@ -1,15 +1,15 @@
-import {Field, Form, Formik, FormikHelpers, FormikProps} from "formik";
 import {ChangeEvent} from "react";
+import {Field, Form, Formik, FormikHelpers, FormikProps} from "formik";
 import {TValidationSchema, useValidationSchema} from "shared/lib/hooks";
 import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select} from "shared/ui/select";
+import s from './RegistrationPhone.scss';
 import FieldSelectOptions from "../../lib/fieldSelectOptions";
 import {UseFormRegistrationPhone, useRegistrationPhone} from "../../lib/hooks/useRegistrationPhone";
 import {RegistrationFormValues} from "../../types";
 import WithHaveAccount from "../with_have_account/WithHaveAccount";
-import s from './RegistrationPhone.scss';
 
 
 type RegistrationPhoneProps = {
@@ -21,8 +21,8 @@ type RegistrationPhoneProps = {
 }
 
 export function RegistrationPhone({nextStep, title, onSubmit, isHaveAccount, isPending}: RegistrationPhoneProps) {
-    let {initialValues, step1IsCheck}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
-    let ValidationSchema: TValidationSchema = useValidationSchema();
+    const {initialValues, step1IsCheck}: UseFormRegistrationPhone = useRegistrationPhone(nextStep);
+    const ValidationSchema: TValidationSchema = useValidationSchema();
 
     function toggleFocus(): void {
         document.getElementsByName('phone')[0].focus();
@@ -37,7 +37,7 @@ export function RegistrationPhone({nextStep, title, onSubmit, isHaveAccount, isP
                 validationSchema={ValidationSchema.registrationPhone}
                 onSubmit={onSubmit}
             >{(formik: FormikProps<RegistrationFormValues>) => {
-                let error: string =
+                const error: string =
                     ((formik.errors.country?.title && !formik.errors.phone && formik.touched.phone)
                     || (formik.errors.phone && formik.touched.phone)
                         ? (formik.errors.country?.title || formik.errors.phone)

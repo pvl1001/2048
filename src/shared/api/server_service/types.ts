@@ -53,7 +53,7 @@ export type ItemChange = {
         "slotId": number
     },
     "target": {
-        "attributes": Object,
+        "attributes": object,
         "count": number
         "id": string
         "linkId": string

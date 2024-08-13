@@ -15,8 +15,8 @@ export type FileCardProps = {
 }
 
 function FileCard({name, size, error, open, removeCard}: FileCardProps) {
-    let mb: number = Math.ceil((size ?? 0) / 1e6 * 10) / 10;
-    let icon: string = error ? fileRedImg : fileBlueImg;
+    const mb: number = Math.ceil((size ?? 0) / 1e6 * 10) / 10;
+    const icon: string = error ? fileRedImg : fileBlueImg;
 
     return (
         <li className={cn(s._, {

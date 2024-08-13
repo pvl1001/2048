@@ -1,6 +1,6 @@
 import React, {ComponentProps, PropsWithChildren} from "react";
-import {TUserTab} from "../../../types";
 import s from "./Tab.module.scss";
+import {TUserTab} from "../../../types";
 
 
 type Props = ComponentProps<'input'> & {

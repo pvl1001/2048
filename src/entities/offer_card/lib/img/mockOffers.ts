@@ -4,7 +4,7 @@ import {OffersResponse} from "../../types";
 
 // console.log(dayjs().add(1, 'm').format());
 
-export let mockOffersResponse: {data: OffersResponse} = {
+export const mockOffersResponse: {data: OffersResponse} = {
     data: {
         "offers": [
             {

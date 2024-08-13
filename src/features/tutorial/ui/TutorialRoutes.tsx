@@ -26,7 +26,7 @@ export function TutorialRoutes() {
         },
     ]);
 
-    let {transitionOutlet} = useTransitionOutlet(routes);
+    const {transitionOutlet} = useTransitionOutlet(routes);
 
     return transitionOutlet;
 }

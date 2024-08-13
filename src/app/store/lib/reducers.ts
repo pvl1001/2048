@@ -12,7 +12,7 @@ import {profileReducer} from "shared/model/profile";
 import {modalEventsReducer} from "shared/ui/modal";
 
 
-export let reducers = {
+export const reducers = {
     profile: profileReducer,
     playersResults: playersResultsReducer,
     promotions: promotionsReducer,

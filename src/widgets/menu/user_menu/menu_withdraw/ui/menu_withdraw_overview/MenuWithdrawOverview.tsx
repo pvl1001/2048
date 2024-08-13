@@ -19,9 +19,9 @@ type MenuWithdrawOverviewProps = {
 }
 
 function MenuWithdrawOverview({hardCurrency, bonusCurrency, amountValue, clickBack, className, formatUniteHard}: MenuWithdrawOverviewProps) {
-    let {navigateModal} = useNavigateModal();
-    let amountCurrency = Mask.hardCurrency(amountValue);
-    let remainingCurrency = Mask.hardCurrency(hardCurrency - amountValue);
+    const {navigateModal} = useNavigateModal();
+    const amountCurrency = Mask.hardCurrency(amountValue);
+    const remainingCurrency = Mask.hardCurrency(hardCurrency - amountValue);
 
     function openModal() {
         navigateModal(RoutePaths.WITHDRAW, {amount: {"ID_HARD_CURRENCY": amountValue}});

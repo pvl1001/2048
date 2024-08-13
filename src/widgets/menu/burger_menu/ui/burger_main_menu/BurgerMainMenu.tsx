@@ -15,8 +15,8 @@ type BurgerMainMenuProps = {
 }
 
 export function BurgerMainMenu({showHelpMenu, ...props}: BurgerMainMenuProps) {
-    let {navigateModal} = useNavigateModal();
-    let isAuth: boolean = useAppSelector(select.profile._isAuth);
+    const {navigateModal} = useNavigateModal();
+    const isAuth: boolean = useAppSelector(select.profile._isAuth);
 
     return (
         <BurgerMenuWrapper {...props}>

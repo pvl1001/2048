@@ -1,7 +1,7 @@
+import {useLocation} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import {RegistrationFormStep3} from "features/auth";
 import {Fields, TValidationCountryParam, TValidationRegexParam, TWithdrawBankValues, TWithdrawValues, validationParams} from "features/withdraw_forms";
-import {useLocation} from "react-router-dom";
 import {TWithdrawFormConfig} from "shared/api/adapters";
 import {addMethod, object, ObjectSchema, string, TestContext} from "yup";
 import {DateUtils} from "../DateUtils";
@@ -24,11 +24,11 @@ addMethod(string, 'email', function () {
 });
 
 export function useValidationSchema(): TValidationSchema {
-    let location = useLocation();
-    let {ageRestriction} = useAppSelector(select.config._region);
-    let config = useAppSelector(select.config._designInt);
+    const location = useLocation();
+    const {ageRestriction} = useAppSelector(select.config._region);
+    const config = useAppSelector(select.config._designInt);
 
-    let email = string()
+    const email = string()
         .email()
         .required('email required')
         .max(config.maxEmailLength, `Max length ${config.maxEmailLength}`);
@@ -41,11 +41,11 @@ export function useValidationSchema(): TValidationSchema {
             }),
         }),
         withdrawForm: (currentForm: TWithdrawFormConfig, documentValidate: TValidationRegexParam) => {
-            let {CountryCode} = currentForm;
-            let localBankCode = location.state.bankCode as number;
-            let validationParam = validationParams[CountryCode as keyof typeof validationParams] as TValidationCountryParam;
-            let accountParam: TValidationRegexParam = validationParam.account[localBankCode] ?? validationParam.account.other;
-            let map = new Map();
+            const {CountryCode} = currentForm;
+            const localBankCode = location.state.bankCode as number;
+            const validationParam = validationParams[CountryCode as keyof typeof validationParams] as TValidationCountryParam;
+            const accountParam: TValidationRegexParam = validationParam.account[localBankCode] ?? validationParam.account.other;
+            const map = new Map();
 
             if (currentForm?.FormFields.includes(Fields.BANK_ACCOUNT_NUMBER)) map.set(Fields.BANK_ACCOUNT_NUMBER, string()
                 .matches(accountParam.regex, accountParam.error)
@@ -64,8 +64,8 @@ export function useValidationSchema(): TValidationSchema {
                 .required('Required'));
 
             if (validationParam.branch) {
-                let branchParam = validationParam.branch[localBankCode] ?? validationParam.branch.other;
-                let testBranch = (val?: string, context?: TestContext) => {
+                const branchParam = validationParam.branch[localBankCode] ?? validationParam.branch.other;
+                const testBranch = (val?: string, context?: TestContext) => {
                     if (val && branchParam && branchParam.regex.test(val)) {
                         if (branchParam.exception?.regex.test(val)) {
                             return context?.createError({message: branchParam.exception.error});
@@ -129,7 +129,7 @@ export function useValidationSchema(): TValidationSchema {
             birthYear: object().shape({
                 value: string().test('birthYear', `Min ${ageRestriction} year`, (year?: string) => {
                     if (!year) return;
-                    let yearNow: number = DateUtils.getYearNow();
+                    const yearNow: number = DateUtils.getYearNow();
                     return +year <= yearNow - ageRestriction;
                 }).required('Year of birth required'),
             }),

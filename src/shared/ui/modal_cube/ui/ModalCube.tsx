@@ -1,5 +1,5 @@
-import cn from "classnames";
 import {PropsWithChildren} from "react";
+import cn from "classnames";
 import cubeImg from "shared/assets/images/cube/cube_register-now.webp";
 import {ModalWrapper} from "shared/ui/modal";
 import s from "./ModalCube.scss";

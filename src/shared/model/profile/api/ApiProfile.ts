@@ -2,14 +2,14 @@ import {AxiosResponse} from "axios";
 import {requestAuth} from "shared/api/Request";
 import {BuyStore} from "shared/common/BuyStore";
 import {mockProfile} from "shared/model/profile/lib/mockProfile";
-import {ChangeNameResponse, CreateProfileResponse, Profile, ProfileResponse, ProfileServerResponse} from "../types";
 import {ProfileAdapter} from "./adapter";
+import {ChangeNameResponse, CreateProfileResponse, Profile, ProfileResponse, ProfileServerResponse} from "../types";
 
 
 export class ApiProfile {
     /** Изменить имя профиля */
     static async changeName(nickname: string): Promise<ChangeNameResponse> {
-        let res: AxiosResponse<ChangeNameResponse> = await requestAuth.post('profile/change_nickname', {nickname});
+        const res: AxiosResponse<ChangeNameResponse> = await requestAuth.post('profile/change_nickname', {nickname});
         return res.data;
     }
 
@@ -22,13 +22,13 @@ export class ApiProfile {
 
     /** Изменить данные профиля */
     static async setAttrProfile(attrs: Record<string, any>): Promise<Profile> {
-        let res: AxiosResponse<{profile: ProfileResponse}> = await requestAuth.post('profile/set_attributes', {attrs});
+        const res: AxiosResponse<{profile: ProfileResponse}> = await requestAuth.post('profile/set_attributes', {attrs});
         return ProfileAdapter.getProfile(res.data.profile);
     }
 
     /** Получить валюту */
     static async buyItem(buyStoreItem: BuyStore | string): Promise<ProfileServerResponse> {
-        let res: AxiosResponse<ProfileServerResponse> = await requestAuth.post('items/buy_item', {
+        const res: AxiosResponse<ProfileServerResponse> = await requestAuth.post('items/buy_item', {
             positionId: buyStoreItem
         });
         return res.data;
@@ -36,7 +36,7 @@ export class ApiProfile {
 
     /** Получить награду за уровень */
     static async getLevelClaim(): Promise<ProfileServerResponse> {
-        let res: AxiosResponse<ProfileServerResponse> = await requestAuth.post('deal/claim_level_rewards', {});
+        const res: AxiosResponse<ProfileServerResponse> = await requestAuth.post('deal/claim_level_rewards', {});
         return res.data;
     }
 
