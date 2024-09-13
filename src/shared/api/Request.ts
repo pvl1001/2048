@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 
 
 const instanceConfig: AxiosRequestConfig = {
-    baseURL: import.meta.env.BASE_URL,
+    baseURL: import.meta.env.VITE_BASEPATH,
     transformResponse: (res: string) => {
         if (!res) return res;
         const data = JSON.parse(res);

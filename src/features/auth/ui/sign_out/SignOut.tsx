@@ -12,7 +12,7 @@ export function SignOut() {
 
     function onLogout() {
         Cookie.delete('token');
-        open(import.meta.env.BASE_URL, '_self');
+        open(import.meta.env.VITE_BASEPATH, '_self');
         dispatch(wsNotificationActions.close());
         TutorialUtils.clearTutorialStorage();
         NotificationsUtils.clearStorage();

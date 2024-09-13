@@ -161,5 +161,5 @@ export const router = createBrowserRouter([
         ]
     }
 ], {
-    basename: import.meta.env.BASEPATH
+    basename: import.meta.env.VITE_BASEPATH
 });
