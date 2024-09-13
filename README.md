@@ -36,6 +36,6 @@ Merge Cube 2048 — это захватывающая игра-головоло�
 - Redux (RTK)
 - WebSocket
 - CSS modules (SCSS)
-- Webpack
+- Vite
 - Архитектура FSD
 - CI/CD
