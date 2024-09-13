@@ -25,6 +25,7 @@ export function ModalHowToPlay() {
         onSlideChange: (swiper) => setSlideIndex(swiper.activeIndex),
     };
 
+    // eslint-disable-next-line
     const setIsLoadingEnded = (isCurrentSlide: boolean) => useCallback(() => {
         setIsLoading(prev => {
             const arr = [...prev];

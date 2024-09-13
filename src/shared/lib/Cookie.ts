@@ -3,7 +3,7 @@ export class Cookie {
         props = {
             path: '/',
             ...props
-        } || {};
+        };
 
         let exp = props.expires;
         if (typeof exp == 'number' && exp) {

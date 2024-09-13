@@ -1,8 +1,8 @@
-import {useState} from "react";
-import {Navigate, useLocation} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {CreateDepositPayin} from "features/create_deposit_payin";
+import {useState} from "react";
+import {Navigate, useLocation} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {ProfileCurrency} from "shared/model/profile";
 import {Checkbox} from "shared/ui/checkbox";
@@ -14,16 +14,16 @@ export function ModalDepositInfo() {
     const location = useLocation();
     const currentEvent = useAppSelector(select.modalEvents._getCurrentEvent(location.pathname as RoutePaths));
     const [deposit] = useState(currentEvent);
+    const [isCheck, setIsCheck] = useState(false);
+    const links = useAppSelector(select.config._links);
+    const profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
 
     if (!deposit) {
         return <Navigate to={'/'}/>;
     }
 
     const {hardCurrency, bonusCurrency, sku} = deposit;
-    const links = useAppSelector(select.config._links);
-    const profileCurrency: ProfileCurrency = useAppSelector(select.profile._currency);
     const totalCurrency: string = (profileCurrency.formatUniteHard + hardCurrency + (bonusCurrency ?? 0)).toFixed(1);
-    const [isCheck, setIsCheck] = useState(false);
 
     return (
         <div className={s._}>

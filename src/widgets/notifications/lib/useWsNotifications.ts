@@ -1,6 +1,6 @@
-import {useEffect} from "react";
 import {select, useAppDispatch, useAppSelector} from "app/store";
 import {wsNotificationActions} from "entities/notification";
+import {useEffect} from "react";
 import {Cookie} from "shared/lib/Cookie";
 
 
@@ -19,7 +19,7 @@ function useWsNotifications() {
         // return () => {
         //     dispatch(wsActions.close());
         // };
-    }, [token]);
+    }, [token, dispatch, status]);
 }
 
 export default useWsNotifications;
