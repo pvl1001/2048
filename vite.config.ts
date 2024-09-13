@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: './',
     plugins: [
         react(),
         svgr(),
@@ -48,15 +49,15 @@ export default defineConfig({
                 chunkFileNames: 'assets/js/[name]-[hash].js',
                 entryFileNames: 'assets/js/[name]-[hash].js',
                 assetFileNames: ({name}) => {
-                    if (/\.woff2?$/.test(name ?? '')){
+                    if (/\.woff2?$/.test(name ?? '')) {
                         return 'assets/fonts/[name]-[hash][extname]';
                     }
 
-                    if (/\.(gif|jpe?g|png|svg|webp)$/.test(name ?? '')){
+                    if (/\.(gif|jpe?g|png|svg|webp)$/.test(name ?? '')) {
                         return 'assets/img/[name]-[hash][extname]';
                     }
 
-                    if (/\.webm$/.test(name ?? '')){
+                    if (/\.webm$/.test(name ?? '')) {
                         return 'assets/video/[name]-[hash][extname]';
                     }
 
