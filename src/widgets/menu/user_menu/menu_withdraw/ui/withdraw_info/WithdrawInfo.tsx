@@ -1,6 +1,6 @@
 import {select, useAppSelector} from "app/store";
 import InfoIcon from 'shared/assets/icons/info.png';
-import s from "./WithdrawInfo.scss";
+import s from "./WithdrawInfo.module.scss";
 
 
 function WithdrawInfo() {

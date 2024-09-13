@@ -5,7 +5,7 @@ import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select} from "shared/ui/select";
-import s from './RegistrationPhone.scss';
+import s from './RegistrationPhone.module.scss';
 import FieldSelectOptions from "../../lib/fieldSelectOptions";
 import {UseFormRegistrationPhone, useRegistrationPhone} from "../../lib/hooks/useRegistrationPhone";
 import {RegistrationFormValues} from "../../types";

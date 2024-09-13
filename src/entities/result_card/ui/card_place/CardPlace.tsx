@@ -1,7 +1,7 @@
 import {ReactNode} from "react";
 import classNames from "classnames";
 import {Place} from "shared/api/server_service";
-import s from "./CardPlace.scss";
+import s from "./CardPlace.module.scss";
 
 
 type CardPlaceProps = {

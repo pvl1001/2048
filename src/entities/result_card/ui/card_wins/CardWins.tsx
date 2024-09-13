@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import peopleIcon from 'shared/assets/icons/people.png';
 import {MatchState} from "shared/common/MatchState";
-import s from "./CardWins.scss";
+import s from "./CardWins.module.scss";
 import MatchDate from "./match_date/MatchDate";
 
 

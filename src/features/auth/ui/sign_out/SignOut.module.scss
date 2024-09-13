@@ -1,0 +1,21 @@
+._ {
+  @include hover-button;
+  & {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-default);
+    font-size: 2.4rem;
+    width: fit-content;
+    margin: 0 auto 3.5rem;
+  }
+
+  span {
+    opacity: 0.5;
+  }
+
+  img {
+    height: 2.7rem;
+    width: 2.8rem;
+  }
+}

@@ -4,7 +4,7 @@ import {CardPlace} from "./card_place/CardPlace";
 import {CardState} from "./card_state/CardState";
 import {CardWins} from "./card_wins/CardWins";
 import {CardYouWon} from "./card_you_won/CardYouWon";
-import s from "./ResultCard.scss";
+import s from "./ResultCard.module.scss";
 import {MatchInfo, PlayerResult} from "../types";
 
 

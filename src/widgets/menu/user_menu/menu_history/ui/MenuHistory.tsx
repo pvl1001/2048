@@ -1,7 +1,7 @@
 import {forwardRef, Ref} from "react";
 import {HistoryCard, Transaction} from "entities/history_card";
 import {ScrollContent} from "shared/ui/scroll_content";
-import s from './MenuHistory.scss';
+import s from './MenuHistory.module.scss';
 import {useTransactions} from "../lib/useTransactions";
 
 

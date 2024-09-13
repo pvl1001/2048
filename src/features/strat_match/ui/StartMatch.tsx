@@ -2,7 +2,7 @@ import arrowImg from "shared/assets/icons/arrow.svg";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal} from "shared/lib/hooks";
 import {TutorialUtils} from "shared/lib/TutorialUtils";
-import s from "./StartMatch.scss";
+import s from "./StartMatch.module.scss";
 
 
 export function StartMatch() {

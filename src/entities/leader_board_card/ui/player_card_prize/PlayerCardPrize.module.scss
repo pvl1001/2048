@@ -1,9 +1,9 @@
-@import "app/styles/mixins.scss";
-
 ._ {
-  width: 12rem;
   @include card-block-line;
-  padding: 2.1rem 1rem 1.2rem;
+  & {
+    width: 12rem;
+    padding: 2.1rem 1rem 1.2rem;
+  }
 
 
   .block_currency {

@@ -13,7 +13,7 @@ function useWsNotifications() {
         if (token) {
             status === 'open' && dispatch(wsNotificationActions.close());
             setTimeout(() => {
-                dispatch(wsNotificationActions.connect(process.env.WS_URL));
+                dispatch(wsNotificationActions.connect(import.meta.env.WS_URL));
             }, 300);
         }
         // return () => {

@@ -2,8 +2,8 @@ import cn from "classnames";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {UseNavigateModal, useNavigateModal} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
-import s from "./ModalWarning.scss";
 import {data, Warnings} from "../lib/consts";
+import s from "./ModalWarning.module.scss";
 
 
 type ModalWarningProps = {

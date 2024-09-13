@@ -4,7 +4,7 @@ import {Dayjs} from "dayjs";
 import clockIcon from "shared/assets/icons/clock.svg";
 import {MatchState} from "shared/common/MatchState";
 import {DateUtils} from "shared/lib/DateUtils";
-import s from "./MatchDate.scss";
+import s from "./MatchDate.module.scss";
 
 
 type MatchDateProps = {

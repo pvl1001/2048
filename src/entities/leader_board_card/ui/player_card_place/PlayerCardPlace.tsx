@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import {Place} from "shared/api/server_service";
-import s from "./PlayerCardPlace.scss";
+import s from "./PlayerCardPlace.module.scss";
 
 
 type PlayerCardPlaceProps = {

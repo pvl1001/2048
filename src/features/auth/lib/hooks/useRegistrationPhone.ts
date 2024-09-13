@@ -44,7 +44,7 @@ export function useRegistrationPhone(nextStep: () => void): UseFormRegistrationP
         dispatch(registrationActions.setIsCheck());
         try {
             setIsPending(true);
-            const fullNumberPhone: string = values.country.code + values.phone;
+            // const fullNumberPhone: string = values.country.code + values.phone;
             // await Api.registerPhone(fullNumberPhone);
             nextStep();
         } catch (err) {

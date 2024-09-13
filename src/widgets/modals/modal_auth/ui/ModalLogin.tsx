@@ -8,7 +8,7 @@ export function ModalLogin() {
 
     return (
         <>
-            {/*{process.env.NODE_ENV === 'development' &&*/}
+            {/*{import.meta.env.NODE_ENV === 'development' &&*/}
             {/*    <DevelopDescription>*/}
             {/*        <p>Для теста использовать код подтверждения '111111'</p>*/}
             {/*    </DevelopDescription>}*/}

@@ -69,7 +69,7 @@ export const socketMiddleware = (): Middleware => {
                     dispatch(wsClose(type));
                     if (code !== 1000) {
                         setTimeout(() => {
-                            dispatch(wsConnection(process.env.WS_URL as string));
+                            dispatch(wsConnection(import.meta.env.WS_URL as string));
                         }, 300);
                     }
                 };

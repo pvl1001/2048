@@ -1,8 +1,8 @@
 import {InputHTMLAttributes} from "react";
-import {ReactComponent as CheckIcon} from 'shared/assets/icons/check.svg';
+import CheckIcon from 'shared/assets/icons/check.svg?react';
 import {avatars} from "shared/assets/images/avatars";
 import {TAvatarName} from "shared/model/profile";
-import s from "./AvatarCard.scss";
+import s from "./AvatarCard.module.scss";
 
 
 function AvatarCard(props: InputHTMLAttributes<HTMLInputElement>) {

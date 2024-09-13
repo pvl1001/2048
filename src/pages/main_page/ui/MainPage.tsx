@@ -8,6 +8,7 @@ import {Promotions} from "widgets/promotions";
 import {Tournaments} from "widgets/tournaments";
 import s from "./MainPage.module.scss";
 
+// const Footer = lazy(() => import('shared/ui/footer').then(({Footer}) => ({default: Footer})));
 
 export function MainPage() {
     const currentOutlet = useOutlet();
@@ -16,6 +17,7 @@ export function MainPage() {
 
     return (
         <div className={s.mainScreen}>
+            <h1>{import.meta.env.TEST}</h1>
             <Header setIsShowUpButton={setIsShowUpButton}/>
             <main className={'wrapper'}>
                 <Tournaments/>
@@ -23,6 +25,10 @@ export function MainPage() {
             <Promotions/>
             <div className="flex-grow"/>
             <Footer/>
+
+            {/*<Suspense fallback={<h1>Loading...</h1>}>*/}
+            {/*    <Footer/>*/}
+            {/*</Suspense>*/}
             <UpButton isShow={isShowUpButton}/>
 
             {transitionOutlet}

@@ -1,6 +1,6 @@
 import {ComponentProps} from "react";
 import cn from "classnames";
-import s from './Tournaments.scss';
+import s from './Tournaments.module.scss';
 
 
 export function SliderArrow({className, ...props}: ComponentProps<'button'>) {

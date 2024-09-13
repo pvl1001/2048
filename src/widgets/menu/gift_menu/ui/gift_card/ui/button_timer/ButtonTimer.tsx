@@ -1,9 +1,9 @@
 import cn from "classnames";
-import {ReactComponent as ClockIcon} from 'shared/assets/icons/clock.svg';
+import ClockIcon from 'shared/assets/icons/clock.svg?react';
 import {useTimer} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
-import s from "./ButtonTimer.module.scss";
 import useButtonTimer from "../../lib/useButtonTimer";
+import s from "./ButtonTimer.module.scss";
 
 
 type ButtonTimerProps = {

@@ -1,6 +1,6 @@
-import {ComponentProps} from "react";
 import cn from "classnames";
-import {ReactComponent as CloseIcon} from 'shared/assets/icons/close.svg';
+import {ComponentProps} from "react";
+import CloseIcon from 'shared/assets/icons/close.svg?react';
 import s from 'shared/ui/close_button/ui/CloseButton.module.scss';
 
 

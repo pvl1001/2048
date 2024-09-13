@@ -1,7 +1,7 @@
 import {InputHTMLAttributes, useState} from "react";
 import cn from "classnames";
 import {TooltipError} from "shared/ui/tooltip_error";
-import s from "./Input.scss";
+import s from "./Input.module.scss";
 
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {

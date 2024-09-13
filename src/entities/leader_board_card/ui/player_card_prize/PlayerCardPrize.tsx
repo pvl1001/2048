@@ -1,7 +1,7 @@
 import {CurrencyId} from "shared/api/server_service";
 import {Mask} from "shared/lib/Mask";
 import {Currency} from "shared/ui/currency";
-import s from "./PlayerCardPrize.scss";
+import s from "./PlayerCardPrize.module.scss";
 
 
 type PlayerCardPrizeProps = {

@@ -1,5 +1,5 @@
 import cn from "classnames";
-import s from "./MenuOverlay.scss";
+import s from "./MenuOverlay.module.scss";
 
 
 function MenuOverlay() {

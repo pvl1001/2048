@@ -1,12 +1,12 @@
-import {ChangeEvent, useState} from "react";
 import {Field, Form, Formik} from "formik";
+import {ChangeEvent, useState} from "react";
 import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {ButtonWithTooltip} from "shared/ui/button_with_tooltip";
-import s from './WithdrawAmountForm.scss';
 import {UseProcessPayout, useProcessPayout} from "../../lib/useProcessPayout";
 import {regex, withDollar} from "../../lib/WithdrawAmountUtils";
-import {WithdrawAmountForm} from "../../types";
+import {TWithdrawAmountForm} from "../../types";
+import s from './WithdrawAmountForm.module.scss';
 
 
 type WithdrawAmountProps = {
@@ -38,7 +38,7 @@ export function WithdrawAmountForm({setAmountValue, amountCurrency, setIsSubmit,
         setAmountValue(value);
     }
 
-    async function onSubmit({amountValue}: WithdrawAmountForm) {
+    async function onSubmit({amountValue}: TWithdrawAmountForm) {
         if (amountValue === '0$') {
             return validate(amountValue);
         }
@@ -47,7 +47,7 @@ export function WithdrawAmountForm({setAmountValue, amountCurrency, setIsSubmit,
     }
 
     return (
-        <Formik<WithdrawAmountForm>
+        <Formik<TWithdrawAmountForm>
             initialValues={{amountValue: '0$'}}
             onSubmit={onSubmit}
         >

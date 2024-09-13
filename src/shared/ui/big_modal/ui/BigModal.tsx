@@ -1,11 +1,11 @@
-import React, {PropsWithChildren, ReactNode} from "react";
 import cn from "classnames";
+import React, {PropsWithChildren, ReactNode} from "react";
 import {useNavigateModal} from "shared/lib/hooks";
 import {CloseButton} from "shared/ui/close_button";
 import {ModalWrapper} from "shared/ui/modal";
 import {Time} from "shared/ui/time";
-import s from "./BigModal.scss";
 import {BigModalTitles} from "../lib/const";
+import s from "./BigModal.module.scss";
 
 
 type Props = {

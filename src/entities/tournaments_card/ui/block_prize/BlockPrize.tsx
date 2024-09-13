@@ -1,7 +1,7 @@
 import cn from "classnames";
 import {Mask} from "shared/lib/Mask";
 import {Reward} from "../../types";
-import s from "../TournamentsCard.scss";
+import s from "../TournamentsCard.module.scss";
 
 
 type BlockPrizeProps = {

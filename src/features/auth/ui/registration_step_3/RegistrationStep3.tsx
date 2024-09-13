@@ -6,7 +6,7 @@ import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select, TSelectOption} from "shared/ui/select";
-import s from "./RegistrationStep3.scss";
+import s from "./RegistrationStep3.module.scss";
 import {RegisterFields} from "../../lib/consts";
 import FieldSelectOptions from "../../lib/fieldSelectOptions";
 import useRegistrationStep3 from "../../lib/hooks/useRegistrationStep3";

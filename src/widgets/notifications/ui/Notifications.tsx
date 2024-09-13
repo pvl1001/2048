@@ -1,14 +1,14 @@
-import {useEffect, useState} from "react";
-import {CSSTransition} from "react-transition-group";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {Notification, TNotification} from "entities/notification";
+import {useEffect, useState} from "react";
+import {CSSTransition} from "react-transition-group";
 import NotificationsIcon from "shared/assets/icons/button_notifications.svg";
-import {ReactComponent as TippyArrow} from 'shared/assets/icons/tooltip-arrow.svg';
+import TippyArrow from 'shared/assets/icons/tooltip-arrow.svg?react';
 import NavButton from "shared/ui/nav_button";
-import s from "./Notifications.scss";
-// import useWsNotifications from "../lib/useWsNotifications";
+import s from "./Notifications.module.scss";
 
+// import useWsNotifications from "../lib/useWsNotifications";
 
 export function Notifications() {
     // useWsNotifications();

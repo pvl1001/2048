@@ -1,7 +1,7 @@
 import {Promotion, PromotionCard, usePromotions, UsePromotions} from "entities/promotion_card";
 import {OpenModalDeposit} from "features/open_modal_deposit";
 import CoinSrc from 'shared/assets/icons/coin.png';
-import s from "./Promotions.scss";
+import s from "./Promotions.module.scss";
 
 
 export function Promotions() {

@@ -7,7 +7,7 @@ import {Errors} from "shared/common/Errors";
 import {UseGetCurrency, useGetCurrency} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
-import s from "./PromoCode.scss";
+import s from "./PromoCode.module.scss";
 import {PromoCodeForm} from "./types";
 
 

@@ -1,5 +1,5 @@
 import {CodeConfirm, RegistrationPhone, RegistrationStep3, useCodeConfirm, UseCodeConfirm, useContinueRegistration, UseFormRegistrationPhone, useModalRegistration, UseModalRegistration, useRegistrationPhone} from "features/auth";
-import s from './ModalRegistration.scss';
+import s from './ModalRegistration.module.scss';
 
 
 export function ModalRegistration() {
@@ -16,7 +16,7 @@ export function ModalRegistration() {
 
     return (
         <div className={s._}>
-            {/*{process.env.NODE_ENV === 'development' &&*/}
+            {/*{import.meta.env.NODE_ENV === 'development' &&*/}
             {/*    <DevelopDescription>*/}
             {/*        <p>1 шаг регистрации - Для теста использовать номер, начинающийся с '+70'</p>*/}
             {/*        <p>2 шаг регистрации - Для теста использовать код подтверждения '111111'</p>*/}

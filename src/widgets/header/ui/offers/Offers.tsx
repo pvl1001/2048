@@ -1,8 +1,8 @@
 import cn from "classnames";
 import {Offer, OfferCard, TOffers} from "entities/offer_card";
 import {RoutePaths} from "shared/common/RoutePaths";
-import s from "./Offers.scss";
 import {useOffers, UseOffers} from "../../lib/useOffers";
+import s from "./Offers.module.scss";
 
 
 type Props = {

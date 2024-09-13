@@ -5,7 +5,7 @@ import {Time} from "shared/ui/time";
 import {BlockPrize} from "./block_prize/BlockPrize";
 import BlockWins from "./block_wins/BlockWins";
 import {BonusFlag} from "./bonus_flag/BonusFlag";
-import s from "./TournamentsCard.scss";
+import s from "./TournamentsCard.module.scss";
 import {Tournament} from "../types";
 
 

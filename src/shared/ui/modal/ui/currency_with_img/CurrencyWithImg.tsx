@@ -6,7 +6,7 @@ import StarXpImg from 'shared/assets/icons/star_xp.png';
 import DollarsAndCoinsImg from 'shared/assets/images/promotions/rookie.png';
 import {ProfileCurrency} from "shared/model/profile";
 import {CurrencyWrapper} from "shared/ui/modal";
-import s from "./CurrencyWithImg.scss";
+import s from "./CurrencyWithImg.module.scss";
 
 
 type ImgProps = Partial<Record<keyof ProfileCurrency | 'hard_and_soft', {

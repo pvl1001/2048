@@ -55,4 +55,4 @@ export type TWithdrawPayloadForm = {
     amount: Partial<CurrencyId>
 }
 
-export type WithdrawAmountForm = Record<'amountValue', string>
+export type TWithdrawAmountForm = Record<'amountValue', string>

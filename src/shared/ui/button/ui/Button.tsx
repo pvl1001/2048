@@ -1,7 +1,7 @@
 import {ComponentProps, PropsWithChildren} from "react";
 import classNames from "classnames";
-import s from "./Button.scss";
-import {Loader} from "../../loader/ui/Loader";
+import s from "./Button.module.scss";
+import {Loader} from "shared/ui/loader";
 
 
 export type ButtonProps = ComponentProps<'button'> & {

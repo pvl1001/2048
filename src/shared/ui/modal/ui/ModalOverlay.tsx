@@ -1,6 +1,6 @@
 import {FC} from "react";
 import cn from "classnames";
-import s from "./Modal.scss";
+import s from "./Modal.module.scss";
 import {useOverlay} from "../lib/useOverlay";
 
 

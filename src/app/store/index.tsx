@@ -11,11 +11,11 @@ export const store = configureStore({
         getDefaultMiddleware().concat(
             socketMiddleware(),
         ),
-    devTools: process.env.NODE_ENV === 'development',
+    devTools: import.meta.env.NODE_ENV === 'development',
 });
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
-export {RootState} from 'app/store/types';
+export type {RootState} from 'app/store/types';
 export {select} from './lib/selectors';

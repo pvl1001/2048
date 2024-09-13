@@ -6,7 +6,7 @@ import {ModalCube} from "shared/ui/modal_cube";
 import {ModalWelcome} from "widgets/modals";
 import {TutorialGift} from "./gift/TutorialGift";
 import {TutorialTournament} from "./tournament/TutorialTournament";
-import s from './Tutorial.scss';
+import s from './Tutorial.module.scss';
 
 
 export function TutorialRoutes() {

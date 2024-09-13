@@ -44,22 +44,24 @@
 
 .plus {
   @include hover-button;
-  position: relative;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  margin-left: auto;
 
-  color: #FFF;
-  font-size: 2.2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  & {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-left: auto;
+    color: #FFF;
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-  text-shadow: 0 .2rem .2rem #06805C;
-  background: linear-gradient(180deg, #00DE9D 0%, #03D094 100%);
+    text-shadow: 0 .2rem .2rem #06805C;
+    background: linear-gradient(180deg, #00DE9D 0%, #03D094 100%);
+  }
 
   span {
     margin-top: -.4rem;

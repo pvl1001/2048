@@ -1,10 +1,10 @@
-import {useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {ReactComponent as CheckIcon} from 'shared/assets/icons/check.svg';
+import {useState} from "react";
+import CheckIcon from 'shared/assets/icons/check.svg?react';
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
-import s from "./PromoCode.scss";
+import s from "./PromoCode.module.scss";
 
 
 export function PromoCodeCopy() {

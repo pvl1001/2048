@@ -2,10 +2,10 @@ import {ChangeEvent} from "react";
 import {avatarNames} from "shared/lib/avatarNames";
 import {TAvatarName} from "shared/model/profile";
 import {Button} from "shared/ui/button";
+import useMenuProfile, {UseMenuProfile} from "../lib/useMenuProfile";
 import AvatarCard from "./avatar_card/AvatarCard";
 import AvatarName from "./avatar_name/AvatarName";
-import s from "./EditProfileForm.scss";
-import useMenuProfile, {UseMenuProfile} from "../lib/useMenuProfile";
+import s from "./EditProfileForm.module.scss";
 
 
 type Props = {

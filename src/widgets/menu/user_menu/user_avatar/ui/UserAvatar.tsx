@@ -2,7 +2,7 @@ import {select, useAppSelector} from "app/store";
 import {avatars} from "shared/assets/images/avatars";
 import {TAvatarName} from "shared/model/profile";
 import AvatarButton from "./avatar_button/AvatarButton";
-import s from "./UserAvatar.scss";
+import s from "./UserAvatar.module.scss";
 
 
 type UserAvatarProps = {

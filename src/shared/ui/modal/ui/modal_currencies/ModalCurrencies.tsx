@@ -1,7 +1,7 @@
 import cn from "classnames";
 import {ProfileCurrency} from "shared/model/profile";
 import {CurrencyWithImg} from "shared/ui/modal";
-import s from "./ModalСurrencies.scss";
+import s from "./ModalСurrencies.module.scss";
 
 
 type CompleteCashProps = {

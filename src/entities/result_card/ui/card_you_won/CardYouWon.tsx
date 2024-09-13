@@ -2,7 +2,7 @@ import {CurrencyId} from "shared/api/server_service";
 import giftImg from 'shared/assets/icons/gift.svg';
 import {Mask} from "shared/lib/Mask";
 import {Currency} from "shared/ui/currency";
-import s from "./CardYouWon.scss";
+import s from "./CardYouWon.module.scss";
 
 
 type CardYouWonProps = {

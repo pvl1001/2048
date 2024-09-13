@@ -3,9 +3,9 @@ import {Claim} from "features/claim";
 import {ConfigDailyReward} from "shared/api/adapters";
 import {ProfileDailyRewards} from "shared/model/profile";
 import {ModalWrapper} from "shared/ui/modal";
-import {DailyCard} from "./daily_card/DailyCard";
-import s from "./DailyRewards.scss";
 import {useReopenDailyRewards} from "../lib/useReopenDailyRewards";
+import {DailyCard} from "./daily_card/DailyCard";
+import s from "./DailyRewards.module.scss";
 
 
 export function DailyRewards() {

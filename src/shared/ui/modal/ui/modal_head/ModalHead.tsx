@@ -1,7 +1,7 @@
+import cn from "classnames";
 import React, {PropsWithChildren} from "react";
 import {useLocation} from "react-router-dom";
-import cn from "classnames";
-import {ReactComponent as CloseIcon} from 'shared/assets/icons/close.svg';
+import CloseIcon from 'shared/assets/icons/close.svg?react';
 import {useNavigateModal} from "shared/lib/hooks";
 import s from "./ModalHead.module.scss";
 

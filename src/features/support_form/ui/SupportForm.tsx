@@ -1,19 +1,19 @@
-import {useState} from "react";
-import {useSearchParams} from "react-router-dom";
 import {select, useAppSelector} from "app/store";
 import {Field, Form, Formik, FormikProps} from "formik";
+import {useState} from "react";
+import {useSearchParams} from "react-router-dom";
 import {useValidationSchema} from "shared/lib/hooks";
 import {StringUtils} from "shared/lib/StringUtils";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select} from "shared/ui/select";
 import {TextArea} from "shared/ui/textarea";
-import {SupportDropzone} from "./support_dropzone/SupportDropzone";
-import s from './SupportForm.scss';
 import {supportOptions} from "../lib/consts";
 import {useSetProfileEmail, UseSetProfileEmail} from "../lib/useSetProfileEmail";
 import {useSupportSubmit, UseSupportSubmit} from "../lib/useSupportSubmit";
 import {TSupportFile, TSupportForm} from "../types";
+import {SupportDropzone} from "./support_dropzone/SupportDropzone";
+import s from './SupportForm.module.scss';
 
 
 export function SupportForm() {

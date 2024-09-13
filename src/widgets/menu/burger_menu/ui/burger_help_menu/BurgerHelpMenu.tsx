@@ -6,7 +6,7 @@ import BurgerAnswerMenu from "../burger_answer_menu/BurgerAnswerMenu";
 import BurgerMenuWrapper from "../burger_menu_wrapper/BurgerMenuWrapper";
 import BurgerQuestionsList from "../burger_questions_list/BurgerQuestionsList";
 import BurgerSearch from "../burger_search/BurgerSearch";
-import s from "../BurgerMenu.scss";
+import s from "../BurgerMenu.module.scss";
 
 
 type BurgerHelpMenuProps = {

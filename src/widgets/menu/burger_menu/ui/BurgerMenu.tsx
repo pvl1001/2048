@@ -1,12 +1,12 @@
-import {useCallback, useState} from "react";
 import cn from "classnames";
+import {useCallback, useState} from "react";
+import helpData from '../lib/FAQ';
+import {TFaqItem, TFaqKey, THelpMenu, THelpMenuKeys} from "../types";
 import BurgerAnswerMenu from "./burger_answer_menu/BurgerAnswerMenu";
 import BurgerHelpMenu from "./burger_help_menu/BurgerHelpMenu";
 import {BurgerMainMenu} from "./burger_main_menu/BurgerMainMenu";
 import BurgerQuestionsList from "./burger_questions_list/BurgerQuestionsList";
-import s from './BurgerMenu.scss';
-import helpData from '../lib/FAQ';
-import {TFaqItem, TFaqKey, THelpMenu, THelpMenuKeys} from "../types";
+import s from './BurgerMenu.module.scss';
 
 
 type BurgerMenuProps = {

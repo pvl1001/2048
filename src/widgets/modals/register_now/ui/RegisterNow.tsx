@@ -4,7 +4,7 @@ import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
 import {CurrencyWrapper} from "shared/ui/modal";
-import s from './RegisterNow.scss';
+import s from './RegisterNow.module.scss';
 
 
 export function RegisterNow() {

@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import {MatchState} from "shared/common/MatchState";
-import s from "./CardState.scss";
+import s from "./CardState.module.scss";
 
 
 type CardStateProps = {

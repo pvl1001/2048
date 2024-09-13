@@ -1,7 +1,7 @@
 import {EditProfileFrom} from "features/edit_profile_form";
 import {MenuTitle} from "shared/ui/menu_title";
 import {ScrollContent} from "shared/ui/scroll_content";
-import s from './MenuProfile.scss';
+import s from './MenuProfile.module.scss';
 
 
 type Props = {

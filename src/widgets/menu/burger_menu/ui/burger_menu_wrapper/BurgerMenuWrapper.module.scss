@@ -9,10 +9,12 @@
 
 .button {
   @include hover-button;
-  position: absolute;
-  top: 2.2rem;
-  left: 6rem;
-  height: 3rem;
+  & {
+    position: absolute;
+    top: 2.2rem;
+    left: 6rem;
+    height: 3rem;
+  }
 
   svg rect {
     fill: var(--color-default)

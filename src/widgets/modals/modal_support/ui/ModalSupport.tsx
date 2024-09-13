@@ -1,5 +1,5 @@
 import {SupportForm} from "features/support_form";
-import s from "./ModalSupport.scss";
+import s from "./ModalSupport.module.scss";
 
 
 export function ModalSupport() {

@@ -4,7 +4,7 @@ import cn from "classnames";
 import CubeIcon from "shared/assets/icons/happy_cube_dark.png";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {Button} from "shared/ui/button";
-import s from "./GiftCard.scss";
+import s from "./GiftCard.module.scss";
 
 
 type InviteProps = {

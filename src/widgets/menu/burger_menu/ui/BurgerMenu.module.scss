@@ -20,10 +20,12 @@
 
 .back_button {
   @include hover-button;
-  position: absolute;
-  top: 2rem;
-  left: 5rem;
-  height: 3rem;
+  & {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    height: 3rem;
+  }
 
   svg rect {
     fill: var(--color-default)

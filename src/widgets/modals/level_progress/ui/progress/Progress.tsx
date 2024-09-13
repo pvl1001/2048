@@ -1,10 +1,9 @@
-import {useEffect, useRef, useState} from "react";
 import {select, useAppSelector} from "app/store";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {SwiperRef} from "swiper/swiper-react";
+import {useEffect, useRef, useState} from "react";
+import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
 import LevelProgressReward from "../tooltip_reward/LevelProgressReward";
 import 'swiper/css';
-import s from "./Progress.scss";
+import s from "./Progress.module.scss";
 
 
 let initialSlide: number = 0;

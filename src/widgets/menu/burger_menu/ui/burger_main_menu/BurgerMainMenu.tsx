@@ -5,7 +5,7 @@ import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal} from "shared/lib/hooks";
 import {CloseButton} from "shared/ui/close_button";
 import BurgerMenuWrapper from "../burger_menu_wrapper/BurgerMenuWrapper";
-import s from "../BurgerMenu.scss";
+import s from "../BurgerMenu.module.scss";
 
 
 type BurgerMainMenuProps = {

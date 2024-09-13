@@ -5,7 +5,7 @@ import {useNavigateModal} from "shared/lib/hooks";
 import {thunkBuyItem} from "shared/model/profile";
 import {Button} from "shared/ui/button";
 import {CurrencyWithImg} from "shared/ui/modal";
-import s from './TutorialGift.scss';
+import s from './TutorialGift.module.scss';
 
 
 export function TutorialGift() {

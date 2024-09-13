@@ -1,7 +1,7 @@
 import {ChangeEvent, PropsWithChildren} from "react";
-import s from "./Tabs.scss";
 import {TUserTab} from "../../../types";
 import Tab from "../tab/Tab";
+import s from "./Tabs.module.scss";
 
 
 type TabsProps = {

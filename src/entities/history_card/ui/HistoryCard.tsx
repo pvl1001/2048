@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import {DateUtils} from "shared/lib/DateUtils";
 import {Mask} from "shared/lib/Mask";
-import s from "./HistoryCard.scss";
 import {Transaction} from "../types";
+import s from "./HistoryCard.module.scss";
 
 
 type HistoryCardProps = {

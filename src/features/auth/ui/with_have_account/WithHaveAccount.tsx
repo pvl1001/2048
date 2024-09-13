@@ -1,7 +1,7 @@
 import {PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 import {RoutePaths} from "shared/common/RoutePaths";
-import s from "./WithHaveAccount.scss";
+import s from "./WithHaveAccount.module.scss";
 
 
 function WithHaveAccount({children, isHaveAccount}: PropsWithChildren<{isHaveAccount?: boolean}>) {

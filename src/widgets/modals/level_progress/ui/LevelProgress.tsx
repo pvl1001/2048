@@ -1,7 +1,7 @@
 import {ClaimLevel} from "features/claim_level";
 import cubeImage from 'shared/assets/images/cube/level-progress.webp';
 import {BigModal, BigModalTitles} from "shared/ui/big_modal";
-import s from "./LevelProgress.scss";
+import s from "./LevelProgress.module.scss";
 import Progress from "./progress/Progress";
 
 

@@ -1,5 +1,5 @@
 import cubeImg from 'shared/assets/icons/sad_cube.png';
-import s from "./EmptyTournaments.scss";
+import s from "./EmptyTournaments.module.scss";
 
 
 function EmptyTournaments() {

@@ -1,4 +1,4 @@
-import {ReactComponent as CrossIcon} from 'shared/assets/icons/cross_error.svg';
+import CrossIcon from 'shared/assets/icons/cross_error.svg?react';
 import {useNavigateModal, UseNavigateModal} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
 import s from "./ModalError.module.scss";

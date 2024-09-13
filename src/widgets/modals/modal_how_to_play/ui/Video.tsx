@@ -1,6 +1,6 @@
 import {memo, useEffect, useRef} from "react";
-import s from "./ModalHowToPlay.scss";
 import {HowToPlaySlide} from "../types";
+import s from "./ModalHowToPlay.module.scss";
 
 
 type Props = {

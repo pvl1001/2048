@@ -4,7 +4,7 @@ import SignoutImg from "shared/assets/icons/4 1.webp";
 import {Cookie} from "shared/lib/Cookie";
 import {NotificationsUtils} from "shared/lib/NotificationsUtils";
 import {TutorialUtils} from "shared/lib/TutorialUtils";
-import s from "./SignOut.scss";
+import s from "./SignOut.module.scss";
 
 
 export function SignOut() {
@@ -12,7 +12,7 @@ export function SignOut() {
 
     function onLogout() {
         Cookie.delete('token');
-        open(process.env.BASEPATH, '_self');
+        open(import.meta.env.BASE_URL, '_self');
         dispatch(wsNotificationActions.close());
         TutorialUtils.clearTutorialStorage();
         NotificationsUtils.clearStorage();

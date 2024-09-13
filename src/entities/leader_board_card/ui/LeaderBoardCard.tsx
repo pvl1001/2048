@@ -4,7 +4,7 @@ import {LeaderBoardResult, PlayerResult} from "entities/result_card";
 import {MatchState} from "shared/common/MatchState";
 import {TAvatarName} from "shared/model/profile";
 import BlockPlayer from "./block_player/BlockPlayer";
-import s from "./LeaderBoardCard.scss";
+import s from "./LeaderBoardCard.module.scss";
 import PlayerCardPlace from "./player_card_place/PlayerCardPlace";
 import PlayerCardPrize from "./player_card_prize/PlayerCardPrize";
 import {getAvatarSrc} from "../lib/getAvatarSrc";

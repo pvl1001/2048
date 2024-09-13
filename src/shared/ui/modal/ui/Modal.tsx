@@ -3,7 +3,7 @@ import {useLocation} from "react-router-dom";
 import cn from "classnames";
 import successMascot from "shared/assets/images/cube/success_mascot.webp";
 import {useChildrenWithProps} from "shared/lib/hooks";
-import s from './Modal.scss';
+import s from './Modal.module.scss';
 import {ModalHead} from "./modal_head/ModalHead";
 import {ModalWrapper} from "./ModalWrapper";
 

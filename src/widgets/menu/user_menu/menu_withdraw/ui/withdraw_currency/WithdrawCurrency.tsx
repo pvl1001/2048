@@ -1,6 +1,6 @@
 import {ProfileCurrency} from "shared/model/profile";
 import {TooltipQuestion} from "shared/ui/tooltip_question";
-import s from "./WithdrawCurrency.scss";
+import s from "./WithdrawCurrency.module.scss";
 
 
 type WithdrawCurrencyProps = {

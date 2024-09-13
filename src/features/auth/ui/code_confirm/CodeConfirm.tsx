@@ -1,10 +1,10 @@
 import {FormEvent, useState} from "react";
-import {ReactComponent as BackIcon} from 'shared/assets/icons/arrow_back.svg';
+import BackIcon from 'shared/assets/icons/arrow_back.svg?react';
 import getErrorMessage from "shared/lib/GetErrorMessage";
 import {Button} from "shared/ui/button";
 import CodeInput from "./code_input/CodeInput";
 import CodeTimer from "./code_timer/CodeTimer";
-import s from "./CodeConfirm.scss";
+import s from "./CodeConfirm.module.scss";
 
 
 type Props = {

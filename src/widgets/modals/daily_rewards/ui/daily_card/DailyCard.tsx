@@ -1,8 +1,8 @@
-import {useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
+import {useState} from "react";
 import {ConfigDailyReward} from "shared/api/adapters";
-import {ReactComponent as DoneIcon} from 'shared/assets/icons/check.svg';
+import DoneIcon from 'shared/assets/icons/check.svg?react';
 import coinImg from 'shared/assets/icons/coin.png';
 import coinsImg from 'shared/assets/icons/coins.png';
 import dollarImg from 'shared/assets/icons/dollar.png';
@@ -10,7 +10,7 @@ import dollarsImg from 'shared/assets/icons/dollars.png';
 import expStarImg from 'shared/assets/icons/star_xp.png';
 import {Mask} from "shared/lib/Mask";
 import {ProfileDailyRewards} from "shared/model/profile";
-import s from "./DailyCard.scss";
+import s from "./DailyCard.module.scss";
 
 
 type DailyCardProps = {

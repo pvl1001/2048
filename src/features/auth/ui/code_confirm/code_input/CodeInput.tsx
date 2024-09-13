@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import cn from "classnames";
 import {Mask} from "shared/lib/Mask";
-import s from "./CodeInput.scss";
+import s from "./CodeInput.module.scss";
 
 
 type Props = {

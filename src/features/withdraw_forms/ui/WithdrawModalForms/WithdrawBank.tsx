@@ -7,7 +7,7 @@ import {TValidationSchema, UseNavigateModal, useNavigateModal, useValidationSche
 import {Button} from "shared/ui/button";
 import {Loader} from "shared/ui/loader";
 import {Select, TSelectOption} from "shared/ui/select";
-import s from "./ModalWithdraw.scss";
+import s from "./ModalWithdraw.module.scss";
 import {thunkGetBanks} from "../../model/extraReducer";
 import {TWithdrawBankValues} from "../../types";
 

@@ -1,9 +1,9 @@
 import cn from "classnames";
-import {ReactComponent as CloseIcon} from 'shared/assets/icons/close.svg';
+import CloseIcon from 'shared/assets/icons/close.svg?react';
 import fileBlueImg from 'shared/assets/icons/file_blue.png';
 import fileRedImg from 'shared/assets/icons/file_red.png';
 import {CloseButton} from "shared/ui/close_button";
-import s from "./FileCard.scss";
+import s from "./FileCard.module.scss";
 
 
 export type FileCardProps = {

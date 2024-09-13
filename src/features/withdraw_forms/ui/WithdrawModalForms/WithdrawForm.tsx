@@ -1,17 +1,17 @@
-import {useRef, useState} from "react";
 import cn from "classnames";
 import {FlagId} from "features/auth";
 import {Field, Form, Formik, FormikProps} from "formik";
+import {useRef, useState} from "react";
 import {TValidationSchema, useNavigateModal, useValidationSchema} from "shared/lib/hooks";
 import {Button} from "shared/ui/button";
 import {Input} from "shared/ui/input";
 import {Select, TSelectOption} from "shared/ui/select";
-import s from "./ModalWithdraw.scss";
 import {Fields} from "../../lib/const";
 import {UseWithdrawForm, useWithdrawForm} from "../../lib/useWithdrawForm";
 import {validationParams} from "../../lib/validationParams";
 import {WithdrawSelects} from "../../lib/WithdrawSelects";
 import {TDocumentTypesKeys, TValidationRegexParam, TWithdrawValues} from "../../types";
+import s from "./ModalWithdraw.module.scss";
 
 
 export function WithdrawForm() {

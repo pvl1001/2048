@@ -1,7 +1,7 @@
 import {DateUtils} from "shared/lib/DateUtils";
 import {TSelectOption} from "shared/ui/select";
-import {countries} from "./consts";
 import {Country} from "../types";
+import {countries} from "./consts";
 
 
 const days: TSelectOption[] = Array(31)
@@ -23,8 +23,11 @@ const years: TSelectOption[] = Array(100).fill('').map((_, i) => {
 
 const countryOptions: TSelectOption[] = countries.map((c: Country) => {
     const iconPath = c.flagId.toLowerCase();
+    let icon
+    import(`./flags/${[iconPath]}.png`).then(module => icon = module.default)
+
     return {
-        icon: require(`./flags/${[iconPath]}.png`),
+        icon,
         title: c.name,
         value: c.flagId,
         code: c.phonePrefix

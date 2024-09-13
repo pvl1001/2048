@@ -1,7 +1,7 @@
-import {ReactComponent as CheckIcon} from 'shared/assets/icons/check.svg';
+import CheckIcon from 'shared/assets/icons/check.svg?react';
 import {useNavigateModal} from "shared/lib/hooks";
 import {ModalWrapper} from "shared/ui/modal";
-import s from "./SupportSuccess.scss";
+import s from "./SupportSuccess.module.scss";
 
 
 export function SupportSuccess() {

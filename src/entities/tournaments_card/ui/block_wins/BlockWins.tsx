@@ -2,7 +2,7 @@ import {memo, ReactElement} from "react";
 import {Mask} from "shared/lib/Mask";
 import {Currency} from "shared/ui/currency";
 import {Tournament} from "../../types";
-import s from "../TournamentsCard.scss";
+import s from "../TournamentsCard.module.scss";
 
 
 type Props = {

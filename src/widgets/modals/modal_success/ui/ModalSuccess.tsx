@@ -1,13 +1,13 @@
-import {useEffect, useState} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {ReactComponent as SuccessIcon} from 'shared/assets/icons/success.svg';
+import {useEffect, useState} from "react";
+import SuccessIcon from 'shared/assets/icons/success.svg?react';
 import {RoutePaths} from "shared/common/RoutePaths";
 import {UseNavigateModal, useNavigateModal} from "shared/lib/hooks";
 import {ProfileCurrency} from "shared/model/profile";
 import {Button} from "shared/ui/button";
 import {ModalCurrencies} from "shared/ui/modal";
-import s from './ModalSuccess.scss';
+import s from './ModalSuccess.module.scss';
 
 
 type ModalSuccessProps = {

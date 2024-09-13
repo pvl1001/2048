@@ -1,6 +1,6 @@
 import cn from "classnames";
 import {UseTimer, useTimer} from "shared/lib/hooks";
-import s from "./CodeTimer.scss";
+import s from "./CodeTimer.module.scss";
 
 
 type CodeTimerProps = {

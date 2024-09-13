@@ -1,6 +1,6 @@
 import {ButtonHTMLAttributes} from "react";
 import pencilImg from "shared/assets/icons/pencil.svg";
-import s from "./AvatarButton.scss";
+import s from "./AvatarButton.module.scss";
 
 
 function AvatarButton({className = '', ...props}: ButtonHTMLAttributes<HTMLButtonElement>) {

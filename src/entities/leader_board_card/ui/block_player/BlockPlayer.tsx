@@ -2,7 +2,7 @@ import {Place} from "shared/api/server_service";
 import Place1 from 'shared/assets/icons/top1.png';
 import Place2 from 'shared/assets/icons/top2.png';
 import Place3 from 'shared/assets/icons/top3.png';
-import s from "./BlockPlayer.scss";
+import s from "./BlockPlayer.module.scss";
 
 
 type BlockPlayerProps = {

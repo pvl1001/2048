@@ -1,6 +1,6 @@
 import cn from "classnames";
 import {Currency} from "shared/ui/currency";
-import s from "./CurrencyWrapper.scss";
+import s from "./CurrencyWrapper.module.scss";
 
 
 type Props = {

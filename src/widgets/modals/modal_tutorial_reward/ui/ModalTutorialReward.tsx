@@ -1,12 +1,12 @@
+import {select, useAppSelector} from "app/store";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
-import {select, useAppSelector} from "app/store";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal, UseNavigateModal} from "shared/lib/hooks";
 import {ProfileCurrency} from "shared/model/profile";
 import {Button} from "shared/ui/button";
 import {ModalCurrencies} from "shared/ui/modal";
-import s from "./ModalTutorialReward.scss";
+import s from "./ModalTutorialReward.module.scss";
 
 
 export function ModalTutorialReward() {

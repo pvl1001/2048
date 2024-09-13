@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import {CSSTransition} from "react-transition-group";
-import {ReactComponent as Icon} from 'shared/assets/icons/arrow_back.svg';
+import Icon from 'shared/assets/icons/arrow_back.svg?react';
 import s from "./UpButton.module.scss";
 
 

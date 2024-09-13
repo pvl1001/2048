@@ -1,4 +1,4 @@
-import {ReactComponent as ArrowIcon} from 'shared/assets/icons/arrow_back.svg';
+import ArrowIcon from 'shared/assets/icons/arrow_back.svg?react';
 import s from "./BurgerQuestion.module.scss";
 
 

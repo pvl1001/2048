@@ -1,8 +1,8 @@
 import {useMenu, UseMenu} from "shared/lib/hooks";
-import {UserAvatar} from "./user_avatar";
-import s from "./UserMenu.scss";
 import {Menu} from "../";
 import {BlockTabs} from "../ui/block_tabs/BlockTabs";
+import {UserAvatar} from "./user_avatar";
+import s from "./UserMenu.module.scss";
 
 
 function UserMenu() {

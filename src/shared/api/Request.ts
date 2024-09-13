@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 
 
 const instanceConfig: AxiosRequestConfig = {
-    baseURL: process.env.BASE_URL,
+    baseURL: import.meta.env.BASE_URL,
     transformResponse: (res: string) => {
         if (!res) return res;
         const data = JSON.parse(res);
@@ -15,7 +15,7 @@ const instanceConfig: AxiosRequestConfig = {
 };
 
 const instanceZendeskConfig: AxiosRequestConfig = {
-    baseURL: process.env.ZENDESK_URL,
+    baseURL: import.meta.env.ZENDESK_URL,
 };
 
 const request: AxiosInstance = axios.create(instanceConfig);
@@ -29,12 +29,12 @@ function authInterceptor(config: InternalAxiosRequestConfig): InternalAxiosReque
 }
 
 function authZendeskInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
-    config.headers.authorization = `Bearer ${process.env.ZENDESK_TOKEN}`;
+    config.headers.authorization = `Bearer ${import.meta.env.ZENDESK_TOKEN}`;
     return config;
 }
 
 function securityInterceptor(config: InternalAxiosRequestConfig): InternalAxiosRequestConfig {
-    const secretAppKey = process.env.SECRET_APP_KEY;
+    const secretAppKey = import.meta.env.SECRET_APP_KEY;
     const uuid: string = uuidv4();
     config.headers['x-request-uuid'] = uuid;
     config.headers['x-signature'] = md5(uuid + secretAppKey);

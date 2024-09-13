@@ -1,11 +1,11 @@
 import {useAppDispatch} from "app/store";
 import cn from "classnames";
-import {ReactComponent as ArrowIcon} from 'shared/assets/icons/arrow_back.svg';
+import ArrowIcon from 'shared/assets/icons/arrow_back.svg?react';
 import {useGetCurrency, UseGetCurrency} from "shared/lib/hooks";
-import s from "./Notification.scss";
 import {variant} from "../lib/consts";
 import {wsNotificationActions} from "../model/NotificationSlice";
 import {TNotification, TNotificationPersistent} from "../types";
+import s from "./Notification.module.scss";
 
 
 type NotificationProps = {

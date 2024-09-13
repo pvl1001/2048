@@ -1,14 +1,14 @@
-import {forwardRef, Ref, useEffect, useRef, useState} from "react";
-import {Link, useLocation} from "react-router-dom";
-import {CSSTransition} from "react-transition-group";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {WithdrawAmountForm} from "features/withdraw_forms";
+import {forwardRef, Ref, useEffect, useRef, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
+import {CSSTransition} from "react-transition-group";
 import {RoutePaths} from "shared/common/RoutePaths";
 import {ProfileCurrency} from "shared/model/profile";
 import {ScrollContent} from "shared/ui/scroll_content";
 import MenuWithdrawOverview from "./menu_withdraw_overview/MenuWithdrawOverview";
-import s from './MenuWithdraw.scss';
+import s from './MenuWithdraw.module.scss';
 import WithdrawCurrency from "./withdraw_currency/WithdrawCurrency";
 import WithdrawInfo from "./withdraw_info/WithdrawInfo";
 

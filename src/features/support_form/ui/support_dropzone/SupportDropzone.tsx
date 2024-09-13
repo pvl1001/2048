@@ -1,12 +1,12 @@
+import cn from "classnames";
 import {Dispatch, memo, SetStateAction, useEffect} from "react";
 import {DropzoneState, useDropzone} from "react-dropzone";
-import cn from "classnames";
 import attachIcon from 'shared/assets/icons/attach.png';
 import {TooltipError} from "shared/ui/tooltip_error";
 import {v4 as uuidv4} from 'uuid';
-import FileCard from "./file_card/FileCard";
-import s from "./SupportDropzone.scss";
 import {TSupportFile} from "../../types";
+import FileCard from "./file_card/FileCard";
+import s from "./SupportDropzone.module.scss";
 
 
 const mb: number = 10;

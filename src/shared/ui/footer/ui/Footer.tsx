@@ -1,7 +1,7 @@
 import {DateUtils} from "shared/lib/DateUtils";
 import {Logo} from "shared/ui/logo";
 import BlockInfo from "./block_info/BlockInfo";
-import s from "./Footer.scss";
+import s from "./Footer.module.scss";
 
 
 export function Footer() {

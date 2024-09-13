@@ -3,11 +3,13 @@
 
   textarea {
     @include input-style;
-    width: 100%;
-    height: 21rem;
-    resize: none;
-    padding: 1.3rem 2rem;
-    font-size: 1.7rem;
+    & {
+      width: 100%;
+      height: 21rem;
+      resize: none;
+      padding: 1.3rem 2rem;
+      font-size: 1.7rem;
+    }
   }
 }
 

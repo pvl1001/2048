@@ -1,8 +1,8 @@
-import {ReactElement} from "react";
 import cn from "classnames";
-import s from "./PromotionCard.scss";
+import {ReactElement} from "react";
 import {getPromotionCardData, PromotionData} from "../lib/getPromotionCardData";
 import {Promotion} from "../types";
+import s from "./PromotionCard.module.scss";
 
 
 type Props = {

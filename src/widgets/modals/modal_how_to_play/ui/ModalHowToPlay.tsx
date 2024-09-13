@@ -5,11 +5,11 @@ import {Button} from "shared/ui/button";
 import {ModalHead, ModalWrapper} from "shared/ui/modal";
 import {Pagination} from "swiper/modules";
 import {Swiper, SwiperProps, SwiperSlide} from "swiper/react";
-import s from "./ModalHowToPlay.scss";
-import {Video} from "./Video";
+import type {Swiper as SwiperClass} from "swiper/types";
 import {slides} from "../lib/const";
 import {HowToPlaySlide} from "../types";
-import type {Swiper as SwiperClass} from "swiper/types";
+import s from "./ModalHowToPlay.module.scss";
+import {Video} from "./Video";
 
 
 export function ModalHowToPlay() {

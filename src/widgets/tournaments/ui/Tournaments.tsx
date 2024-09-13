@@ -6,7 +6,7 @@ import 'swiper/css/grid';
 import {Grid, Navigation, Pagination} from 'swiper/modules';
 import {Swiper, SwiperProps, SwiperSlide} from "swiper/react";
 import {SliderArrow} from "./SliderArrow";
-import s from "./Tournaments.scss";
+import s from "./Tournaments.module.scss";
 
 
 export function Tournaments() {

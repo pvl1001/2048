@@ -1,13 +1,13 @@
-import {forwardRef, Ref} from "react";
 import {useAppDispatch} from "app/store";
 import {LeaderBoardResult, MatchInfo, PlayerResult, playersResultsActions, ResultCard, TournamentGroup} from "entities/result_card";
+import {forwardRef, Ref} from "react";
 import {UseMenu, useMenu} from "shared/lib/hooks";
 import {ScrollContent} from "shared/ui/scroll_content";
-import EmptyTournaments from "./empty_tournaments/EmptyTournaments";
-import s from './MenuResults.scss';
-import ResultTitle from "./result_title/ResultTitle";
 import {Menu} from "../../../";
 import useMenuResults from "../lib/useMenuResults";
+import EmptyTournaments from "./empty_tournaments/EmptyTournaments";
+import s from './MenuResults.module.scss';
+import ResultTitle from "./result_title/ResultTitle";
 
 
 function MenuResults({}, ref: Ref<HTMLDivElement>) {

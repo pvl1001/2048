@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Icon from 'shared/assets/icons/bonus.svg';
-import s from "./BonusFlag.scss";
+import s from "./BonusFlag.module.scss";
 
 
 type BonusFlagProps = {

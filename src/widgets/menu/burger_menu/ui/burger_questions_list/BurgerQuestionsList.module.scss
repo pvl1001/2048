@@ -13,7 +13,9 @@
 
   li {
     @include hover-button;
-    cursor: pointer;
+    & {
+      cursor: pointer;
+    }
 
     &:nth-child(2n) {
       background: #D5DAF680;

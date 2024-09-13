@@ -1,12 +1,12 @@
 import cn from "classnames";
-import {ReactComponent as D24Icon} from 'shared/assets/icons/d24.svg';
+import D24Icon from 'shared/assets/icons/d24.svg?react';
 import {RoutePaths} from "shared/common/RoutePaths";
 import {useNavigateModal} from "shared/lib/hooks";
 import {Mask} from "shared/lib/Mask";
 import {Button} from "shared/ui/button";
 import {ButtonBack} from "shared/ui/button_back";
 import {ScrollContent} from "shared/ui/scroll_content";
-import s from "./MenuWithdrawOverview.scss";
+import s from "./MenuWithdrawOverview.module.scss";
 
 
 type MenuWithdrawOverviewProps = {

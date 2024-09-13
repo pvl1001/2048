@@ -2,7 +2,7 @@ import {forwardRef, InputHTMLAttributes, Ref, useState} from "react";
 import classNames from "classnames";
 import {MenuTitle} from "shared/ui/menu_title";
 import {TooltipError} from "shared/ui/tooltip_error";
-import s from "./AvatarName.scss";
+import s from "./AvatarName.module.scss";
 
 
 type AvatarNameProps = InputHTMLAttributes<HTMLInputElement> & {

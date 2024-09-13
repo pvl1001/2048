@@ -1,6 +1,6 @@
 import {PropsWithChildren} from "react";
 import cn from "classnames";
-import s from "./MenuTitle.scss";
+import s from "./MenuTitle.module.scss";
 
 
 type MenuTitleProps = {

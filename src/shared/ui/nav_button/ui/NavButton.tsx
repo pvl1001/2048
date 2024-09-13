@@ -1,6 +1,6 @@
 import {ButtonHTMLAttributes, forwardRef, Ref} from "react";
 import classNames from "classnames";
-import s from './NavButton.scss';
+import s from './NavButton.module.scss';
 
 
 type NavButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

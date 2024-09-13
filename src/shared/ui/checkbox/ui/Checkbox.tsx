@@ -1,6 +1,6 @@
-import {ComponentProps} from "react";
 import cn from "classnames";
-import {ReactComponent as Icon} from 'shared/assets/icons/check.svg';
+import {ComponentProps} from "react";
+import Icon from 'shared/assets/icons/check.svg?react';
 import s from "./Checkbox.module.scss";
 
 

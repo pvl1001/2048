@@ -3,4 +3,4 @@ export {PlayersResultsSelectors} from './model/PlayersResultsSelectors';
 export {thunkGetMatchResults} from './model/PlayersResultsThunks';
 
 export {ResultCard} from './ui/ResultCard';
-export {LeaderBoardResult, TournamentGroup, MatchInfo, PlayerResult, FinishMatchResponse, PlayMatchResponse} from "./types";
+export type {LeaderBoardResult, TournamentGroup, MatchInfo, PlayerResult, FinishMatchResponse, PlayMatchResponse} from "./types";

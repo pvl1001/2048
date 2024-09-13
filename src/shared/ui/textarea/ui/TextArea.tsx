@@ -9,7 +9,7 @@ type TextAreaProps = ComponentProps<'textarea'> & {
 }
 
 export function TextArea({label, error, ...props}: TextAreaProps) {
-    const counter: number = (props.maxLength ?? 0) - (props.value as string)?.length ?? 0;
+    const counter: number = (props.maxLength ?? 0) - (props.value as string).length;
 
     return (
         <div className={s._}>

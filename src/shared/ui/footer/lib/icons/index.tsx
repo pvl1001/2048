@@ -1,5 +1,5 @@
-import {ReactComponent as AndroidIcon} from './android.svg';
-import {ReactComponent as AppleIcon} from './apple.svg';
+import AndroidIcon from './android.svg?react';
+import AppleIcon from './apple.svg?react';
 
 
 export const Icons = {

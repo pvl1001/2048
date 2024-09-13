@@ -16,7 +16,7 @@ export function usePaymentCurrency() {
     const currencyName: string = paymentCurrency?.Currency ?? 'USD';
 
     function getConvertPaymentCurrency(centum: number): string {
-        return ((+Mask.hardCurrency(centum) ?? 0) * +(paymentCurrency?.ConversionRate ?? 0)).toFixed(0) + currencySymbol;
+        return (+Mask.hardCurrency(centum) * +(paymentCurrency?.ConversionRate ?? 0)).toFixed(0) + currencySymbol;
     }
 
     return {

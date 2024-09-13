@@ -1,5 +1,5 @@
 import cn from "classnames";
-import s from "./SaleBanner.scss";
+import s from "./SaleBanner.module.scss";
 
 
 type Props = {

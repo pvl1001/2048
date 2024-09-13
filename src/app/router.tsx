@@ -7,7 +7,7 @@ import {ProtectedRoute} from "shared/lib/hocs";
 import {thunkGetGlobalConfig} from "shared/model/global_config";
 import {ErrorBoundary} from "shared/ui/error_boundary";
 import {Modal} from "shared/ui/modal";
-import s from 'shared/ui/modal/ui/Modal.scss';
+import s from 'shared/ui/modal/ui/Modal.module.scss';
 import {ModalCube} from "shared/ui/modal_cube";
 import * as Modals from 'widgets/modals';
 import {Warnings} from "widgets/modals/modal_warning";
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: RoutePaths.LEVEL_PROGRESS,
-                        element: <Modals.LevelProgress/>,
+                        element: <Modals.LevelProgress/>
                     },
                     {
                         path: RoutePaths.REFUND,
@@ -94,7 +94,7 @@ export const router = createBrowserRouter([
                         children: [
                             {
                                 path: RoutePaths.LEVEL_UP,
-                                element: <Modals.LevelUp/>,
+                                element: <Modals.LevelUp/>
                             },
                             {
                                 path: RoutePaths.DAILY_REWARDS,
@@ -161,5 +161,5 @@ export const router = createBrowserRouter([
         ]
     }
 ], {
-    basename: process.env.BASEPATH
+    basename: import.meta.env.BASEPATH
 });

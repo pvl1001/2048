@@ -1,9 +1,9 @@
 import {WithAuth} from "shared/lib/hocs";
 import {Logo} from "shared/ui/logo";
-import s from "./Header.scss";
+import useViewHeader from "../lib/useViewHeader";
+import s from "./Header.module.scss";
 import Nav from "./nav/Nav";
 import {Offers} from "./offers/Offers";
-import useViewHeader from "../lib/useViewHeader";
 
 
 type HeaderProps = {

@@ -1,7 +1,7 @@
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import s from "./BlockInfo.scss";
 import {Icons} from "../../lib/icons";
+import s from "./BlockInfo.module.scss";
 
 
 function BlockInfo() {

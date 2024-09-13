@@ -1,11 +1,11 @@
-import {CSSProperties, useMemo} from "react";
 import {select, useAppSelector} from "app/store";
 import cn from "classnames";
-import {ReactComponent as DoneIcon} from 'shared/assets/icons/check.svg';
+import {CSSProperties, useMemo} from "react";
+import DoneIcon from 'shared/assets/icons/check.svg?react';
 import coinImg from 'shared/assets/icons/coin.png';
 import dollarImg from 'shared/assets/icons/dollar.png';
 import {Mask} from "shared/lib/Mask";
-import s from "./LevelProgressReward.scss";
+import s from "./LevelProgressReward.module.scss";
 
 
 type TooltipRewardProps = {

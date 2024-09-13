@@ -1,5 +1,5 @@
 import {TVariant} from "../types";
-import s from "../ui/Notification.scss";
+import s from "../ui/Notification.module.scss";
 
 
 export enum WSTopics {

@@ -1,6 +1,6 @@
 import {PropsWithChildren} from "react";
 import cn from "classnames";
-import s from "./ResultTitle.scss";
+import s from "./ResultTitle.module.scss";
 
 
 type ResultTitleProps = {

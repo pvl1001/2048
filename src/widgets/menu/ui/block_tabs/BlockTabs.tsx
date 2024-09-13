@@ -1,12 +1,12 @@
 import {useRef, useState} from "react";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 import {UserTab} from "shared/common/UserTab";
-import s from './BlockTabs.scss';
-import {Tabs} from "./tabs/Tabs";
 import {TabData, TUserTab} from "../../types";
 import MenuHistory from "../../user_menu/menu_history";
 import MenuResults from "../../user_menu/menu_results";
 import MenuWithdraw from "../../user_menu/menu_withdraw";
+import s from './BlockTabs.module.scss';
+import {Tabs} from "./tabs/Tabs";
 
 
 export function BlockTabs() {

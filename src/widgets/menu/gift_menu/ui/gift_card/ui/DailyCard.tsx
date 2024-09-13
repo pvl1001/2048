@@ -2,7 +2,7 @@ import {select, useAppSelector} from "app/store";
 import cn from "classnames";
 import {Claim} from "features/claim";
 import ButtonTimer from "./button_timer/ButtonTimer";
-import s from "./GiftCard.scss";
+import s from "./GiftCard.module.scss";
 
 
 export function DailyCard() {

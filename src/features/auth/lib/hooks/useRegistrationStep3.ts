@@ -8,7 +8,7 @@ import {FieldErrors, RegisterFields} from "../consts";
 import {isServerErrors} from "../isServerErrors";
 
 
-function UseRegistrationStep3(nextStep: () => void): UseRegistrationStep3 {
+function useRegistrationStep3(nextStep: () => void): UseRegistrationStep3 {
     const dispatch = useAppDispatch();
     const refFormik = useRef<FormikProps<RegistrationDataStep3>>(null);
     const [isPending, setIsPending] = useState(false);
@@ -52,4 +52,4 @@ function UseRegistrationStep3(nextStep: () => void): UseRegistrationStep3 {
     };
 }
 
-export default UseRegistrationStep3;
+export default useRegistrationStep3;

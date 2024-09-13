@@ -1,12 +1,12 @@
-import {ChangeEvent, ComponentProps, useEffect, useState} from "react";
 import cn from "classnames";
-import {ReactComponent as InputArrowIcon} from 'shared/assets/icons/arrow_back.svg';
+import {ChangeEvent, ComponentProps, useEffect, useState} from "react";
+import InputArrowIcon from 'shared/assets/icons/arrow_back.svg?react';
 import {ScrollContent} from "shared/ui/scroll_content";
 import {TooltipError} from "shared/ui/tooltip_error";
-import s from "./Select.module.scss";
-import {SelectOption} from "./SelectOption";
 import useSelect from "../lib/useSelect";
 import {TSelectOption, TUseSelect} from "../types";
+import s from "./Select.module.scss";
+import {SelectOption} from "./SelectOption";
 
 
 export type SelectProps = ComponentProps<'input'> & {
@@ -32,7 +32,7 @@ export function Select({afterChange, onChangeHandler, label, options, setFieldVa
         clickOut: withSearch ? () => setSearchValueHandler(value.title) : undefined,
     });
     const [data, setData] = useState<string | number>();
-    
+
     useEffect(() => {
         data && afterChange?.(data);
     }, [data]);
