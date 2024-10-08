@@ -5,7 +5,7 @@ export function ErrorBoundary() {
     const error = useRouteError();
     if (isRouteErrorResponse(error)) {
         return (
-            <div>
+            <div data-testid={'error_boundary'}>
                 <h1>Oops!</h1>
                 <h2>{error.status}</h2>
                 <p>{error.statusText}</p>

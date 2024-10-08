@@ -1,7 +1,7 @@
-import {ComponentProps, PropsWithChildren} from "react";
 import classNames from "classnames";
-import s from "./Button.module.scss";
+import {ComponentProps, PropsWithChildren} from "react";
 import {Loader} from "shared/ui/loader";
+import s from "./Button.module.scss";
 
 
 export type ButtonProps = ComponentProps<'button'> & {
@@ -23,6 +23,6 @@ export function Button({children, theme = 'blue', className, isPending, currency
             <span style={{opacity: Number(!isPending)}}>{children}</span>
         </div>
 
-        {(currency && !isPending) && <p className={s.currency__container}>+{currency}</p>}
+        {(currency && !isPending) && <p data-testid={'currency'} className={s.currency__container}>+{currency}</p>}
     </button>;
 }

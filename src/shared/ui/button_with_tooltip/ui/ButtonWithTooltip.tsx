@@ -1,5 +1,5 @@
-import {PropsWithChildren} from "react";
 import cn from "classnames";
+import {PropsWithChildren} from "react";
 import {Button, ButtonProps} from "shared/ui/button";
 import {TooltipError} from "shared/ui/tooltip_error";
 import s from "./ButtonWithTooltip.module.scss";
@@ -9,9 +9,9 @@ export type ButtonWithTooltipProps = ButtonProps & {
     error: string | undefined
 }
 
-export function ButtonWithTooltip({children, error, ...props}: PropsWithChildren<ButtonWithTooltipProps>) {
+export function ButtonWithTooltip({children, error, className, ...props}: PropsWithChildren<ButtonWithTooltipProps>) {
     return (
-        <div className={cn(s.container, props.className)}>
+        <div className={cn(s.container, className)}>
             <Button {...props} disabled={props.disabled || !!error}>
                 {children}
             </Button>

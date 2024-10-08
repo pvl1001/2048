@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path';
 import {defineConfig, loadEnv} from 'vite';
@@ -8,6 +9,11 @@ export default ({mode}) => {
     process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
     return defineConfig({
+        test: {
+            globals: true,
+            environment: 'happy-dom',
+            setupFiles: ['src/setupTest.ts']
+        },
         base: process.env.VITE_BASEPATH,
         plugins: [
             react(),

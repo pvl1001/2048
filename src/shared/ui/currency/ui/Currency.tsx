@@ -1,9 +1,9 @@
-import React from "react";
 import cn from "classnames";
+import React from "react";
 import s from "./Currency.module.scss";
 
 
-type CurrencyProps = {
+export type CurrencyProps = {
     children: React.ReactNode,
     currency: 'money' | 'coin' | 'star'
     className?: string

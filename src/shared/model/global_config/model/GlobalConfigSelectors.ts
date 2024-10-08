@@ -2,6 +2,14 @@ import {RootState} from "app/store";
 import {StatusRequest} from "shared/common/StatusRequest";
 
 
+export type GlobalConfigLinks = Record<
+    | 'termsOfService'
+    | 'privacyPolicy'
+    | 'contactUs'
+    | 'rateUsIOS'
+    | 'rateUs', string
+>
+
 export class GlobalConfigSelectors {
     static _isSuccess = (state: RootState) => state.globalConfig.status === StatusRequest.SUCCESS;
 
