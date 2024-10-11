@@ -6,3 +6,4 @@ export {TournamentsCard} from './ui/TournamentsCard';
 
 export {useSliderSpaceBetween} from "./lib/useSliderSpaceBetween";
 export {useTournaments} from "./lib/useTournaments";
+export {mockTournaments} from "./lib/mockTournaments";

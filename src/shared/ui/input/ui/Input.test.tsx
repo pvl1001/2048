@@ -27,7 +27,7 @@ describe('test Input', () => {
     });
 
     it('check render icon', async () => {
-        const {container,} = render(<Input icon={<TestIcon/>}/>);
+        const {container} = render(<Input icon={<TestIcon/>}/>);
         expect(container.querySelector('svg')).toBeInTheDocument();
     });
 });

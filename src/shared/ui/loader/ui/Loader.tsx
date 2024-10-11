@@ -9,10 +9,7 @@ type LoaderProps = {
 
 export function Loader({className, theme}: LoaderProps) {
     return (
-        <div className={classNames(s._, className, {
-            [s.button]: theme === 'button',
-            [s.modal]: theme === 'modal',
-        })}>
+        <div className={classNames(s._, className, theme && s[theme])}>
             <ul className={s.loader}>
                 <li></li>
                 <li></li>

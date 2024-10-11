@@ -1,5 +1,5 @@
 // import {AxiosResponse} from "axios";
-import mockTournaments from '../lib/mockTournaments';
+import {mockTournaments} from '../lib/mockTournaments';
 // import {request} from "shared/api/Request";
 import {Tournament} from "../types";
 

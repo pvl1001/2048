@@ -1,22 +1,18 @@
 import cn from "classnames";
-import {Mask} from "shared/lib/Mask";
-import {Reward} from "../../types";
 import s from "../TournamentsCard.module.scss";
 
 
 type BlockPrizeProps = {
-    currency: Reward['currency']
+    hasBonus: boolean
+    hardCurrency: number
+    softCurrency: string | number
 }
 
-export function BlockPrize({currency}: BlockPrizeProps) {
-    const {ID_SOFT_CURRENCY, ID_HARD_CURRENCY, ID_BONUS_CURRENCY} = currency;
-
-    const blockPrizeClass = ID_BONUS_CURRENCY ? s.with_bonus : ID_HARD_CURRENCY && ID_SOFT_CURRENCY ? s.with_coin : '';
-    const hardCurrency: number = Mask.hardCurrency(ID_BONUS_CURRENCY || ID_HARD_CURRENCY);
-    const softCurrency: string | number = Mask.softCurrency(ID_SOFT_CURRENCY);
-
+export function BlockPrize({hardCurrency, softCurrency, hasBonus}: BlockPrizeProps) {
     return (
-        <div className={cn(s.block_prize, blockPrizeClass)}>
+        <div className={cn(s.block_prize, {
+            [s.with_bonus]: hasBonus,
+        })}>
             <div className={s.currency}>
 
                 {!!hardCurrency &&

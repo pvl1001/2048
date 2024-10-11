@@ -1,11 +1,15 @@
 import arrowImg from "shared/assets/icons/arrow.svg";
-import {RoutePaths} from "shared/common/RoutePaths";
+import {RoutePaths} from "shared/common/RoutePaths.ts";
 import {useNavigateModal} from "shared/lib/hooks";
 import {TutorialUtils} from "shared/lib/TutorialUtils";
 import s from "./StartMatch.module.scss";
 
 
-export function StartMatch() {
+type Props = {
+    id: string
+}
+
+export function StartMatch({id}: Props) {
     const {navigateEventModal} = useNavigateModal();
 
     const startMatchHandler = () => {
@@ -18,7 +22,7 @@ export function StartMatch() {
             });
             return TutorialUtils.finishTutorial();
         }
-        alert('play game');
+        alert(`play game ${id}`);
     };
 
     return (

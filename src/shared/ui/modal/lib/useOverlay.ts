@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {useNavigateModal} from "shared/lib/hooks";
 
 
@@ -16,16 +16,16 @@ export function useOverlay(): UseModalProps {
         setVisible(true);
     }
 
-    useEffect(() => {
-        function keydownHandler(e: KeyboardEvent) {
-            if (e.key === 'Escape') closeModal();
-        }
-
-        document.addEventListener('keydown', keydownHandler);
-        return () => {
-            document.removeEventListener('keydown', keydownHandler);
-        };
-    }, []);
+    // useEffect(() => {
+    //     function keydownHandler(e: KeyboardEvent) {
+    //         if (e.key === 'Escape') closeModal();
+    //     }
+    //
+    //     document.addEventListener('keydown', keydownHandler);
+    //     return () => {
+    //         document.removeEventListener('keydown', keydownHandler);
+    //     };
+    // }, []);
 
     return {visible, onClose: closeModal, onOpen};
 }

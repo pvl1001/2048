@@ -1,5 +1,5 @@
-import {ComponentProps} from "react";
 import cn from "classnames";
+import {ComponentProps} from "react";
 import s from "./TextArea.module.scss";
 
 
@@ -9,7 +9,7 @@ type TextAreaProps = ComponentProps<'textarea'> & {
 }
 
 export function TextArea({label, error, ...props}: TextAreaProps) {
-    const counter: number = (props.maxLength ?? 0) - (props.value as string).length;
+    const counter: number | undefined = props.maxLength && (props.maxLength ?? 0) - (props.value as string).length;
 
     return (
         <div className={s._}>
@@ -21,7 +21,7 @@ export function TextArea({label, error, ...props}: TextAreaProps) {
                     [s.error]: error
                 })}
             />
-            <p className={s.counter}>{counter}</p>
+            {props.maxLength && <p className={s.counter}>{counter}</p>}
         </div>
 
     );

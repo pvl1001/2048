@@ -3,12 +3,10 @@ import {Currency, CurrencyProps} from "./Currency";
 
 
 describe('test Currency', () => {
-    const curr: CurrencyProps['currency'][] = ['money', 'star', 'coin'];
+    const currencies: CurrencyProps['currency'][] = ['money', 'star', 'coin'];
 
-    curr.forEach((el) => {
-        it(`should render ${el}`, () => {
-            render(<Currency currency={el}>1</Currency>);
-            expect(screen.getByRole('paragraph')).toHaveClass(RegExp(el));
-        });
+    it.each(currencies)('should render %s', (currency) => {
+        render(<Currency currency={currency}>1</Currency>);
+        expect(screen.getByRole('paragraph')).toHaveClass(RegExp(currency));
     });
 });

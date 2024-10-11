@@ -5,7 +5,7 @@ import {Tournament} from "../types";
 // let testTime = dayjs('2023-09-15 11:10');
 // console.log(testTime.unix());
 
-const mockTournaments: Tournament[] = [
+export const mockTournaments: Tournament[] = [
     {
         "id": "tournament1",
         "numberOfParticipants": 6,
@@ -44,7 +44,8 @@ const mockTournaments: Tournament[] = [
             {
                 "place": 1,
                 "currency": {
-                    "ID_SOFT_CURRENCY": 60
+                    // "ID_SOFT_CURRENCY": 60,
+                    "ID_BONUS_CURRENCY": 200,
                 }
             },
             {
@@ -179,5 +180,3 @@ const mockTournaments: Tournament[] = [
         "state": MatchState.ONGOING
     }
 ];
-
-export default mockTournaments;

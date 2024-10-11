@@ -1,3 +1,5 @@
+import {Tournament, useTournaments} from "entities/tournaments_card";
+import {TutorialRoutes} from "features/tutorial";
 import {useState} from "react";
 import {useOutlet} from "react-router-dom";
 import {useTransitionOutlet} from "shared/lib/hooks";
@@ -14,13 +16,16 @@ export function MainPage() {
     const currentOutlet = useOutlet();
     const {transitionOutlet} = useTransitionOutlet(currentOutlet);
     const [isShowUpButton, setIsShowUpButton] = useState(false);
+    const tournaments: Tournament[] = useTournaments();
 
     return (
         <div className={s.mainScreen}>
-            <h1>{import.meta.env.TEST}</h1>
             <Header setIsShowUpButton={setIsShowUpButton}/>
             <main className={'wrapper'}>
-                <Tournaments/>
+                <Tournaments
+                    tournaments={tournaments}
+                    tutorialRoutes={<TutorialRoutes/>}
+                />
             </main>
             <Promotions/>
             <div className="flex-grow"/>
