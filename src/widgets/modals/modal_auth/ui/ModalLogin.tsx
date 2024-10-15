@@ -8,11 +8,6 @@ export function ModalLogin() {
 
     return (
         <>
-            {/*{import.meta.env.NODE_ENV === 'development' &&*/}
-            {/*    <DevelopDescription>*/}
-            {/*        <p>Для теста использовать код подтверждения '111111'</p>*/}
-            {/*    </DevelopDescription>}*/}
-
             {step === 1 && <RegistrationPhone
                 title={'Please enter your phone number to log in'}
                 onSubmit={onSubmitLogin}

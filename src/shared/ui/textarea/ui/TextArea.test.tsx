@@ -20,7 +20,14 @@ describe('test TextArea', () => {
         {value: 'test', maxLength: 10, expected: 6},
         {value: 'test', maxLength: 4, expected: 0},
     ])('value = $value maxLength = $maxLength counter should be $expected', ({value, maxLength, expected}) => {
-        render(<TextArea label={'label'} value={value} maxLength={maxLength}/>);
+        render(
+            <TextArea
+                label={'label'}
+                onChange={console.log}
+                value={value}
+                maxLength={maxLength}
+            />
+        );
         expect(screen.getByText(expected)).toBeInTheDocument();
     });
 });

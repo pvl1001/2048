@@ -1,5 +1,5 @@
-import {useEffect} from "react";
 import {select, useAppDispatch, useAppSelector} from "app/store";
+import {useEffect} from "react";
 import {StorageItem} from "shared/common/StorageItem";
 import {Cookie} from "shared/lib/Cookie";
 import {TutorialUtils} from "shared/lib/TutorialUtils";

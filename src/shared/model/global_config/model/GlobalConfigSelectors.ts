@@ -1,58 +1,65 @@
+import {createSelector} from "@reduxjs/toolkit";
 import {RootState} from "app/store";
 import {StatusRequest} from "shared/common/StatusRequest";
 
 
-export type GlobalConfigLinks = Record<
-    | 'termsOfService'
-    | 'privacyPolicy'
-    | 'contactUs'
-    | 'rateUsIOS'
-    | 'rateUs', string
->
-
 export class GlobalConfigSelectors {
     static _isSuccess = (state: RootState) => state.globalConfig.status === StatusRequest.SUCCESS;
 
-    static _region = (state: RootState) => ({
-        keys: Object.keys(state.globalConfig.data.RegionConfig),
-        ageRestriction: +state.globalConfig.data.RegionConfig?.RU.AgeRestriction,
-    });
+    static _region = createSelector(
+        [(state: RootState) => state.globalConfig.data.RegionConfig],
+        (regionConfig) => ({
+            keys: Object.keys(regionConfig),
+            ageRestriction: +regionConfig?.RU.AgeRestriction,
+        })
+    );
 
-    static _designInt = (state: RootState) => ({
-        maxEmailLength: +state.globalConfig.data.DesignIntVariable.MaxEmailLength.Value,
-        minFirstNameLength: +state.globalConfig.data.DesignIntVariable.MinFirstNameLength.Value,
-        maxFirstNameLength: +state.globalConfig.data.DesignIntVariable.MaxFirstNameLength.Value,
-        minSecondNameLength: +state.globalConfig.data.DesignIntVariable.MinSecondNameLength.Value,
-        maxSecondNameLength: +state.globalConfig.data.DesignIntVariable.MaxSecondNameLength.Value,
-        minZipCodeLength: +state.globalConfig.data.DesignIntVariable.MinZipCodeLength.Value,
-        maxZipCodeLength: +state.globalConfig.data.DesignIntVariable.MaxZipCodeLength.Value,
-        maxReferralCodeLength: +state.globalConfig.data.DesignIntVariable.MaxReferralCodeLength.Value,
-        maxInvites: +state.globalConfig.data.DesignIntVariable.MaxInvites.Value,
-        minNicknameLength: +state.globalConfig.data.DesignIntVariable.MinNicknameLength.Value,
-        maxNicknameLength: +state.globalConfig.data.DesignIntVariable.MaxNicknameLength.Value,
-        maxSupportMsgLength: +state.globalConfig.data.DesignIntVariable.MaxSupportMsgLength.Value,
-    });
+    static _designInt = createSelector(
+        [(state: RootState) => state.globalConfig.data.DesignIntVariable],
+        (designIntVariable) => ({
+            maxEmailLength: +designIntVariable.MaxEmailLength.Value,
+            minFirstNameLength: +designIntVariable.MinFirstNameLength.Value,
+            maxFirstNameLength: +designIntVariable.MaxFirstNameLength.Value,
+            minSecondNameLength: +designIntVariable.MinSecondNameLength.Value,
+            maxSecondNameLength: +designIntVariable.MaxSecondNameLength.Value,
+            minZipCodeLength: +designIntVariable.MinZipCodeLength.Value,
+            maxZipCodeLength: +designIntVariable.MaxZipCodeLength.Value,
+            maxReferralCodeLength: +designIntVariable.MaxReferralCodeLength.Value,
+            maxInvites: +designIntVariable.MaxInvites.Value,
+            minNicknameLength: +designIntVariable.MinNicknameLength.Value,
+            maxNicknameLength: +designIntVariable.MaxNicknameLength.Value,
+            maxSupportMsgLength: +designIntVariable.MaxSupportMsgLength.Value,
+        })
+    );
 
-    static _links = (state: RootState) => ({
-        termsOfService: state.globalConfig.data.DesignStringVariable.TermsOfServiceLink.Value,
-        privacyPolicy: state.globalConfig.data.DesignStringVariable.PrivacyPolicyLink.Value,
-        contactUs: state.globalConfig.data.DesignStringVariable.ContactUsLink.Value,
-        rateUsIOS: state.globalConfig.data.DesignStringVariable.RateUsLinkIOS.Value,
-        rateUs: state.globalConfig.data.DesignStringVariable.RateUsLink.Value,
-    });
+    static _links = createSelector(
+        [(state: RootState) => state.globalConfig.data.DesignStringVariable],
+        (designStringVariable) => ({
+            termsOfService: designStringVariable.TermsOfServiceLink.Value,
+            privacyPolicy: designStringVariable.PrivacyPolicyLink.Value,
+            contactUs: designStringVariable.ContactUsLink.Value,
+            rateUsIOS: designStringVariable.RateUsLinkIOS.Value,
+            rateUs: designStringVariable.RateUsLink.Value,
+        }));
 
     static _storeItemConfig = (state: RootState) => state.globalConfig.data.StoreItemConfig;
 
-    static _designCurrency = (state: RootState) => ({
-        dailyGiftValue: state.globalConfig.data.DesignCurrencyVariable.DailyGift.Value.split(':')[1],
-        tutFeeCurrency: +state.globalConfig.data.DesignCurrencyVariable.TutorialFee.Value.split(':')[1],
-    });
+    static _designCurrency = createSelector(
+        [(state: RootState) => state.globalConfig.data.DesignCurrencyVariable],
+        (designCurrencyVariable) => ({
+            dailyGiftValue: designCurrencyVariable.DailyGift.Value.split(':')[1],
+            tutFeeCurrency: +designCurrencyVariable.TutorialFee.Value.split(':')[1],
+        })
+    );
 
-    static _storeLevelConfig = (state: RootState) => ({
-        data: state.globalConfig.data.StoreLevelConfig,
-        maxLevel: Math.max(...Object.keys(state.globalConfig.data.StoreLevelConfig).map(n => +n)),
-        progressLevels: Array(Object.keys(state.globalConfig.data.StoreLevelConfig).length).fill(null).map((_, i) => i + 1),
-    });
+    static _storeLevelConfig = createSelector(
+        [(state: RootState) => state.globalConfig.data.StoreLevelConfig],
+        (storeLevelConfig) => ({
+            data: storeLevelConfig,
+            maxLevel: Math.max(...Object.keys(storeLevelConfig).map(n => +n)),
+            progressLevels: Array(Object.keys(storeLevelConfig).length).fill(null).map((_, i) => i + 1),
+        })
+    );
 
     static _getCurrentReward = (level: number) => (state: RootState) => state.globalConfig.data.StoreLevelConfig[level];
 
