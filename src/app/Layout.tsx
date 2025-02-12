@@ -4,7 +4,6 @@ import {useModalEvents} from "shared/ui/modal";
 
 
 export function Layout() {
-    console.log(import.meta.env)
     Hooks.useGetProfile();
     Hooks.useShowRegisterNow();
     useModalEvents();
