@@ -20,14 +20,12 @@ export function PromotionCard({currency, sku, action}: Props) {
             [s.popular]: id === 'rookie'
         })}>
             <div className={s.content}>
-
                 <div className={s.image}>
                     <div className={s.currency}>
                         {formatHard}$
                     </div>
                     <p className={s.bonus}>Bonus +{formatBonus}$</p>
                 </div>
-
             </div>
 
             <div className={s.buy}>
